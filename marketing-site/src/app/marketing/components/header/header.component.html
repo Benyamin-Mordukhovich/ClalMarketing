@@ -1,0 +1,13 @@
+
+<header class="header" [class.open]="isHamburgerOpen">
+    <a role="button" class="hamburger" (click)="clickHamburger()"><div><span></span></div></a>
+    <a class="logo" routerLink="/">
+        <img src="assets/img/logo.png" alt="לוגו">
+    </a>
+    <ul class="mainMenu">
+        <li class="item" role="presentation"><a class="link" routerLink="/faq">שאלות ותשובות</a></li>
+        <li class="item" role="presentation"><button type="button" class="link" (click)="openAboutDialog()">אודות כלל ביטוח אשראי</button></li>
+        <li class="item" role="presentation"><button type="button" class="link">צור קשר</button></li>
+        <li class="item" role="presentation"><a class="link btnBorder">לאתר ניהול הפוליסה</a></li>
+    </ul>
+</header>

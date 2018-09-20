@@ -1,0 +1,12 @@
+
+
+<mat-accordion class="expansionPanelFaq" *ngFor="let item of modelFaq">
+    <mat-expansion-panel>
+        <mat-expansion-panel-header [collapsedHeight]="'auto'" [expandedHeight]="'auto'">
+            <mat-panel-title>
+                {{item.question}}
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        {{item.answer}}
+    </mat-expansion-panel>
+</mat-accordion>

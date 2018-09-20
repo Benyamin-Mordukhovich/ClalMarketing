@@ -1,0 +1,109 @@
+@import 'elements';
+@media (min-width: $screen-sm) {
+    $headerHight: 112px;
+    .wrapper {
+        padding-top: $headerHight;
+    }
+    .mainTitle {
+        font-size: 4.6em;
+    }
+   
+    /*S:header*/
+    .header {
+        height: $headerHight;
+        justify-content: space-between;
+        padding: 0 10px;
+        &.open {
+            .mainMenu {
+                width: auto;
+            }
+        }
+        .logo {
+            img {
+                width: 240px;
+            }
+        }
+    }
+    .hamburger {
+        display: none;
+    }
+    .mainMenu {
+        width: auto;
+        height: auto;
+        display: flex;
+        align-items: center;
+        position: static;
+        background: none;
+        .item {
+            padding-bottom: 0;
+            margin: 0 8px;
+            border-bottom: none;
+        }
+        .link {
+            font-size: 1.6em;
+        }
+    }
+    /*E:header*/
+    .faqSection {
+        padding-top: 100px;
+    }
+    .faqPage {
+        display: flex;
+    }
+    .picFaq {
+        display: block;
+        img {
+            width: 240px;
+        }
+    }
+    .faqBoxList {
+        margin-top: 30px;
+    }
+    .faqBox {
+        margin-bottom: 40px;
+        .title {
+            font-size: 2.6em;
+        }
+    }
+    .closeDialog {
+        top: 13px;
+        right: 13px;
+        &:before,
+        &:after {
+            width: 3px;
+            height: 22px;
+        }
+    }
+    /*S:about*/
+   
+    .aboutDialog {
+        .title,h2 {
+            margin: 40px 0 6px;
+        }
+        .text {
+            p {
+                margin-bottom: 25px;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+    .linkLogoContainer {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-top: 50px;
+        .link {
+            margin: 0;
+        }
+        .pic {
+            width: auto;
+            img {
+                width: auto;
+            }
+        }
+    }
+    /*E:about*/
+
+}

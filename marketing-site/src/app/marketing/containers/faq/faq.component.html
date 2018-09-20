@@ -1,0 +1,23 @@
+<section class="faqSection">
+    <div class="container-fluid">
+        <div class="faqPage">
+            <div class="faqContainer">
+                <div class="mainTitle">
+                    {{ faqPage.mainTitle }}
+                </div>
+                <ul class="faqBoxList">
+                    <li class="faqBox" *ngFor="let model of faqPage.faqModel">
+                        <div class="title">{{model.title}}</div>
+                        <div class="expansionPanel">
+                            <app-faqModel [modelFaq]="model.faq"></app-faqModel>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="picFaq">
+                <img src="assets/img/imgFaq.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</section>

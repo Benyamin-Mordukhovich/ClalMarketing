@@ -1,0 +1,55 @@
+@import 'elements';
+
+@media (min-width: $screen-lg) {
+ /*S:perfect-scrollbar*/
+ perfect-scrollbar.perfectScrollbar {
+    >.ps.ps--active-y,
+    >.ps.ps--scrolling-y {
+        >.ps__rail-y {
+            right: 0 !important;
+        }
+    }
+}
+/*E:perfect-scrollbar*/
+.header{
+    padding: 0 50px;
+    .logo{
+        img{
+            width: auto;
+        }
+    }
+}
+
+.mainMenu{
+    .item{
+        margin: 0 24px;
+    
+    }
+    .link{
+        font-size: 1.8em;
+    }
+}
+
+.picFaq{
+    img{
+        width: auto;
+    }
+}
+.dialogContainer{
+    &.about{
+        width: 1034px;
+    }
+ }
+    /*S:about*/
+    .dialogContainer {
+        &.about {
+            padding: 60px 140px;
+        }
+    }
+    /*E:about*/
+
+
+
+
+
+}
