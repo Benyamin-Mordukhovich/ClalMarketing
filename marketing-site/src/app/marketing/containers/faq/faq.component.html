@@ -2,9 +2,7 @@
     <div class="container-fluid">
         <div class="faqPage">
             <div class="faqContainer">
-                <div class="mainTitle">
-                    {{ faqPage.mainTitle }}
-                </div>
+                <h1 class="mainTitle">{{ faqPage.mainTitle }}</h1>
                 <ul class="faqBoxList">
                     <li class="faqBox" *ngFor="let model of faqPage.faqModel">
                         <div class="title">{{model.title}}</div>

@@ -5,9 +5,13 @@
         padding-top: $headerHight;
     }
     .mainTitle {
-        font-size: 4.6em;
+        font-size: 3.6em;
     }
-   
+    .btn {
+        &.btnGlobal {
+            font-size: 2.4em;
+        }
+    }
     /*S:header*/
     .header {
         height: $headerHight;
@@ -20,7 +24,7 @@
         }
         .logo {
             img {
-                width: 240px;
+                width: 220px;
             }
         }
     }
@@ -40,7 +44,17 @@
             border-bottom: none;
         }
         .link {
+            width: auto;
             font-size: 1.6em;
+        }
+    }
+    .menuAccessibilityContainer {
+        display: flex;
+        align-items: center;
+    }
+    .accessibilityList {
+        .btnAccessibility {
+            margin: 0 8px;
         }
     }
     /*E:header*/
@@ -75,13 +89,15 @@
         }
     }
     /*S:about*/
-   
     .aboutDialog {
-        .title,h2 {
+        .title,
+        h2 {
             margin: 40px 0 6px;
         }
         .text {
             p {
+                font-size: 1.5em;
+                line-height: 1.6;
                 margin-bottom: 25px;
                 &:last-child {
                     margin-bottom: 0;
@@ -105,5 +121,66 @@
         }
     }
     /*E:about*/
+    /*S:contact*/
+    .imgContact {
+        top: 18px;
+        left: 34px;
+        img {
+            width: 56px;
+        }
+    }
+    .rowFields {
+        display: flex;
+        justify-content: space-between; // margin: 0 -30px;
+        .formGroup {
+            width: 45%;
+            &.details {
+                width: 100%;
+            }
+        }
+    }
+    /*E:contactDialog*/
+    /*S:offerDialog*/
+    .offerDialogScroll {
+        max-height: none;
+    }
+    .offerContainer {
+        padding: 25px 20px;
+    }
+    .offerBox {
+        .offerList {
+            display: flex;
+            flex-wrap: wrap;
+            .item {
+                width: 33.3333%;
+            }
+        }
+    }
+    .offerList {
+        .item {
+            padding-left: 20px;
+        }
+    }
+    /*E:offerDialog*/
+    /*S:home*/
+    .sectionInfo {
+        top: 15vh;
+        right: 7vw;
+        left: auto;
+        .text {
+            font-size: 2.2em;
+        }
+        .btnGlobal{
+            margin: 15px 0;
+        }
+    }
+    .note{
+        font-size: 1.6em;
+    }
+    /*E:home*/
+    /*S:footer*/
+.footer{
 
+}
+/*E:footer*/
 }

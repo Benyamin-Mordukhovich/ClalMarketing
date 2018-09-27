@@ -1,0 +1,94 @@
+<div class="dialogContainer contact">
+    <button type="button" class="closeDialog" (click)="closeDialog()"></button>
+    <h1 class="mainTitle">{{ mainTitle }}</h1>
+    <h2 class="titleContact">{{ title }}</h2>
+    <div class="imgContact">
+        <img src="{{ imgUrl }}" alt="">
+    </div>
+    <perfect-scrollbar class="perfectScrollbar aboutDialogScroll">
+        <form [formGroup]="contactForm">
+            <div class="rowFields">
+                <div class="formGroup">
+                    <mat-form-field class="formField">
+                        <input matInput type="text" placeholder="שם עסק / חברה" value="" formControlName="companyName"
+                            autocomplete="off">
+                        <span class="errorMsg" *ngIf="!contactForm.controls['companyName'].valid && contactForm.controls['companyName'].touched">שדה
+                            חובה</span>
+                    </mat-form-field>
+                </div>
+                <div class="formGroup">
+                    <mat-form-field class="formField">
+                        <input matInput type="text" placeholder="ח.פ" value="" formControlName="privateCompany"
+                            autocomplete="off">
+                        <span class="errorMsg" *ngIf="!contactForm.controls['privateCompany'].valid && contactForm.controls['privateCompany'].touched">שדה
+                            חובה</span>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="rowFields">
+                <div class="formGroup">
+                    <mat-form-field class="formField">
+                        <mat-select placeholder="מחזור עסקאות שנתי" formControlName="transactionsOption">
+                            <mat-option *ngFor="let option of transactionsOptionsList" [value]="option.value">
+                                {{option.title}}
+                            </mat-option>
+                        </mat-select>
+                        <span class="errorMsg" *ngIf="!contactForm.controls['transactionsOption'].valid && contactForm.controls['transactionsOption'].touched">שדה
+                            חובה</span>
+                    </mat-form-field>
+                </div>
+                <div class="formGroup">
+                    <mat-form-field class="formField">
+                        <input matInput type="text" placeholder="שם הפונה" value="" formControlName="customerName"
+                            autocomplete="off">
+                        <span class="errorMsg" *ngIf="!contactForm.controls['customerName'].valid && contactForm.controls['customerName'].touched">שדה
+                            חובה</span>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="rowFields">
+                <div class="formGroup">
+                    <mat-form-field class="formField">
+                        <input matInput type="text" placeholder="תפקיד" value="" formControlName="role" autocomplete="off">
+                        <span class="errorMsg" *ngIf="!contactForm.controls['role'].valid && contactForm.controls['role'].touched">שדה
+                            חובה</span>
+                    </mat-form-field>
+                </div>
+                <div class="formGroup">
+                    <mat-form-field class="formField">
+                        <input matInput type="tel" placeholder="טלפון" value="" formControlName="phone" autocomplete="off">
+                        <span class="errorMsg" *ngIf="!contactForm.controls['phone'].valid && contactForm.controls['phone'].touched">שדה
+                            חובה</span>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="rowFields">
+                <div class="formGroup">
+                    <mat-form-field class="formField">
+                        <input matInput type="email" placeholder="כתובת דואר אלקטרוני" value="" formControlName="email"
+                            autocomplete="off">
+                        <!-- <span class="errorMsg" *ngIf="!contactForm.controls['email'].valid && contactForm.controls['email'].touched">שדה
+                            חובה</span> -->
+                        <span class="errorMsg" *ngIf="!contactForm.controls['email'].valid && contactForm.controls['email'].touched">
+                            <span *ngIf="contactForm.controls['email'].value === ''">שדה חובה</span>
+                            נא להזין אימייל חוקי
+                        </span>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="rowFields">
+                <div class="formGroup details">
+                    <mat-form-field class="formField">
+                        <input matInput type="text" placeholder="פירוט הפנייה" value="" formControlName="details"
+                            autocomplete="off">
+                        <span class="errorMsg" *ngIf="!contactForm.controls['details'].valid && contactForm.controls['details'].touched">שדה
+                            חובה</span>
+                    </mat-form-field>
+                </div>
+            </div>
+        </form>
+    </perfect-scrollbar>
+    <div class="btnSend">
+        <button type="button" class="btn btnGlobal" [disabled]="!contactForm.valid" (click)="submitForm()">המשך</button>
+    </div>
+</div>

@@ -20,3 +20,33 @@ interface Ifaq {
     answer: string;
 }
 
+interface IdropDownItem{
+    title: string,
+    value?: string | number | boolean
+}
+
+interface IcontactPage{
+    mainTitle?: string;
+    title?: string,
+    transactionsList?:IdropDownItem[],
+    imgUrl?:string
+}
+
+interface IcontactForm{
+    companyName: string,
+    privateCompany: string,
+    transactionsOption:string,
+    customerName:string,
+    role: string,
+    phone:string,
+    email: string,
+    details: string,
+}
+
+interface IsectionModel{
+    mainTitle?:string,
+    text?:string,
+    linkText?:string,
+    link?:string,
+    note?:string,
+}

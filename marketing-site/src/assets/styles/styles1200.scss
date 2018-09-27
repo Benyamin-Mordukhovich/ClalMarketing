@@ -1,55 +1,161 @@
 @import 'elements';
-
 @media (min-width: $screen-lg) {
- /*S:perfect-scrollbar*/
- perfect-scrollbar.perfectScrollbar {
-    >.ps.ps--active-y,
-    >.ps.ps--scrolling-y {
-        >.ps__rail-y {
-            right: 0 !important;
+    /*S:perfect-scrollbar*/
+    perfect-scrollbar.perfectScrollbar {
+        >.ps.ps--active-y,
+        >.ps.ps--scrolling-y {
+            >.ps__rail-y {
+                right: 0 !important;
+            }
         }
     }
-}
-/*E:perfect-scrollbar*/
-.header{
-    padding: 0 50px;
-    .logo{
-        img{
+    .mainTitle{
+        font-size: 4.6em;
+
+    }
+    /*E:perfect-scrollbar*/
+    /*S:header*/
+    .header {
+        padding: 0 50px;
+        .logo {
+            img {
+                width: auto;
+            }
+        }
+    }
+    .mainMenu {
+        .item {
+            margin: 0 24px;
+        }
+        .link {
+            font-size: 1.8em;
+        }
+    }
+    .accessibilityList {
+        .btnAccessibility {
+            margin: 0 24px;
+        }
+    }
+    .btnAccessibility {
+        &.keyboard {
+            display: block;
+            width: 40px;
+            margin-top: 5px;
+            img {
+                width: 40px;
+            }
+        }
+    }
+    /*E:header*/
+    .picFaq {
+        img {
             width: auto;
         }
     }
-}
-
-.mainMenu{
-    .item{
-        margin: 0 24px;
-    
-    }
-    .link{
-        font-size: 1.8em;
-    }
-}
-
-.picFaq{
-    img{
-        width: auto;
-    }
-}
-.dialogContainer{
-    &.about{
-        width: 1034px;
-    }
- }
-    /*S:about*/
+    /*S:dialog*/
     .dialogContainer {
         &.about {
+            width: 1030px;
             padding: 60px 140px;
         }
+        &.contact {
+            width: 1000px;
+            // padding: 96px 150px;
+            padding: 10vh 16vh;
+        }
+        &.offer {
+            max-width: 1500px;
+            // padding: 64px 130px 80px 100px;
+            // padding: 6.8vh 6.8vw 8.5vh 5.2vw;
+            padding: 6.8vh 6.8vw 5vh 5.2vw;
+        }
     }
+    /*E:dialog*/
+    /*S:about*/
     /*E:about*/
+    /*S:contact*/
+    .imgContact {
+        top: 56px;
+        left: 74px;
+        img {
+            width: auto;
+        }
+    }
+    .titleContact {
+        max-width: 450px;
+        margin: 10px 0 40px;
+    }
+    .rowFields {
+        // margin-bottom: 24px;
+        margin-bottom: 2.8vh;
+    }
+    .btnSend {
+        margin-top: 40px;
+        margin-top: 4vh;
+    }
+    /*E:contact*/
+    /*S:offerDialog*/
+    .offerDialogScroll {
+        // max-height: calc(100vh - 38vh);
+    }
 
+    .offerContainer {
+        // margin-top: 68px;
+        padding-bottom: 34px;
+        padding-left: 16px;
+        display: flex;
+        .title {
+            padding-bottom: 9px;
+            // font-size: 3em;
+            font-size: 3.2vh;
+        }
+    }
+    .businessDetailsBox {
+        min-width: 280px;
+        padding-top: 30px;
+        margin-left: 70px;
+    }
+    .offerBox {
+        max-width: 920px;
+        padding: 30px 60px;
+        .offerList {
+            margin-top: 0;
+            .item {
+                // margin: 60px 0 20px;
+                margin: 6.4vh 0 2.1vh;
+            }
+        }
+    }
+    .offerList {
+        // margin-top: 60px;
+        margin-top: 6.4vh;
+        .item {
+            margin-bottom: 30px;
+            .pic{
+                width: auto;
+                top: -6px;
+            }
+        }
+        .numberContainer {
+            .number {
+                // font-size: 5.4em;
+                font-size: 5.8vh;
+            }
+            .currency {
+                font-size: 2.6em;
+            }
+        }
+    }
+    /*E:offerDialog*/
+    /*S:home*/
 
+    .sectionInfo{
+        top: 23vh;
+        .btnGlobal{
+            margin: 20px 0 33px;
 
-
+        }
+    }
+    /*E:home*/
 
 }

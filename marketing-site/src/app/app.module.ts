@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule } from '@angular/forms';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
@@ -10,15 +11,25 @@ import { FaqComponent } from './marketing/containers/faq/faq.component';
 import { HeaderComponent } from './marketing/components/header/header.component';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 import { AboutDialogComponent } from './marketing/components/aboutDialog/aboutDialog.component';
+import { ContactDialogComponent } from './marketing/components/contactDialog/contactDialog.component';
+import { OfferDialogComponent } from './marketing/components/offerDialog/offerDialog.component';
+import { SectionInfoComponent } from './marketing/components/sectionInfo/sectionInfo.component';
+import { FooterComponent } from './marketing/components/footer/footer.component';
+
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http'
 import { DataService } from './services/data.service';
 
+
 import { FaqModelComponent } from './marketing/components/faqModel/faqModel.component';
 export const MATERIALCOMPONENTS = [
   MatExpansionModule,
-  MatDialogModule
+  MatDialogModule,
+  MatInputModule,
+  MatSelectModule
 ]
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
@@ -32,11 +43,16 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     FaqComponent,
     HeaderComponent,
     AboutDialogComponent,
-    FaqModelComponent
+    ContactDialogComponent,
+    OfferDialogComponent,
+    FaqModelComponent,
+    SectionInfoComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
     MATERIALCOMPONENTS,
     AppRoutingModule,
     HttpClientModule,
@@ -44,6 +60,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   ],
   entryComponents:[
     AboutDialogComponent,
+    ContactDialogComponent,
+    OfferDialogComponent
   ],
   providers: [
     {

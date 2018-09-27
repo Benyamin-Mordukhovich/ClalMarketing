@@ -3,6 +3,7 @@
 @include font-face('assistantRegular', 'assistant-v1-hebrew-regular');
 @include font-face('assistantSemiBold', 'assistant-v2-hebrew-600');
 @include font-face('assistantBold', 'assistant-v1-hebrew-700');
+@include font-face('latoLight', 'lato-v14-latin-300');
 /* start reset*/
 
 * {
@@ -26,6 +27,7 @@ body {
 }
 
 .main {
+    height: 100%;
     font-size: 10px;
     -webkit-overflow-scrolling: touch;
 }
@@ -245,10 +247,11 @@ mat-dialog-container.mat-dialog-container {
     font-size: 10px;
     border-radius: 16px;
     position: relative;
+    box-shadow: 0px 15px 25px 0px rgba(5, 36, 99, 0.2);
 }
 
 .cdk-overlay-pane {
-    max-width: calc(100vw - 30px);
+    max-width: calc(100vw - 30px)!important;
 }
 
 /*E:reset:dialog*/
@@ -256,6 +259,14 @@ mat-dialog-container.mat-dialog-container {
 /*S:perfect-scrollbar*/
 
 perfect-scrollbar.perfectScrollbar {
+    &.offerDialogScroll{
+        >.ps.ps--active-y,
+        >.ps.ps--scrolling-y {
+            >.ps__rail-y {
+                right: -2px !important;
+            }
+        }
+    }
     >.ps.ps--active-y,
     >.ps.ps--scrolling-y {
         >.ps__rail-y {
@@ -279,6 +290,7 @@ perfect-scrollbar.perfectScrollbar {
 /*E:perfect-scrollbar*/
 
 .wrapper {
+    height: 100%;
     padding-top: $headerHight;
 }
 
@@ -288,8 +300,29 @@ perfect-scrollbar.perfectScrollbar {
 }
 
 .mainTitle {
-    font: 2.4em $fontAssistantBold;
+    font: 2.4em/1 $fontAssistantBold;
     color: $colorBlue;
+}
+
+.btn {
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    &.btnGlobal {
+        display: inline-flex;
+        align-items: center;
+        padding: 5px 20px 8px;
+        font-size: 1.8em;
+        color: $colorWhite;
+        transition: all 0.2s ease-out;
+        background: linear-gradient(to right, rgba(30, 180, 255, 1) 0%, rgba(13, 200, 245, 1) 100%);
+        &:hover,
+        &:focus,
+        &:active {
+            background-position: right center;
+        }
+    }
 }
 
 /*S:header*/
@@ -419,8 +452,10 @@ perfect-scrollbar.perfectScrollbar {
         }
     }
     .link {
+        width: 100%;
         position: relative;
         white-space: nowrap;
+        text-align: right;
         font-size: 1.8em;
         color: $colorBlueDark;
         cursor: pointer;
@@ -450,7 +485,8 @@ perfect-scrollbar.perfectScrollbar {
             transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.2s;
             transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.2s, -webkit-transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
-        &:hover {
+        &:hover,
+        &.active {
             &:before,
             &:after {
                 opacity: 1;
@@ -470,10 +506,19 @@ perfect-scrollbar.perfectScrollbar {
         }
     }
     .btnBorder {
+        width: auto;
         display: inline-block;
         padding: 8px 10px;
         border-radius: 5px;
         border: solid 1px $colorBlueDark;
+    }
+}
+
+.btnAccessibility {
+    width: 25px;
+    cursor: pointer;
+    &.keyboard {
+        display: none;
     }
 }
 
@@ -528,6 +573,8 @@ perfect-scrollbar.perfectScrollbar {
     }
 }
 
+/*S:dialog*/
+
 .closeDialog {
     width: 30px;
     height: 30px;
@@ -555,20 +602,27 @@ perfect-scrollbar.perfectScrollbar {
 }
 
 .dialogContainer {
+    padding: 30px 15px 15px;
     border-radius: 10px;
-    &.about {
-        width: 100%;
-        padding: 30px 15px 15px;
+    &.offer {
+        background: url(./../img/offerDialogBG_.png) no-repeat right bottom;
     }
 }
+
+/*E:dialog*/
+
+/*S:aboutDialog*/
 
 .aboutDialog {
     color: $colorBlueDark;
     .text {
-        font-size: 1.5em;
-        line-height: 1.6;
+        p {
+            font-size: 1.4em;
+            line-height: 1.5;
+        }
     }
-    .title,h2 {
+    .title,
+    h2 {
         margin: 25px 0 6px;
         font: 1.6em $fontAssistantBold;
     }
@@ -585,24 +639,8 @@ perfect-scrollbar.perfectScrollbar {
 
 .linkLogoContainer {
     margin-top: 15px;
-    .link {
-        display: inline-block;
-        position: relative;
-        padding-left: 10px;
+    .btnLink{
         margin-bottom: 15px;
-        font: 1.6em $fontAssistantBold;
-        color: $colorBlue;
-        cursor: pointer;
-        .arrowIcon {
-            position: absolute;
-            top: 1px;
-            left: 0;
-        }
-        &:hover {
-            .arrowIcon {
-                animation: bounce 1s forwards;
-            }
-        }
     }
     .pic {
         width: 100%;
@@ -612,10 +650,268 @@ perfect-scrollbar.perfectScrollbar {
         }
     }
 }
+.btnLink {
+    display: inline-block;
+    position: relative;
+    padding-left: 10px;
+    font: 1.6em $fontAssistantBold;
+    color: $colorBlue;
+    cursor: pointer;
+    .arrowIcon {
+        position: absolute;
+        top: 1px;
+        left: 0;
+    }
+    &:hover {
+        .arrowIcon {
+            animation: bounce 1s forwards;
+        }
+    }
+}
+/*S:aboutDialog*/
 
+/*S:contactDialog*/
+
+.imgContact {
+    position: absolute;
+    top: 10px;
+    left: 24px;
+    img {
+        width: 40px;
+    }
+}
+
+.errorMsg {
+    margin-top: 1px;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    font-size: 1.4em;
+    color: $colorRed;
+}
+
+.titleContact {
+    font-size: 1.5em;
+    color: $colorBlueDark;
+}
+
+.formField {
+    width: 100%;
+}
+
+.mat-form-field {
+    &.mat-focused {
+        .mat-form-field-ripple {
+            background-color: $colorBlue;
+        }
+    }
+    &.mat-form-field-invalid {
+        .mat-select-arrow-wrapper {
+            .mat-select-arrow {
+                border-right-color: $colorRed;
+                border-bottom-color: $colorRed;
+            }
+        }
+    }
+}
+
+.mat-form-field-flex {
+    padding-top: 20px;
+}
+
+.mat-form-field-infix {
+    .mat-input-element {
+        text-align: right;
+        font: 1.6em $fontAssistantRegular;
+    }
+    .mat-form-field-label-wrapper {
+        overflow: visible;
+    }
+}
+
+.mat-form-field-appearance-legacy {
+    &.mat-form-field-can-float {
+        &.mat-form-field-should-float {
+            .mat-form-field-label {
+                width: 100%;
+                font-size: 1.4em;
+                color: $colorPlaceholder;
+                transform: translateY(-1.28125em) scale(1) perspective(100px) translateZ(.001px);
+            }
+        }
+    }
+    .mat-form-field-wrapper {
+        padding-bottom: 13px;
+    }
+    .mat-form-field-infix {
+        width: 100%;
+        padding: 0;
+    }
+    .mat-form-field-label {
+        text-align: right;
+        top: 0;
+        font: 1.6em $fontAssistantRegular;
+        @include placeholder($colorPlaceholder);
+        @include transitionMove();
+    }
+    .mat-form-field-underline {
+        background-color: #21cbf6;
+    }
+}
+
+.mat-form-field-type-mat-select {
+    label.mat-form-field-label {
+        width: 100%;
+    }
+}
+
+.mat-select {
+    .mat-select-value {
+        text-align: right;
+        font: 1.6em $fontAssistantRegular;
+    }
+}
+
+.mat-option-text {
+    text-align: right;
+    font: 1.4em $fontAssistantRegular;
+    color: $colorPlaceholder;
+}
+
+.mat-select-arrow-wrapper {
+    .mat-select-arrow {
+        width: 7px;
+        height: 7px;
+        margin-top: -10px;
+        border-right: solid 1px $colorBlue;
+        border-bottom: solid 1px $colorBlue;
+        border-left: none;
+        border-top: none;
+        transform: rotate(45deg);
+    }
+}
+
+.btnSend {
+    margin-top: 20px;
+}
+
+/*E:contactDialog*/
+
+/*S:offerDialog*/
+.mat-dialog-container {
+    max-width: none !important;
+}
+.offerDialogScroll{
+    max-height: calc(100vh - 40vh);
+    // padding-right: 20px;
+    // margin: 10px -20px 0 0;
+    // margin: 10px -10px 0 0px;
+}
+
+.titleOffer {
+    font: 2.2em $fontAssistantRegular;
+    color: $colorBlueDark;
+    margin-bottom: 26px;
+
+}
+
+.offerContainer {
+    padding: 25px 15px;
+    .title {
+        font: 1.8em $fontAssistantSemiBold;
+        border-bottom: solid 1px #b6c4da;
+        color: $colorBlueDark;
+    }
+}
+
+.businessDetailsBox {}
+
+.offerBox {
+    padding: 10px 15px;
+    border-radius: 16px;
+    background: $colorWhite;
+    box-shadow: 0px 15px 25px 0px rgba(5, 36, 99, 0.2);
+    
+}
+
+.offerList {
+    margin-top: 15px;
+    .item {
+        margin-bottom: 15px;
+        &:last-child {
+            margin-bottom: none;
+        }
+        .pic {
+            width: 24px;
+            position: absolute;
+            top: 0;
+            left: -100%;
+        }
+    }
+    .titleItem {
+        font: 1.5em $fontAssistantBold;
+        color: $colorBlueDark;
+    }
+    .numberContainer {
+        display: inline-block;
+        position: relative;
+        color: $colorBlueDark;
+        &.present {
+            font-weight: bold;
+            color: $colorBlue;
+            background: url(./../img/underline.png) no-repeat bottom center;
+            .number {
+                font-weight: bold;
+            }
+        }
+        .number {
+            font: 2.6em $fontLatoLight;
+        }
+        .currency {
+            font-size: 1.6em;
+        }
+    }
+    .currency {
+        font-size: .4em;
+    }
+    .text {
+        font-size: 1.5em;
+        color: $colorGray;
+    }
+}
+
+/*E:offerDialog*/
+
+/*S:home*/
+.sectionInfo{
+    max-width: 540px;
+    position: absolute;
+    top: 100px;
+    right: 15px;
+    left: 15px;
+    
+    .text{
+        margin-top: 10px;
+        font-size:1.6em;
+        line-height: 1.2;
+        color: $colorBlueDark;
+    }
+    .btnGlobal{
+        margin: 10px 0;
+        border-radius: 5px;
+    }
+    .btnLink{
+        margin-top: 6px;
+    }
+}
+.note{
+    margin-top: 6px;
+ font-size: 1.4em;
+ color:$colorBlue;       
+}
 .homeSlide {
     width: 100%;
-    height: 90vh;
+    height: 90vh; 
 }
 
 .bcg {
@@ -646,6 +942,21 @@ perfect-scrollbar.perfectScrollbar {
 #slide-3 p {
     color: #b2b2b2;
 }
+/*E:home*/
+
+/*S:footer*/
+.footer{
+    display: flex;
+    justify-content: center;
+    background: #1d3a74;
+    .title{
+        font: 4.2em $fontAssistantBold;
+    }
+    .text{
+        font-size: 2.2em;
+    }
+}
+/*E:footer*/
 
 @include keyframes(bounce) {
     0%,
