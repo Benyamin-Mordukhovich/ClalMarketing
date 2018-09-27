@@ -65,25 +65,10 @@ export class DataService {
     }
 
 
-    // sendContactForm(formValue:IcontactForm) : Observable<IcontactForm>{
-    //     console.log("sendContactForm",formValue);
-    //     const httpOptions = {headers: new HttpHeaders ({'Content-Type': 'application/json'})}
-    //     return this.http.post<IcontactForm>(this._urlContactPage, formValue,httpOptions)
-        
-    // }
-
-    sendContactForm(formValue:IcontactForm) {
+    sendContactForm(formValue:IcontactForm): Observable<Result>  {
         console.log("sendContactForm",formValue);
         const httpOptions = {headers: new HttpHeaders ({'Content-Type': 'application/json'})}
-        return this.http.post(this._urlContactPage, formValue,httpOptions).subscribe(
-            data => {
-                console.log("POST Request is successful ", data); 
-            },
-            error => {
-                console.log("Error", error); 
-            }
-        ); 
-                
+        return this.http.post<Result>(this._urlContactPage, formValue,httpOptions)
         
     }
 
@@ -91,4 +76,9 @@ export class DataService {
 
 
     
+}
+
+interface Result {
+    success: boolean
+    error?:string
 }

@@ -40,7 +40,7 @@ export class HeaderComponent implements OnInit {
 
   accessibilityControl() {
     this.focusTheme = localStorage.getItem(this.focusClass);
-  
+
     if (this.focusTheme != null) {
       this.document.body.classList.add(this.focusClass);
     }
@@ -79,15 +79,20 @@ export class HeaderComponent implements OnInit {
           }
         }).afterClosed().subscribe((data) => {
           this.contactDataFromUser = data;
-          // console.log("this.contactDataFromUser", this.contactDataFromUser)
-          this._dataService.sendContactForm(this.contactDataFromUser);
+          this._dataService.sendContactForm(this.contactDataFromUser)
+            .subscribe((res) => {
+              console.log('submit result', res)
+            }, err => {
+              console.error('failed to submit', err)
+            });
+
         });
       }
     )
   }
 
-  openOfferDialog(){
-    this.dialog.open(OfferDialogComponent,{
+  openOfferDialog() {
+    this.dialog.open(OfferDialogComponent, {
       data: {
         width: '600px',
       }

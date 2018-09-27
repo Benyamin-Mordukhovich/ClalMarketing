@@ -947,7 +947,8 @@ perfect-scrollbar.perfectScrollbar {
 /*S:footer*/
 .footer{
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     background: #1d3a74;
     .title{
         font: 4.2em $fontAssistantBold;
