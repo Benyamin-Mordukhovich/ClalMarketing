@@ -4,7 +4,6 @@ import { AboutDialogComponent } from '../aboutDialog/aboutDialog.component';
 import { DataService } from '../../../services/data.service';
 import { ContactDialogComponent } from '../contactDialog/contactDialog.component';
 import { DOCUMENT } from '@angular/platform-browser';
-import { OfferDialogComponent } from '../offerDialog/offerDialog.component';
 
 @Component({
   selector: 'app-header',
@@ -83,7 +82,7 @@ export class HeaderComponent implements OnInit {
             .subscribe((res) => {
               console.log('submit result', res)
             }, err => {
-              console.error('failed to submit', err)
+              // console.error('failed to submit', err)
             });
 
         });
@@ -91,13 +90,7 @@ export class HeaderComponent implements OnInit {
     )
   }
 
-  openOfferDialog() {
-    this.dialog.open(OfferDialogComponent, {
-      data: {
-        width: '600px',
-      }
-    })
-  }
+
 
 
 }

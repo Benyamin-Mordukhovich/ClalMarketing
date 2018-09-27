@@ -170,17 +170,26 @@
         .text {
             font-size: 2.2em;
         }
-        .btnGlobal{
+        .btnGlobal {
             margin: 15px 0;
         }
     }
-    .note{
+    .note {
         font-size: 1.6em;
     }
     /*E:home*/
     /*S:footer*/
-.footer{
-
-}
-/*E:footer*/
+    .footer {
+        padding: 35px $gutter 60px;
+        .title {
+            font-size: 3.4em;
+        }
+        .text{
+        font-size: 2.2em;
+        }
+        .btnLinkContainer{
+            margin-bottom: 30px;
+        }
+    }
+    /*E:footer*/
 }

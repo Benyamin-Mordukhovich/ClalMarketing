@@ -122,4 +122,15 @@
     margin: 20px 0 33px;
   }
   /*E:home*/
+  /*S:footer*/
+  .footer {
+    padding: 80px 15px 180px;
+  }
+  .footer .title {
+    font-size: 4.2em;
+  }
+  .footer .btnLinkContainer {
+    margin-bottom: 80px;
+  }
+  /*S:footer*/
 }

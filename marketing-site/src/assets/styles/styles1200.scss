@@ -157,5 +157,18 @@
         }
     }
     /*E:home*/
+    /*S:footer*/
+    .footer{
+        padding: 80px $gutter 180px;
+        .title{
+            font-size: 4.2em;
+        }
+        .btnLinkContainer{
+        margin-bottom: 80px;
+
+        }
+    }
+    /*S:footer*/
+
 
 }

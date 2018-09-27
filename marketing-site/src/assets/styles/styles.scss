@@ -949,12 +949,37 @@ perfect-scrollbar.perfectScrollbar {
     display: flex;
     align-items: center;
     flex-direction: column;
-    background: #1d3a74;
+    padding: 35px $gutter 80px;
+    background-color: #1d3a74;
+    background-image: url(./../img/footer.png);
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: contain;
+
+    margin-top: 600px;
     .title{
-        font: 4.2em $fontAssistantBold;
+        margin-bottom: 15px;
+        font: 2.2em $fontAssistantBold;
+        color:$colorWhite;
     }
     .text{
-        font-size: 2.2em;
+        margin-bottom: 18px;
+        font-size: 1.6em;
+        color:$colorWhite;
+
+    }
+    .btnLinkContainer{
+        margin-bottom: 20px;
+    }
+    .btnGlobal{
+        border-radius: 5px;   
+    }
+    .btnLink{
+        padding-left: 16px;
+        color:$colorWhite;
+        .arrowIcon{
+            top: 2px;
+        }
     }
 }
 /*E:footer*/

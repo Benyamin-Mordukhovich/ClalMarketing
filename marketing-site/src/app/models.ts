@@ -46,7 +46,9 @@ interface IcontactForm{
 interface IsectionModel{
     mainTitle?:string,
     text?:string,
+    linkReadMore?:string,
     linkText?:string,
     link?:string,
     note?:string,
 }
+
