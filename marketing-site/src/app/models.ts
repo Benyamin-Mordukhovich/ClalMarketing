@@ -43,6 +43,10 @@ interface IcontactForm{
     details: string,
 }
 
+interface Ihp{
+    sectionsData:IsectionModel[]
+}
+
 interface IsectionModel{
     mainTitle?:string,
     text?:string,
