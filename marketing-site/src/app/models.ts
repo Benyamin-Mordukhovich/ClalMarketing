@@ -6,8 +6,8 @@ interface IaboutDialog{
 }
 
 interface IfaqPage {
-    mainTitle: string;
-    items: IfaqModel[];
+    mainTitle?: string;
+    items?: IfaqModel[];
 }
 
 interface IfaqModel {
@@ -56,3 +56,7 @@ interface IsectionModel{
     note?:string,
 }
 
+interface Result {
+    success: boolean
+    error?:string
+}
