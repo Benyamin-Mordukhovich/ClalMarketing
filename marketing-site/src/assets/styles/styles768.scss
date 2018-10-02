@@ -165,13 +165,12 @@
     /*S:errorPage*/
     .errorContainer {
         padding: 70px $gutter 25px;
-        .pic{
+        .pic {
             margin-bottom: 28px;
         }
-        .text{
+        .text {
             margin: 13px 0 34px;
-        font-size: 2.2em;
-
+            font-size: 2.2em;
         }
     }
     /*E:errorPage*/
@@ -205,4 +204,5 @@
         }
     }
     /*E:footer*/
+    
 }

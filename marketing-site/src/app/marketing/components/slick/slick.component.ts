@@ -14,7 +14,7 @@ export class SlickComponent {
     slideConfig = { 
         "rtl": true, 
         "dots": true, 
-        "slidesToShow": 3, 
+        "slidesToShow": 1, 
         "slidesToScroll": 1 
     };
 

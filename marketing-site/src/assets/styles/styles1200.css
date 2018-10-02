@@ -133,4 +133,48 @@
     margin-bottom: 80px;
   }
   /*S:footer*/
+  /*S:slick*/
+  .commentsCarusel {
+    height: auto;
+  }
+  .commentsCarusel .slick-arrow {
+    top: 50%;
+    bottom: auto;
+    transform: translateY(-50%);
+  }
+  .commentsCarusel .slick-arrow.slick-prev {
+    right: 45px;
+  }
+  .commentsCarusel .slick-arrow.slick-next {
+    left: 45px;
+  }
+  .commentsCarusel .slick-dots button {
+    width: 16px;
+    height: 16px;
+  }
+  .itemCarusel {
+    display: flex;
+    justify-content: center;
+    padding: 80px 15px 80px;
+  }
+  .itemCarusel .pic {
+    margin: 0 0 0 96px;
+  }
+  .itemCarusel .comment {
+    text-align: right;
+    font-size: 3.4em;
+  }
+  .itemCarusel .comment img {
+    width: auto;
+  }
+  .itemCarusel .startPic {
+    position: absolute;
+    top: 0;
+    right: -44px;
+  }
+  .itemCarusel .text {
+    text-align: right;
+    font-size: 2.2em;
+  }
+  /*E:slick*/
 }

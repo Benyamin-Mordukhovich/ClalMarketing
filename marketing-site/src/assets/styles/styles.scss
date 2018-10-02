@@ -215,6 +215,7 @@ body.keyboardFocus {
         float: right;
     }
 }
+
 /*S:expansionPanel*/
 
 .expansionPanel {
@@ -262,7 +263,7 @@ mat-dialog-container.mat-dialog-container {
 }
 
 .cdk-overlay-pane {
-    max-width: calc(100vw - 30px)!important;
+    max-width: calc(100vw - 30px) !important;
 }
 
 /*E:reset:dialog*/
@@ -270,7 +271,7 @@ mat-dialog-container.mat-dialog-container {
 /*S:perfect-scrollbar*/
 
 perfect-scrollbar.perfectScrollbar {
-    &.offerDialogScroll{
+    &.offerDialogScroll {
         >.ps.ps--active-y,
         >.ps.ps--scrolling-y {
             >.ps__rail-y {
@@ -647,20 +648,19 @@ perfect-scrollbar.perfectScrollbar {
     padding-right: 20px;
     margin: 10px -20px 0 0;
     @include transitionMove();
-
-    &.sendSuccess{
+    &.sendSuccess {
         max-height: 0;
         opacity: 0;
         visibility: hidden;
-        .ps__rail-x{
-            display: none!important;
+        .ps__rail-x {
+            display: none !important;
         }
     }
 }
 
 .linkLogoContainer {
     margin-top: 15px;
-    .btnLink{
+    .btnLink {
         margin-bottom: 15px;
     }
     .pic {
@@ -671,6 +671,7 @@ perfect-scrollbar.perfectScrollbar {
         }
     }
 }
+
 .btnLink {
     display: inline-block;
     position: relative;
@@ -689,6 +690,7 @@ perfect-scrollbar.perfectScrollbar {
         }
     }
 }
+
 /*S:aboutDialog*/
 
 /*S:contactDialog*/
@@ -819,12 +821,13 @@ perfect-scrollbar.perfectScrollbar {
 /*E:contactDialog*/
 
 /*S:offerDialog*/
+
 .mat-dialog-container {
     max-width: none !important;
 }
-.offerDialogScroll{
-    max-height: calc(100vh - 40vh);
-    // padding-right: 20px;
+
+.offerDialogScroll {
+    max-height: calc(100vh - 40vh); // padding-right: 20px;
     // margin: 10px -20px 0 0;
     // margin: 10px -10px 0 0px;
 }
@@ -833,7 +836,6 @@ perfect-scrollbar.perfectScrollbar {
     font: 2.2em $fontAssistantRegular;
     color: $colorBlueDark;
     margin-bottom: 26px;
-
 }
 
 .offerContainer {
@@ -852,7 +854,6 @@ perfect-scrollbar.perfectScrollbar {
     border-radius: 16px;
     background: $colorWhite;
     box-shadow: 0px 15px 25px 0px rgba(5, 36, 99, 0.2);
-    
 }
 
 .offerList {
@@ -904,27 +905,30 @@ perfect-scrollbar.perfectScrollbar {
 /*E:offerDialog*/
 
 /*S:errorPage*/
-.errorContainer{
+
+.errorContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 25px $gutter 25px;
-    .pic{
+    .pic {
         margin-bottom: 14px;
-        img{
+        img {
             width: 100%;
             max-width: 900px;
         }
     }
-    .text{
+    .text {
         margin: 10px 0 20px;
         font-size: 1.8em;
-        color:$colorBlueDark;
+        color: $colorBlueDark;
     }
 }
+
 /*E:errorPage*/
 
 /*S:home*/
+
 .sectionInfoWrapper {
     top: 112px;
     left: 0;
@@ -954,31 +958,31 @@ perfect-scrollbar.perfectScrollbar {
     top: 100px;
     right: 15px;
     left: 15px;
-    
-    .text{
+    .text {
         margin-top: 10px;
-        font-size:1.6em;
+        font-size: 1.6em;
         line-height: 1.2;
         color: $colorBlueDark;
     }
-    .btnGlobal{
+    .btnGlobal {
         margin: 10px 0;
         border-radius: 5px;
     }
-    .btnLink{
+    .btnLink {
         margin-top: 6px;
     }
 }
-.note{
+
+.note {
     margin-top: 6px;
- font-size: 1.4em;
- color:$colorBlue;       
-}
-.homeSlide {
-    width: 100%;
-    height: 90vh; 
+    font-size: 1.4em;
+    color: $colorBlue;
 }
 
+.homeSlide {
+    width: 100%;
+    height: 90vh;
+}
 
 .bcg {
     background-position: center center;
@@ -1008,10 +1012,12 @@ perfect-scrollbar.perfectScrollbar {
 #slide-3 p {
     color: #b2b2b2;
 }
+
 /*E:home*/
 
 /*S:footer*/
-.footer{
+
+.footer {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -1021,34 +1027,136 @@ perfect-scrollbar.perfectScrollbar {
     background-repeat: no-repeat;
     background-position: bottom center;
     background-size: contain;
-
     margin-top: 600px;
-    .title{
+    .title {
         margin-bottom: 15px;
         font: 2.2em $fontAssistantBold;
-        color:$colorWhite;
+        color: $colorWhite;
     }
-    .text{
+    .text {
         margin-bottom: 18px;
         font-size: 1.6em;
-        color:$colorWhite;
-
+        color: $colorWhite;
     }
-    .btnLinkContainer{
+    .btnLinkContainer {
         margin-bottom: 20px;
     }
-    .btnGlobal{
-        border-radius: 5px;   
+    .btnGlobal {
+        border-radius: 5px;
     }
-    .btnLink{
+    .btnLink {
         padding-left: 16px;
-        color:$colorWhite;
-        .arrowIcon{
+        color: $colorWhite;
+        .arrowIcon {
             top: 2px;
         }
     }
 }
+
 /*E:footer*/
+
+/*S:slick*/
+
+.commentsCarusel {
+    height: calc(100vh - #{$headerHight});
+    z-index: 99;
+    background: white;
+
+    .slick-list {
+        max-width: 1200px;
+        height: 100%;
+        margin: auto;
+    }
+    .slick-arrow {
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        bottom: 40px;
+        border-radius: 50%;
+        transform: translateY(50%);
+        cursor: pointer;
+        font-size: 0;
+        z-index: 1;
+        &:after {
+            content: '';
+            width: 16px;
+            height: 16px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%) rotate(45deg);
+        }
+        &.slick-prev {
+            right: 30px;
+            &:after {
+                left: 4px;
+                border-top: solid 2px $colorBlueDark;
+                border-right: solid 2px $colorBlueDark;
+            }
+        }
+        &.slick-next {
+            left: 30px;
+            &:after {
+                left: 4px;
+                border-left: solid 2px $colorBlueDark;
+                border-bottom: solid 2px $colorBlueDark;
+            }
+        }
+    }
+    .slick-dots {
+        position: absolute;
+        bottom: 36px;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        li {
+            margin: 0 8px;
+        }
+        .slick-active {
+            button {
+                background: $colorBlueDark;
+            }
+        }
+        button {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            font-size: 0;
+            background: #bbc4d8;
+        }
+    }
+  
+}
+.itemCarusel{
+    padding: 80px 15px 0;
+    .pic{
+        text-align: center;
+        margin: 0 0 40px 0;
+        img{
+            display: inline-block;
+        }
+    }
+    .comment{
+        position: relative;
+        margin-bottom: 20px;
+        text-align: center;
+        font: 2.7em $fontAssistantSemiBold;
+        color:$colorBlue;
+        img{
+            display: inline-block;
+            width: 26px;
+        }
+    }
+    .startPic{
+       
+    }
+    .text{
+        text-align: center;
+        font-size: 1.6em;
+        color:$colorBlueDark;
+    }
+}
+/*E:slick*/
 
 @include keyframes(bounce) {
     0%,
