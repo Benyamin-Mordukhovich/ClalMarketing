@@ -12,7 +12,6 @@ export class HpComponent implements OnInit {
   hpHeight: number = 2500;
   opacityValue: number = 1;
   lastScrollTop: number = 0;
-
   //@ViewChild('slideSection') slideSectionRef: ElementRef;
 
   private sectionItems: any = [];
@@ -32,6 +31,7 @@ export class HpComponent implements OnInit {
         this.sectionItems.forEach(e => {
           e.scrollBegin = distance;
           e.scrollEnd = distance + interval;
+          e.bgUrl = "url(assets/img/" + e.bgImage + ")";
           distance += interval;
         });
       }
