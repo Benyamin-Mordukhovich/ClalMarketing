@@ -13,7 +13,7 @@ export class ContactDialogComponent {
     contactForm: FormGroup;
     mainTitle: string = "";
     title: string = "";
-    transactionsOptionsList: [] = [];
+    transactionsOptionsList: any[] = [];
     mainTitleSendSuccess:string = "";
     titleSendSuccess:string = "";
     mainTitleSendFailed:string = "";
