@@ -1,0 +1,15 @@
+<ngx-slick class="commentsCarusel" #slickModal="slick-modal" [config]="slideConfig">
+    <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+        <div class="item">
+            <div class="pic">
+                <img src="{{ slide.imgUrl }}" alt="">
+            </div>
+            <div class="comment">
+                ביטוו חאשר אשר טשרכוחלג
+            </div>
+            <div class="text">
+                    ביטוו חאשר אשר טשרכוחלג
+            </div>
+        </div>
+    </div>
+</ngx-slick>

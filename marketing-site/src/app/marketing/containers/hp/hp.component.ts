@@ -7,6 +7,7 @@ import { DataService } from '../../../services/data.service';
 })
 export class HpComponent implements OnInit {
 
+  private hp:any = [];
   private sectionItems:any = [];
   constructor(private _dataService: DataService) {
 
@@ -15,7 +16,9 @@ export class HpComponent implements OnInit {
   ngOnInit() {
     this._dataService.getHomePage().subscribe(
       res => {
-        this.sectionItems = res
+        this.hp = res
+        this.sectionItems = this.hp[0]
+        this.sectionItems = this.hp[1]
         console.log("res",this.sectionItems)
       },
       err =>{

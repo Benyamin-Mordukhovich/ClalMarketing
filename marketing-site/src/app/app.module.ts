@@ -19,11 +19,12 @@ import { ContactDialogComponent } from './marketing/components/contactDialog/con
 import { OfferDialogComponent } from './marketing/components/offerDialog/offerDialog.component';
 import { SectionInfoComponent } from './marketing/components/sectionInfo/sectionInfo.component';
 import { FooterComponent } from './marketing/components/footer/footer.component';
+import { SlickComponent } from './marketing/components/slick/slick.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http'
 import { DataService } from './services/data.service';
-
+import { SlickModule } from 'ngx-slick';
 
 import { FaqModelComponent } from './marketing/components/faqModel/faqModel.component';
 export const MATERIALCOMPONENTS = [
@@ -49,7 +50,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     OfferDialogComponent,
     FaqModelComponent,
     SectionInfoComponent,
-    FooterComponent
+    FooterComponent,
+    SlickComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +60,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     MATERIALCOMPONENTS,
     AppRoutingModule,
     HttpClientModule,
-    PerfectScrollbarModule
+    PerfectScrollbarModule,
+    SlickModule.forRoot()
   ],
   entryComponents:[
     AboutDialogComponent,
