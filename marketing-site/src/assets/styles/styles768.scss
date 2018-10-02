@@ -37,6 +37,7 @@
         display: flex;
         align-items: center;
         position: static;
+        padding-bottom:0;
         background: none;
         .item {
             padding-bottom: 0;
@@ -45,6 +46,7 @@
         }
         .link {
             width: auto;
+            text-align: right;
             font-size: 1.6em;
         }
     }

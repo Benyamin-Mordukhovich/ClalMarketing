@@ -396,7 +396,7 @@ perfect-scrollbar.perfectScrollbar {
     align-items: center;
     justify-content: center;
     position: absolute;
-    right: 15px;
+    left: 5px;
     top: 50%;
     transform: translateY(-50%);
     z-index: 104;
@@ -447,7 +447,7 @@ perfect-scrollbar.perfectScrollbar {
 
 .mainMenu {
     width: 0;
-    height: calc(100vh - 100px);
+    padding-bottom: 15px;
     position: absolute;
     top: 100px;
     right: 0;
@@ -455,21 +455,22 @@ perfect-scrollbar.perfectScrollbar {
     background: $colorWhite;
     @include transitionMove();
     .item {
-        margin: 0 24px 10px;
-        padding-bottom: 1px;
-        border-bottom: solid 1px #eee;
+        text-align: center;
+        margin: 0 24px 16px;
         &:last-child {
             margin-left: 0;
             border-bottom: none;
         }
     }
     .link {
+        display: inline-block;
         width: 100%;
         position: relative;
         white-space: nowrap;
         text-align: right;
         font-size: 1.8em;
         color: $colorBlueDark;
+        text-align: center;
         cursor: pointer;
         &:before,
         &:after {
