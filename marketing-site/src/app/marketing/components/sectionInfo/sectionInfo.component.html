@@ -1,22 +1,22 @@
-<div class="sectionInfo">
-    
-    <div class="mainTitle" [innerHTML]="infoObj.mainTitle"></div>
-    <div class="text" [innerHTML]="infoObj.text"></div>
-    <a class="btnLink" href="{{infoObj.link}}">
-        {{infoObj.linkText}}
-        <span class="arrowIcon">
-            <img src="assets/img/arrowIcon.png" alt="">
-        </span>
-    </a>
-    <div>
-        <a href="#" class="btn btnGlobal">להצעת מחיר</a>
+<div class="sectionInfoWrapper" [style.opacity]="opacityValue" [style.transform]="'scale(' + scaleValue + ')'" [style.visibility]="visibilityValue">
+    <div class="sectionInfo">
+        <div class="mainTitle" [innerHTML]="infoObj.mainTitle"></div>
+        <div class="text" [innerHTML]="infoObj.text"></div>
+        <a class="btnLink" href="{{infoObj.link}}">
+            {{infoObj.linkText}}
+            <span class="arrowIcon">
+                <img src="assets/img/arrowIcon.png" alt="">
+            </span>
+        </a>
+        <div>
+            <a href="#" class="btn btnGlobal">להצעת מחיר</a>
+        </div>
+        <a class="btnLink" href="{{infoObj.link}}">
+            {{infoObj.linkText}}
+            <span class="arrowIcon">
+                <img src="assets/img/arrowIcon.png" alt="">
+            </span>
+        </a>
+        <div class="note">{{infoObj.note}}</div>
     </div>
-    <a class="btnLink" href="{{infoObj.link}}">
-        {{infoObj.linkText}}
-        <span class="arrowIcon">
-            <img src="assets/img/arrowIcon.png" alt="">
-        </span>
-    </a>
-    <div class="note">{{infoObj.note}}</div>
-
-</div> 
+</div>

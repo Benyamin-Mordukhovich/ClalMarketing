@@ -1,8 +1,10 @@
 
-<section class="slideSection" *ngFor="let item of sectionItems">
-        <app-sectionInfo [infoObj]="item"></app-sectionInfo>
-</section>
-<app-footer></app-footer>
+<div [style.height.px]="hpHeight">
+    <section class="slideSection" *ngFor="let item of sectionItems; let i=index" [ngStyle]="{'z-index': (10-i) * 10}">
+        <app-sectionInfo class="app-sectionInfo" [infoObj]="item" [scrollTop]="scrollTop"></app-sectionInfo>
+    </section>
+</div>
+<!-- <app-footer></app-footer> -->
 <!-- <section id="slide-1" class="homeSlide">
     <div class="bcg" data-top="opacity: 1; width: 100%; height: 100%; top: 0%; left: 0%;" data-center="opacity: 0; width: 156%; height: 156%; top: -28%; left: -28%;"
         data-anchor-target="#slide-1"></div>
