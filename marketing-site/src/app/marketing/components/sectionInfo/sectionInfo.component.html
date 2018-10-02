@@ -1,4 +1,6 @@
-<div class="sectionInfoWrapper" [style.opacity]="opacityValue" [style.transform]="'scale(' + scaleValue + ')'" [style.visibility]="visibilityValue">
+<div class="sectionInfoWrapper"
+     [ngStyle]="{'z-index': (3 - index) * 10 }" 
+     [style.opacity]="opacityValue" [style.transform]="'scale(' + scaleValue + ')'" [style.visibility]="visibilityValue">
     <div class="sectionInfo">
         <div class="mainTitle" [innerHTML]="infoObj.mainTitle"></div>
         <div class="text" [innerHTML]="infoObj.text"></div>

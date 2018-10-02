@@ -890,11 +890,11 @@ perfect-scrollbar.perfectScrollbar {
 
 /*S:home*/
 .sectionInfoWrapper {
-    top: 0;
+    top: 112px;
     left: 0;
     right: 0;
     bottom: 0;
-    position: absolute;
+    position: fixed;
     background-size: 90%;
     background-color: #fff;
     background-repeat: no-repeat;
