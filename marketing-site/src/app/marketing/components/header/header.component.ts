@@ -18,7 +18,6 @@ export class HeaderComponent implements OnInit {
 
   private dataAbout = {};
   private dataContactPage = {};
-  private contactDataFromUser;
 
 
   constructor(public dialog: MatDialog, private _dataService: DataService, @Inject(DOCUMENT) private document: Document) { }
@@ -76,15 +75,6 @@ export class HeaderComponent implements OnInit {
           data: {
             dataContactPage: this.dataContactPage
           }
-        }).afterClosed().subscribe((data) => {
-          this.contactDataFromUser = data;
-          this._dataService.sendContactForm(this.contactDataFromUser)
-            .subscribe((res) => {
-              console.log('submit result', res)
-            }, err => {
-              // console.error('failed to submit', err)
-            });
-
         });
       }
     )

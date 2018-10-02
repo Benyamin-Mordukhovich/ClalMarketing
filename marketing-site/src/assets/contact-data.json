@@ -15,5 +15,8 @@
             "value": "3,000,000"
         }
     ],
-    "imgUrl":"assets/img/contactImg.png"
+    "imgUrl":"assets/img/contactImg.png",
+    "mainTitleSendSuccess":"הפניה נשלחה בהצלחה",
+    "titleSendSuccess":"נציג יחזור אליכם בהקדם, <br> תודה!",
+    "mainTitleSendFailed":"השליחה נכשלה"
 }

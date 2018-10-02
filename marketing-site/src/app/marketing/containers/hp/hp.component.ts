@@ -17,6 +17,10 @@ export class HpComponent implements OnInit {
       res => {
         this.sectionItems = res
         console.log("res",this.sectionItems)
+      },
+      err =>{
+        console.log("err ",err)
+
       }
     )
   }

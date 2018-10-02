@@ -1,11 +1,11 @@
 <div class="dialogContainer contact">
     <button type="button" class="closeDialog" (click)="closeDialog()"></button>
     <h1 class="mainTitle">{{ mainTitle }}</h1>
-    <h2 class="titleContact">{{ title }}</h2>
+    <h2 class="titleContact" [innerHTML]="title"></h2>
     <div class="imgContact">
         <img src="{{ imgUrl }}" alt="">
     </div>
-    <perfect-scrollbar class="perfectScrollbar aboutDialogScroll">
+    <perfect-scrollbar class="perfectScrollbar aboutDialogScroll" [class.sendSuccess]="sendSuccess">
         <form [formGroup]="contactForm">
             <div class="rowFields">
                 <div class="formGroup">
@@ -89,6 +89,6 @@
         </form>
     </perfect-scrollbar>
     <div class="btnSend">
-        <button type="button" class="btn btnGlobal" [disabled]="!contactForm.valid" (click)="submitForm()">המשך</button>
+        <button type="button" class="btn btnGlobal" [disabled]="!contactForm.valid" (click)="submit()">{{ btnText }}</button>
     </div>
 </div>

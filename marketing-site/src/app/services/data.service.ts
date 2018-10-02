@@ -22,7 +22,7 @@ export class DataService {
         }
         return this.http.get<Ihp[]>(this._urlHp).pipe(
             catchError(err=>{
-                return of([]);
+                throw (err.message || "");
             }),
             tap(res =>{
                 this.cacheHpPage[this._urlHp] = res;

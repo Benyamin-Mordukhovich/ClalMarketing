@@ -635,6 +635,16 @@ perfect-scrollbar.perfectScrollbar {
     max-height: calc(100vh - 52vh); // max-height: calc(100vh - 490px);
     padding-right: 20px;
     margin: 10px -20px 0 0;
+    @include transitionMove();
+
+    &.sendSuccess{
+        max-height: 0;
+        opacity: 0;
+        visibility: hidden;
+        .ps__rail-x{
+            display: none!important;
+        }
+    }
 }
 
 .linkLogoContainer {
@@ -881,6 +891,27 @@ perfect-scrollbar.perfectScrollbar {
 }
 
 /*E:offerDialog*/
+
+/*S:errorPage*/
+.errorContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px $gutter 25px;
+    .pic{
+        margin-bottom: 14px;
+        img{
+            width: 100%;
+            max-width: 900px;
+        }
+    }
+    .text{
+        margin: 10px 0 20px;
+        font-size: 1.8em;
+        color:$colorBlueDark;
+    }
+}
+/*E:errorPage*/
 
 /*S:home*/
 .sectionInfo{

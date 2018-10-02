@@ -8,6 +8,7 @@ import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { AppComponent } from './app.component';
 import { HpComponent } from './marketing/containers/hp/hp.component';
 import { FaqComponent } from './marketing/containers/faq/faq.component';
+import { ErrorPageComponent } from './marketing/containers/errorPage/errorPage.component';
 import { HeaderComponent } from './marketing/components/header/header.component';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -41,6 +42,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     AppComponent,
     HpComponent,
     FaqComponent,
+    ErrorPageComponent,
     HeaderComponent,
     AboutDialogComponent,
     ContactDialogComponent,
