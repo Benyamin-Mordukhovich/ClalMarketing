@@ -31,6 +31,7 @@ export class TransitionSlideDirective {
     this.el.nativeElement.style.opacity = getCssValue(this._scrollTop, 'decrease', this.infoObj.scrollBegin, this.infoObj.scrollEnd) / 100;
     this.el.nativeElement.style.transform = 'scale(' + (1 + getCssValue(this._scrollTop, 'increase', this.infoObj.scrollBegin, this.infoObj.scrollEnd) / 100) +')';
     this.el.nativeElement.style.visibility = getVisibility(this._scrollTop, this.lastScrollTop, this.infoObj.scrollEnd);
+    //console.log(this.el.nativeElement.style);
     this.lastScrollTop = this._scrollTop <= 0 ? 0 : this._scrollTop;
   }
 
