@@ -4,11 +4,6 @@ import { Component, Input } from '@angular/core';
     templateUrl: './sectionInfo.component.html'
 })
 export class SectionInfoComponent {
-
     @Input() infoObj;
-
-    constructor() {
-    }
-
-
+    constructor() { }
 }

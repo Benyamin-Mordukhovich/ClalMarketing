@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Subscription, fromEvent, Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { DataService } from '../../../services/data.service';
 
 @Component({
@@ -6,8 +8,15 @@ import { DataService } from '../../../services/data.service';
   templateUrl: './hp.component.html'
 })
 export class HpComponent implements OnInit {
+  scrollTop: number;
+  hpHeight: number = 2500;
+  opacityValue: number = 1;
+  lastScrollTop: number = 0;
 
-  private sectionItems:any = [];
+  //@ViewChild('slideSection') slideSectionRef: ElementRef;
+
+  private sectionItems: any = [];
+
   constructor(private _dataService: DataService) {
 
   }
@@ -15,16 +24,27 @@ export class HpComponent implements OnInit {
   ngOnInit() {
     this._dataService.getHomePage().subscribe(
       res => {
-        this.sectionItems = res
-        console.log("res",this.sectionItems)
-      },
-      err =>{
-        console.log("err ",err)
+        this.sectionItems = res;
 
+        let interval = this.hpHeight / this.sectionItems.length;
+        let distance = 0;
+
+        this.sectionItems.forEach(e => {
+          e.scrollBegin = distance;
+          e.scrollEnd = distance + interval;
+          distance += interval;
+        });
       }
     )
-  }
 
+    //create observable that emits click events
+    const source = fromEvent(window, 'scroll').pipe(map(e => e));
+    source.subscribe(val => {
+      this.scrollTop = window.pageYOffset;
+    });
+
+  }
+  
   // sectionInfoVideo = {
   //   mainTitle: "לעבוד בראש שקט<br>עם ביטוח אשראי מבית כלל",
   //   text: "לראשונה בישראל, שירותי ביטוח אשראי של כלל ניתנים גם לעסקים בינוניים וקטנים,בעלי מחזור הכנסות שנתי שבין 10-50 מיליון שח ביטוח אשראי מאפשר לך לבצע יותר עסקאות בצורה בטוחה,ומקנה ייתרון במימון הבנקאי כל זאת עם גב של חברת כלל ביטוח",

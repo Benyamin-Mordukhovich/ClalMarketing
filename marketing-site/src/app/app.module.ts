@@ -26,6 +26,7 @@ import { DataService } from './services/data.service';
 
 
 import { FaqModelComponent } from './marketing/components/faqModel/faqModel.component';
+import { TransitionSlideDirective } from './directives/transition-slide.directive';
 export const MATERIALCOMPONENTS = [
   MatExpansionModule,
   MatDialogModule,
@@ -49,7 +50,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     OfferDialogComponent,
     FaqModelComponent,
     SectionInfoComponent,
-    FooterComponent
+    FooterComponent,
+    TransitionSlideDirective
   ],
   imports: [
     BrowserModule,
