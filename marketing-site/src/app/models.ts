@@ -45,6 +45,7 @@ interface IcontactForm{
 
 interface Ihp{
     sectionsData:IsectionModel[]
+    caruselData:IcaruselItem[]
 }
 
 interface IsectionModel{
@@ -59,4 +60,10 @@ interface IsectionModel{
 interface Result {
     success: boolean
     error?:string
+}
+
+interface IcaruselItem{
+    comment:string
+    text:string
+    imgUrl:string
 }

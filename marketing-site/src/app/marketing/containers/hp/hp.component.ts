@@ -24,7 +24,7 @@ export class HpComponent implements OnInit {
   ngOnInit() {
     this._dataService.getHomePage().subscribe(
       res => {
-        this.sectionItems = res;
+        this.sectionItems = res[0];
 
         let interval = this.hpHeight / this.sectionItems.length;
         let distance = 0;
