@@ -1,20 +1,9 @@
 
 <div [style.height.px]="hpHeight">
-    <!-- <section class="slideSection" *ngFor="let item of sectionItems; let i=index" [ngStyle]="{'z-index': (sectionItems.length - i) * 10 }">
-        <app-sectionInfo class="app-sectionInfo" [infoObj]="item" [scrollTop]="scrollTop"></app-sectionInfo>
-    </section> -->
-    <app-sectionInfo *ngFor="let item of sectionItems; let i=index"
-                     [infoObj]="item" [scrollTop]="scrollTop" [index]="i">
+    <app-sectionInfo class="sectionInfoWrapper" appTransitionSlide [infoObj]="item" [scrollTop]="scrollTop" [index]="i" [itemsNumber]="sectionItems.length"
+                     *ngFor="let item of sectionItems; let i=index">
     </app-sectionInfo>
 </div>
-
-
-
-
-
-
-
-
 
 
 
