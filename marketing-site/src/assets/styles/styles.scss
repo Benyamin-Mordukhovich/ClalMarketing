@@ -928,7 +928,9 @@ perfect-scrollbar.perfectScrollbar {
 
 /*S:home*/
 .videoWrapper {
+    top:0;
     left: 0;
+    right: 0;
     bottom: 0;
     position: absolute;
 }
@@ -977,6 +979,7 @@ perfect-scrollbar.perfectScrollbar {
     top: 100px;
     right: 15px;
     left: 15px;
+    z-index: 1;
     .text {
         margin-top: 10px;
         font-size: 1.6em;

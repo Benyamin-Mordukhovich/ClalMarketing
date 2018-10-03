@@ -1,8 +1,6 @@
-
 <div [style.height.px]="hpHeight">
-    <app-sectionInfo class="sectionInfoWrapper" appTransitionSlide [infoObj]="item" [scrollTop]="scrollTop" [index]="i" [itemsNumber]="sectionItems.length"
-                    [style.backgroundImage]="item.bgUrl"
-                     *ngFor="let item of sectionItems; let i=index">
+    <app-sectionInfo class="sectionInfoWrapper" appTransitionSlide [infoObj]="item" [scrollTop]="scrollTop" [index]="i"
+        [itemsNumber]="sectionItems.length" [style.backgroundImage]="item.bgUrl" *ngFor="let item of sectionItems; let i=index">
     </app-sectionInfo>
 </div>
 
