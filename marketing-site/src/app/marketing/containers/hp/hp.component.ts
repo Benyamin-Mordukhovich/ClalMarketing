@@ -9,31 +9,50 @@ import { DataService } from '../../../services/data.service';
 })
 export class HpComponent implements OnInit {
   scrollTop: number;
-  hpHeight: number = 2500;
+  stripHeight: number = 0;
   opacityValue: number = 1;
   lastScrollTop: number = 0;
+  windowHeight: number = 0;
+  hpHeight: any = 'auto';
   //@ViewChild('slideSection') slideSectionRef: ElementRef;
 
   private sectionItems: any = [];
+  private footerItem = {};
 
   constructor(private _dataService: DataService) {
 
   }
 
   ngOnInit() {
+
+    this.windowHeight = (window.innerHeight);
+
     this._dataService.getHomePage().subscribe(
       res => {
-        this.sectionItems = res[0];
-
-        let interval = this.hpHeight / this.sectionItems.length;
-        let distance = 0;
+        this.sectionItems = res.sectionsData;
+        this.footerItem = res.footer;
 
         this.sectionItems.forEach(e => {
-          e.scrollBegin = distance;
-          e.scrollEnd = distance + interval;
-          e.bgUrl = "url(assets/img/" + e.bgImage + ")";
-          distance += interval;
+          e.bgUrl = "url(" + e.bgImageMobile + ")";
         });
+
+        if (window.screen.width > 1200) {
+
+          this.stripHeight = this.windowHeight * this.sectionItems.length;
+          this.hpHeight = this.stripHeight + this.windowHeight;
+          let interval = this.stripHeight / this.sectionItems.length;
+          let distance = 0;
+
+          this.sectionItems.forEach(e => {
+            e.scrollBegin = distance;
+            e.scrollEnd = distance + interval;
+            e.bgUrl = "url(" + e.bgImage + ")";
+            distance += interval;
+          });
+        }
+      
+
+
       }
     )
 
@@ -44,14 +63,6 @@ export class HpComponent implements OnInit {
     });
 
   }
-  
-  // sectionInfoVideo = {
-  //   mainTitle: "לעבוד בראש שקט<br>עם ביטוח אשראי מבית כלל",
-  //   text: "לראשונה בישראל, שירותי ביטוח אשראי של כלל ניתנים גם לעסקים בינוניים וקטנים,בעלי מחזור הכנסות שנתי שבין 10-50 מיליון שח ביטוח אשראי מאפשר לך לבצע יותר עסקאות בצורה בטוחה,ומקנה ייתרון במימון הבנקאי כל זאת עם גב של חברת כלל ביטוח",
-  //   linkReadMore: "www",
-  //   linkText: "יצאונים? זקוקים לביטוח פרויקטלי?",
-  //   link: "www",
-  //   note: "כלל ממשיכה לספק ביטוח מימון פרויקטלי, ביטוח הזמנות ומגוון ביטוחים נוספים המתאימים לעסקים המובילים בשוק"
-  // }
+
 
 }

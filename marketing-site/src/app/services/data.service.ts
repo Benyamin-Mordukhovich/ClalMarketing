@@ -16,11 +16,11 @@ export class DataService {
     private cacheAboutDialog: any = {}
     private cacheContactForm: any = {}
 
-    getHomePage():Observable<Ihp[]>{
+    getHomePage():Observable<Ihp>{
         if (this.cacheHpPage[this._urlHp]) {
             return of(this.cacheHpPage[this._urlHp]);
         }
-        return this.http.get<Ihp[]>(this._urlHp).pipe(
+        return this.http.get<Ihp>(this._urlHp).pipe(
             catchError(err=>{
                 throw (err.message || "");
             }),
@@ -37,7 +37,7 @@ export class DataService {
 
         return this.http.get<IfaqPage>(this._urlFaq).pipe(
             catchError(err => {
-                return of()
+                throw (err.message || "");
             }),
             tap(res => {
                 this.cacheFaqPage[this._urlFaq] = res;

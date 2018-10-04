@@ -44,8 +44,11 @@ interface IcontactForm{
 }
 
 interface Ihp{
-    sectionsData:IsectionModel[]
-    caruselData:IcaruselItem[]
+    sectionsData:IsectionModel[],
+    footer:{
+        mainTitle:string,
+        text:string
+    }
 }
 
 interface IsectionModel{
@@ -55,6 +58,10 @@ interface IsectionModel{
     linkText?:string,
     link?:string,
     note?:string,
+    bgImage?:string,
+    bgImageMobile?:string,
+    videoUrl?:string,
+    caruselData?:IcaruselItem[]
 }
 
 interface Result {

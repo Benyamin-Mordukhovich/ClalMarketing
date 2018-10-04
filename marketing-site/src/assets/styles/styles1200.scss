@@ -9,9 +9,8 @@
             }
         }
     }
-    .mainTitle{
+    .mainTitle {
         font-size: 4.6em;
-
     }
     /*E:perfect-scrollbar*/
     /*S:header*/
@@ -59,20 +58,16 @@
             padding: 60px 140px;
         }
         &.contact {
-            width: 1000px;
-            // padding: 96px 150px;
+            width: 1000px; // padding: 96px 150px;
             padding: 10vh 16vh;
         }
         &.offer {
-            max-width: 1500px;
-            // padding: 64px 130px 80px 100px;
+            max-width: 1500px; // padding: 64px 130px 80px 100px;
             // padding: 6.8vh 6.8vw 8.5vh 5.2vw;
             padding: 6.8vh 6.8vw 5vh 5.2vw;
         }
     }
     /*E:dialog*/
-    /*S:about*/
-    /*E:about*/
     /*S:contact*/
     .imgContact {
         top: 56px;
@@ -98,15 +93,13 @@
     .offerDialogScroll {
         // max-height: calc(100vh - 38vh);
     }
-
     .offerContainer {
         // margin-top: 68px;
         padding-bottom: 34px;
         padding-left: 16px;
         display: flex;
         .title {
-            padding-bottom: 9px;
-            // font-size: 3em;
+            padding-bottom: 9px; // font-size: 3em;
             font-size: 3.2vh;
         }
     }
@@ -131,7 +124,7 @@
         margin-top: 6.4vh;
         .item {
             margin-bottom: 30px;
-            .pic{
+            .pic {
                 width: auto;
                 top: -6px;
             }
@@ -148,30 +141,64 @@
     }
     /*E:offerDialog*/
     /*S:home*/
-
-    .sectionInfo{
-        top: 10vh;
-        .btnGlobal{
-            margin: 20px 0 33px;
-
+    .sectionInfoWrapper {
+        height: auto;
+        top: 112px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        position: fixed;
+        background-size: 85%;
+        &.caruselSection {
+            .sectionInfo {
+                height: auto;
+            }
         }
+    }
+    .sectionInfo {
+        position: absolute;
+        right: 15px;
+        left: 15px;
+        top: 10vh;
+        padding: 0;
+        .btnGlobal {
+            margin: 20px 0 33px;
+        }
+    }
+    .videoWrapper {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        position: absolute;
+        padding: 35px $gutter 80px;
     }
     /*E:home*/
     /*S:footer*/
-    .footer{
-        padding: 80px $gutter 180px;
-        .title{
+    .footer {
+        height: auto;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        padding: 20vh $gutter 0;
+        background-image: url(./../img/footer.png);
+        .title {
             font-size: 4.2em;
         }
-        .btnLinkContainer{
-        margin-bottom: 80px;
-
+        .btnLinkContainer {
+            margin: 10px 0 40px;
         }
     }
     /*S:footer*/
     /*S:slick*/
     .commentsCarusel {
         height: auto;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
         .slick-arrow {
             top: 50%;
             bottom: auto;
@@ -184,13 +211,11 @@
             }
         }
         .slick-dots {
-            button {
-                width: 16px;
-                height: 16px;
-            }
+            bottom: 70px;
         }
     }
     .itemCarusel {
+        min-height: 380px;
         display: flex;
         justify-content: center;
         padding: 80px 15px 80px;
@@ -198,6 +223,7 @@
             margin: 0 0 0 96px;
         }
         .comment {
+            margin-bottom: 10px;
             text-align: right;
             font-size: 3.4em;
             img {
@@ -215,5 +241,4 @@
         }
     }
     /*E:slick*/
-
 }

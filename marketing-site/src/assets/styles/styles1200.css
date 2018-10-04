@@ -50,8 +50,6 @@
     padding: 6.8vh 6.8vw 5vh 5.2vw;
   }
   /*E:dialog*/
-  /*S:about*/
-  /*E:about*/
   /*S:contact*/
   .imgContact {
     top: 56px;
@@ -115,27 +113,62 @@
   }
   /*E:offerDialog*/
   /*S:home*/
+  .sectionInfoWrapper {
+    height: auto;
+    top: 112px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    background-size: 85%;
+  }
+  .sectionInfoWrapper.caruselSection .sectionInfo {
+    height: auto;
+  }
   .sectionInfo {
+    position: absolute;
+    right: 15px;
+    left: 15px;
     top: 10vh;
+    padding: 0;
   }
   .sectionInfo .btnGlobal {
     margin: 20px 0 33px;
   }
+  .videoWrapper {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    padding: 35px 15px 80px;
+  }
   /*E:home*/
   /*S:footer*/
   .footer {
-    padding: 80px 15px 180px;
+    height: auto;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    padding: 20vh 15px 0;
+    background-image: url(./../img/footer.png);
   }
   .footer .title {
     font-size: 4.2em;
   }
   .footer .btnLinkContainer {
-    margin-bottom: 80px;
+    margin: 10px 0 40px;
   }
   /*S:footer*/
   /*S:slick*/
   .commentsCarusel {
     height: auto;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
   }
   .commentsCarusel .slick-arrow {
     top: 50%;
@@ -148,11 +181,11 @@
   .commentsCarusel .slick-arrow.slick-next {
     left: 45px;
   }
-  .commentsCarusel .slick-dots button {
-    width: 16px;
-    height: 16px;
+  .commentsCarusel .slick-dots {
+    bottom: 70px;
   }
   .itemCarusel {
+    min-height: 380px;
     display: flex;
     justify-content: center;
     padding: 80px 15px 80px;
@@ -161,6 +194,7 @@
     margin: 0 0 0 96px;
   }
   .itemCarusel .comment {
+    margin-bottom: 10px;
     text-align: right;
     font-size: 3.4em;
   }

@@ -312,8 +312,11 @@ perfect-scrollbar.perfectScrollbar {
 }
 
 .mainTitle {
-    font: 2.4em/1 $fontAssistantBold;
+    font: 2.5em/1 $fontAssistantBold;
     color: $colorBlue;
+    &.blueDark {
+        color: $colorBlueDark;
+    }
 }
 
 .btn {
@@ -325,7 +328,7 @@ perfect-scrollbar.perfectScrollbar {
         display: inline-flex;
         align-items: center;
         padding: 5px 20px 8px;
-        font-size: 1.8em;
+        font-size: 1.6em;
         color: $colorWhite;
         transition: all 0.2s ease-out;
         background: linear-gradient(to right, rgba(30, 180, 255, 1) 0%, rgba(13, 200, 245, 1) 100%);
@@ -677,7 +680,7 @@ perfect-scrollbar.perfectScrollbar {
     display: inline-block;
     position: relative;
     padding-left: 10px;
-    font: 1.6em $fontAssistantBold;
+    font: 1.5em $fontAssistantBold;
     color: $colorBlue;
     cursor: pointer;
     .arrowIcon {
@@ -927,29 +930,17 @@ perfect-scrollbar.perfectScrollbar {
 /*E:errorPage*/
 
 /*S:home*/
-.videoWrapper {
-    top:0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    position: absolute;
-}
 
 .sectionInfoWrapper {
-    top: 112px;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    position: fixed;
-    background-size: 85%;
+    display: block;
+    height: calc(100vh - #{$headerHight});
     background-color: #fff;
     background-repeat: no-repeat;
+    background-size: 100%;
     transform-origin: center center;
     transition: visibility .25s ease;
-
     &:nth-of-type(even) {
         background-position: bottom right;
-
         .sectionInfo {
             left: 5vw;
             right: auto;
@@ -957,10 +948,17 @@ perfect-scrollbar.perfectScrollbar {
     }
     &:nth-of-type(odd) {
         background-position: bottom left;
-
         .sectionInfo {
             left: auto;
             right: 5vw;
+        }
+    }
+    &.caruselSection {
+        height: auto;
+        background-position: top left;
+        background-color: $colorYellow;
+        .sectionInfo {
+            height: calc(100vh - #{$headerHight});
         }
     }
 }
@@ -974,15 +972,14 @@ perfect-scrollbar.perfectScrollbar {
 }
 
 .sectionInfo {
-    max-width: 540px;
-    position: absolute;
-    top: 100px;
-    right: 15px;
-    left: 15px;
+    padding: 30px 35px;
     z-index: 1;
+    .sectionInfoInner {
+        max-width: 540px;
+    }
     .text {
         margin-top: 10px;
-        font-size: 1.6em;
+        font-size: 1.5em;
         line-height: 1.2;
         color: $colorBlueDark;
     }
@@ -1001,67 +998,39 @@ perfect-scrollbar.perfectScrollbar {
     color: $colorBlue;
 }
 
-.homeSlide {
-    width: 100%;
-    height: 90vh;
-}
-
-.bcg {
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100%;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-}
-
-/* Slide 1 */
-
-.bcg {
-    background-image: url('../img/marketingBG.jpg');
-}
-
-/* Slide 2 */
-
-#slide-2 h2,
-#slide-3 h2 {
-    color: #ffffff;
-}
-
-#slide-3 p,
-#slide-3 p {
-    color: #b2b2b2;
-}
-
 /*E:home*/
 
 /*S:footer*/
 
 .footer {
+    height: calc(100vh - 60px);
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding: 35px $gutter 80px;
+    padding: 85px $gutter 80px;
     background-color: #1d3a74;
-    background-image: url(./../img/footer.png);
+    background-image: url(./../img/footerMobile.png);
     background-repeat: no-repeat;
     background-position: bottom center;
     background-size: contain;
-    margin-top: 600px;
     .title {
+        text-align: center;
         margin-bottom: 15px;
         font: 2.2em $fontAssistantBold;
         color: $colorWhite;
     }
     .text {
+        max-width: 500px;
+        text-align: center;
         margin-bottom: 18px;
         font-size: 1.6em;
         color: $colorWhite;
     }
+      
     .btnLinkContainer {
-        margin-bottom: 20px;
+        margin: 40px 0 50px;
+        box-shadow: 0px 0px 18px 0px rgba(1, 192, 240, 0.5);
+
     }
     .btnGlobal {
         border-radius: 5px;
@@ -1083,7 +1052,6 @@ perfect-scrollbar.perfectScrollbar {
     height: calc(100vh - #{$headerHight});
     z-index: 99;
     background: white;
-
     .slick-list {
         max-width: 1200px;
         height: 100%;
@@ -1118,7 +1086,7 @@ perfect-scrollbar.perfectScrollbar {
         &.slick-next {
             left: 30px;
             &:after {
-                left: 4px;
+                left: 11px;
                 border-left: solid 2px $colorBlueDark;
                 border-bottom: solid 2px $colorBlueDark;
             }
@@ -1147,34 +1115,41 @@ perfect-scrollbar.perfectScrollbar {
             background: #bbc4d8;
         }
     }
-  
 }
-.itemCarusel{
+
+.itemCarusel {
     padding: 80px 15px 0;
-    .pic{
+    .pic {
         text-align: center;
         margin: 0 0 40px 0;
-        img{
+        img {
             display: inline-block;
         }
     }
-    .comment{
+    .comment {
         position: relative;
         margin-bottom: 20px;
         text-align: center;
-        font: 2.7em $fontAssistantSemiBold;
-        color:$colorBlue;
-        img{
+        font: 2.7em/1 $fontAssistantSemiBold;
+        color: $colorBlue;
+        img {
             display: inline-block;
             width: 26px;
         }
     }
-    .text{
+    .text {
         text-align: center;
         font-size: 1.6em;
-        color:$colorBlueDark;
+        color: $colorBlueDark;
+    }
+    .startPic {
+        margin-left: 6px;
+    }
+    .endPic {
+        margin-right: 6px;
     }
 }
+
 /*E:slick*/
 
 @include keyframes(bounce) {

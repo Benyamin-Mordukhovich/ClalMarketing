@@ -7,14 +7,10 @@
             <div>
                 <div class="comment">
                     <img class="startPic" src="assets/img/commentStart.png" alt="">
-                    ביטוו חאשר אשר טשרכוחלג
-                    ביטוו חאשר אשר טשרכוחלג
-                    ביטוו חאשר אשר טשרכוחלג
+                    <span [innerHTML]="slide.comment"></span>
                     <img class="endPic" src="assets/img/commentEnd.png" alt="">
                 </div>
-                <div class="text">
-                    ביטוו חאשר אשר טשרכוחלג
-                </div>
+                <div class="text" [innerHTML]="slide.text"></div>
             </div>
 
         </div>

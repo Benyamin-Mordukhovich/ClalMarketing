@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { OfferDialogComponent } from '../offerDialog/offerDialog.component';
 @Component({
@@ -9,6 +9,7 @@ export class FooterComponent {
 
     constructor(public dialog: MatDialog){}
     
+    @Input() item;
     openOfferDialog() {
         this.dialog.open(OfferDialogComponent, {})
       }
