@@ -28,8 +28,8 @@ export class TransitionSlideDirective {
   set scrollTop(scrollTop: number) {
     this._scrollTop = scrollTop || 0;
 
-    this.el.nativeElement.style.opacity = getCssValue(this._scrollTop, 'decrease', this.infoObj.scrollBegin, this.infoObj.scrollEnd) / 100;
-    this.el.nativeElement.style.transform = 'scale(' + (1 + getCssValue(this._scrollTop, 'increase', this.infoObj.scrollBegin, this.infoObj.scrollEnd) / 100) +')';
+    this.el.nativeElement.style.opacity = getCssValue(this._scrollTop, this.lastScrollTop, 'decrease', this.infoObj.scrollBegin, this.infoObj.scrollEnd) / 100;
+    this.el.nativeElement.style.transform = 'scale(' + (1 + getCssValue(this._scrollTop, this.lastScrollTop, 'increase', this.infoObj.scrollBegin, this.infoObj.scrollEnd) / 100) +')';
     this.el.nativeElement.style.visibility = getVisibility(this._scrollTop, this.lastScrollTop, this.infoObj.scrollEnd);
     //console.log(this.el.nativeElement.style);
     this.lastScrollTop = this._scrollTop <= 0 ? 0 : this._scrollTop;
@@ -39,9 +39,14 @@ export class TransitionSlideDirective {
 
 }
 
-function getCssValue(st: number, cssValueDir: string, scrollBegin: number, scrollEnd: number): number {
+function getCssValue(st: number, lastScrollTop: number, cssValueDir: string, scrollBegin: number, scrollEnd: number): number {
   let percentage;
 
+  if (st > lastScrollTop) {
+    if (st < scrollBegin + 300) return;
+} else {
+    if(st > scrollEnd - 300) return;
+}
   if (st < scrollBegin) return;
 
   if (cssValueDir == "decrease") {
