@@ -15,7 +15,6 @@ export class HpComponent implements OnInit {
   windowHeight: number = 0;
   hpHeight: any = 'auto';
   //@ViewChild('slideSection') slideSectionRef: ElementRef;
-
   private sectionItems: any = [];
   private footerItem = {};
 
@@ -63,6 +62,5 @@ export class HpComponent implements OnInit {
     });
 
   }
-
 
 }

@@ -7,11 +7,11 @@ import { OfferDialogComponent } from '../offerDialog/offerDialog.component';
 })
 export class FooterComponent {
 
-    constructor(public dialog: MatDialog){}
-    
+    constructor(public dialog: MatDialog) { }
+
     @Input() item;
     openOfferDialog() {
         this.dialog.open(OfferDialogComponent, {})
-      }
+    }
 
 }

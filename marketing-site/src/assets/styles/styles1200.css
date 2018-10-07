@@ -131,9 +131,14 @@
     left: 15px;
     top: 10vh;
     padding: 0;
+    transition: all 0.2s linear;
   }
   .sectionInfo .btnGlobal {
     margin: 20px 0 33px;
+  }
+  .sectionInfo.playing {
+    opacity: 0;
+    visibility: hidden;
   }
   .videoWrapper {
     top: 0;
@@ -141,7 +146,6 @@
     right: 0;
     bottom: 0;
     position: absolute;
-    padding: 35px 15px 80px;
   }
   /*E:home*/
   /*S:footer*/

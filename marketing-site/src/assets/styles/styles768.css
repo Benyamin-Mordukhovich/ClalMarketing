@@ -141,6 +141,12 @@
   .offerBox .offerList .item {
     width: 33.3333%;
   }
+  .businessDetailsBox .offerList {
+    flex-direction: column;
+  }
+  .businessDetailsBox .offerList .item {
+    margin-left: 0;
+  }
   .offerList .item {
     padding-left: 20px;
   }
@@ -187,4 +193,13 @@
     margin-bottom: 30px;
   }
   /*E:footer*/
+  .playBtn {
+    width: 120px;
+    height: 120px;
+  }
+  .playBtn:after {
+    border-top: 24px solid transparent;
+    border-left: 40px solid #042163;
+    border-bottom: 24px solid transparent;
+  }
 }

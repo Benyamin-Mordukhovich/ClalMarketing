@@ -1,4 +1,4 @@
-<div class="sectionInfo">
+<div class="sectionInfo" [class.playing]="isVideoPlaying">
     <div class="sectionInfoInner">
             <div class="mainTitle" [innerHTML]="infoObj.mainTitle"></div>
             <div class="text" [innerHTML]="infoObj.text"></div>
@@ -22,9 +22,10 @@
 </div>
 
 <div *ngIf="infoObj.videoUrl.length > 0" class="videoWrapper">
-    <video width="100%" controls>
+    <video width="100%" #videoRef (click)="stopVideo()">
         <source src="assets/img/{{infoObj.videoUrl}}" type="video/mp4">
     </video>
+    <button type="button" class="playBtn" (click)="playVideo()" [class.active]="isVideoPlaying"></button>
 </div>
 
 <div *ngIf="infoObj.caruselData.length > 0">

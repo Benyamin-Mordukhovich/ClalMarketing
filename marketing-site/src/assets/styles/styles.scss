@@ -858,6 +858,16 @@ perfect-scrollbar.perfectScrollbar {
     box-shadow: 0px 15px 25px 0px rgba(5, 36, 99, 0.2);
 }
 
+.businessDetailsBox{
+    .offerList{
+        display: flex;
+        flex-wrap: wrap;
+        .item{
+            margin-left: 15px;
+        }
+    }   
+}
+
 .offerList {
     margin-top: 15px;
     .item {
@@ -1151,6 +1161,39 @@ perfect-scrollbar.perfectScrollbar {
 }
 
 /*E:slick*/
+.videoWrapper{
+    position: relative;
+}
+.playBtn{
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+    background: $colorWhite;
+    cursor: pointer;
+    @include transitionMove();
+
+    &:after{
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-top: 12px solid transparent;
+        border-left: 20px solid $colorBlueDark;
+        border-bottom: 12px solid transparent;
+        top:50%;
+        left: 55%;
+        transform: translate(-50%,-50%);
+    }
+
+    &.active{
+        opacity: 0;
+        visibility: hidden;
+    }
+}
 
 @include keyframes(bounce) {
     0%,

@@ -37,7 +37,7 @@
         display: flex;
         align-items: center;
         position: static;
-        padding-bottom:0;
+        padding-bottom: 0;
         background: none;
         .item {
             padding-bottom: 0;
@@ -158,6 +158,14 @@
             }
         }
     }
+    .businessDetailsBox {
+        .offerList {
+            flex-direction: column;
+            .item {
+                margin-left: 0;
+            }
+        }
+    }
     .offerList {
         .item {
             padding-left: 20px;
@@ -206,5 +214,13 @@
         }
     }
     /*E:footer*/
-    
+    .playBtn {
+        width: 120px;
+        height: 120px;
+        &:after {
+            border-top: 24px solid transparent;
+            border-left: 40px solid $colorBlueDark;
+            border-bottom: 24px solid transparent;
+        }
+    }
 }

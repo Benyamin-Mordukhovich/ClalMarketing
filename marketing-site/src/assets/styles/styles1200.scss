@@ -161,8 +161,13 @@
         left: 15px;
         top: 10vh;
         padding: 0;
+        @include transitionMove();
         .btnGlobal {
             margin: 20px 0 33px;
+        }
+        &.playing{
+            opacity: 0;
+            visibility: hidden;
         }
     }
     .videoWrapper {
@@ -171,7 +176,6 @@
         right: 0;
         bottom: 0;
         position: absolute;
-        padding: 35px $gutter 80px;
     }
     /*E:home*/
     /*S:footer*/
