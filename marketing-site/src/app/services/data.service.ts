@@ -79,7 +79,7 @@ export class DataService {
     }
 
     sendContactForm(formValue:IcontactForm): Observable<Result>  {
-        console.log("sendContactForm",formValue);
+        // console.log("sendContactForm",formValue);
         const httpOptions = {headers: new HttpHeaders ({'Content-Type': 'application/json'})}
         return this.http.post<Result>(this._urlContactPage, formValue,httpOptions)
     }

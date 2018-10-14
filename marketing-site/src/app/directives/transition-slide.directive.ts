@@ -42,12 +42,13 @@ export class TransitionSlideDirective {
 function getCssValue(st: number, lastScrollTop: number, cssValueDir: string, scrollBegin: number, scrollEnd: number): number {
   let percentage;
 
+  console.log(st,lastScrollTop,"scrollBegin: " + scrollBegin)
+  if (st > lastScrollTop) {
+    if (st < scrollBegin + 200) return;
+  } else {
+    if (st > scrollEnd - 200) return;
+  }
 
-  // if (st > lastScrollTop) {
-  //   if (st < scrollBegin + 200) return;
-  // } else {
-  //   if (st > scrollEnd - 200) return;
-  // }
   if (st < scrollBegin) return;
 
   if (cssValueDir == "decrease") {

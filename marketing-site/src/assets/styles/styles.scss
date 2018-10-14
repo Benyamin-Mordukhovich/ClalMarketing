@@ -1174,6 +1174,7 @@ perfect-scrollbar.perfectScrollbar {
     border-radius: 50%;
     background: $colorWhite;
     cursor: pointer;
+    box-shadow: 0px 12px 16px 0px rgba(47, 103, 117, 0.56);
     @include transitionMove();
 
     &:after{

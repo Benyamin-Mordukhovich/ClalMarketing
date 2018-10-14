@@ -9,7 +9,7 @@
     [style.backgroundImage]="item.bgUrl" 
     *ngFor="let item of sectionItems; let i=index">
     </app-sectionInfo>
-    <app-footer [item]="footerItem"></app-footer> 
+    <app-footer [item]="footerItem" *ngIf="showFooter"></app-footer> 
 </div>
 
 

@@ -8,6 +8,7 @@ interface IaboutDialog{
 interface IfaqPage {
     mainTitle?: string;
     items?: IfaqModel[];
+    imgUrl?:string;
 }
 
 interface IfaqModel {
@@ -28,10 +29,15 @@ interface IdropDownItem{
 interface IcontactPage{
     mainTitle?: string;
     title?: string,
+    fieldList:Ifield[],
     transactionsList?:IdropDownItem[],
     imgUrl?:string
 }
-
+interface Ifield{
+    name:string,
+    placeholder:string,
+    errorMsg:string
+}
 interface IcontactForm{
     companyName: string,
     privateCompany: string,
@@ -46,8 +52,8 @@ interface IcontactForm{
 interface Ihp{
     sectionsData:IsectionModel[],
     footer:{
-        mainTitle:string,
-        text:string
+        mainTitle?:string,
+        text?:string
     }
 }
 

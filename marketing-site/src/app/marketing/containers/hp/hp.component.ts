@@ -15,6 +15,7 @@ export class HpComponent implements OnInit {
   windowHeight: number = 0;
   hpHeight: any = 'auto';
   //@ViewChild('slideSection') slideSectionRef: ElementRef;
+  showFooter:boolean = false;
   private sectionItems: any = [];
   private footerItem = {};
 
@@ -60,6 +61,10 @@ export class HpComponent implements OnInit {
     source.subscribe(val => {
       this.scrollTop = window.pageYOffset;
     });
+
+    setTimeout(()=>{
+      this.showFooter = true;
+    },1000)
 
   }
 
