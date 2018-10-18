@@ -263,3 +263,4 @@ __pycache__/
 Server/App_Data
 Server/Media
 
+client/dist
