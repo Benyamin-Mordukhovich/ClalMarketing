@@ -1,7 +1,7 @@
 import { ContentUrls } from "src/types";
 
 const urls: ContentUrls = {
-  hp: 'assets/hp-data.json',
+  hp: '/umbraco/api/app/Content?url=/',
   about: "assets/about-data.json",
   contact: "assets/contact-data.json",
   faq: "assets/faq-data.json"
