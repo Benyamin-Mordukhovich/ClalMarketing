@@ -1,4 +1,4 @@
-import { ContentUrls } from "src/types";
+import { ContentUrls } from "../types";
 
 const urls: ContentUrls = {
   hp: 'assets/hp-data.json',

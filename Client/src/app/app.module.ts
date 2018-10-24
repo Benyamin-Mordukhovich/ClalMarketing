@@ -56,7 +56,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     SlickComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({appId: 'clalMarketing'}),
     BrowserAnimationsModule,
     ReactiveFormsModule,
     MATERIALCOMPONENTS,

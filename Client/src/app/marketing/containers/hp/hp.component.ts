@@ -16,8 +16,8 @@ export class HpComponent implements OnInit {
   hpHeight: any = 'auto';
   //@ViewChild('slideSection') slideSectionRef: ElementRef;
   showFooter:boolean = false;
-  private sectionItems: any = [];
-  private footerItem = {};
+  sectionItems: any = [];
+  footerItem = {};
 
   constructor(private _dataService: DataService) {
 

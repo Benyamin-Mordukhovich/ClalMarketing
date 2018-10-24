@@ -3,7 +3,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { tap, catchError } from 'rxjs/operators';
 import { environment } from "../../environments/environment";
-import { ContentUrls } from 'src/types';
+import { ContentUrls } from '../../types';
+
 
 @Injectable()
 export class DataService {
