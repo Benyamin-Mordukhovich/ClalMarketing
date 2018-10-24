@@ -4,7 +4,13 @@ import { Observable, of } from 'rxjs';
 import { tap, catchError } from 'rxjs/operators';
 import { environment } from "../../environments/environment";
 import { ContentUrls } from '../../types';
+import { TransferState, makeStateKey } from '@angular/platform-browser';
 
+
+const homeStateKey = makeStateKey("home");
+const faqStateKey = makeStateKey("faq");
+const contactStateKey = makeStateKey("contact");
+const aboutStateKey = makeStateKey("about");
 
 @Injectable()
 export class DataService {
@@ -15,39 +21,52 @@ export class DataService {
     private cacheAboutDialog: any = {}
     private cacheContactForm: any = {}
 
-    constructor(private http: HttpClient) {
+    constructor(private http: HttpClient, private state: TransferState) {
 
     }
 
 
     getHomePage(): Observable<Ihp> {
-        if (this.cacheHpPage[this.urls.hp]) {
-            return of(this.cacheHpPage[this.urls.hp]);
+        let data = this.state.get(homeStateKey, undefined)
+        if (!data) {
+
+            if (this.cacheHpPage[this.urls.hp]) {
+                return of(this.cacheHpPage[this.urls.hp]);
+            }
+            return this.http.get<Ihp>(this.urls.hp).pipe(
+                catchError(err => {
+                    throw ("failed to get " + this.urls.hp + ", error:" + err);
+                }),
+                tap(res => {
+                    this.cacheHpPage[this.urls.hp] = res;
+                    this.state.set(homeStateKey, res)
+                })
+            )
         }
-        return this.http.get<Ihp>(this.urls.hp).pipe(
-            catchError(err => {
-                throw (err.message || "");
-            }),
-            tap(res => {
-                this.cacheHpPage[this.urls.hp] = res;
-            })
-        )
+
+        return of(data);
     }
 
     getFaqPage(): Observable<IfaqPage> {
-        if (this.cacheFaqPage[this.urls.faq]) {
-            return of(this.cacheFaqPage[this.urls.faq]);
+
+        let data = this.state.get(faqStateKey, undefined);
+        if (!data) {
+
+            if (this.cacheFaqPage[this.urls.faq]) {
+                return of(this.cacheFaqPage[this.urls.faq]);
+            }
+
+            return this.http.get<IfaqPage>(this.urls.faq).pipe(
+                catchError(err => {
+                    throw (err || "");
+                }),
+                tap(res => {
+                    this.cacheFaqPage[this.urls.faq] = res;
+                }),
+
+            );
         }
-
-        return this.http.get<IfaqPage>(this.urls.faq).pipe(
-            catchError(err => {
-                throw (err.message || "");
-            }),
-            tap(res => {
-                this.cacheFaqPage[this.urls.faq] = res;
-            }),
-
-        );
+        return of(data);
     }
 
     getAboutData(): Observable<IaboutDialog[]> {
