@@ -302,6 +302,10 @@
       <HintPath>..\packages\UmbracoCms.Core.7.12.3\lib\net45\umbraco.providers.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Umbraco.Web.PublishedContentModels, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Umbraco.Web.PublishedContentModels.dll</HintPath>
+    </Reference>
     <Reference Include="Umbraco.Web.UI, Version=1.0.6837.12345, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\UmbracoCms.Core.7.12.3\lib\net45\Umbraco.Web.UI.dll</HintPath>
       <Private>True</Private>
@@ -390,7 +394,9 @@
     <Compile Include="App_Start\UmbracoStandardOwinStartup.cs" />
     <Compile Include="Controllers\ApiController.cs" />
     <Compile Include="Controllers\AppServerController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Helpers\AppHelpers.cs" />
+    <Compile Include="Models\ContactFormModel.cs" />
     <Compile Include="Mvc\CorsHeaderAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

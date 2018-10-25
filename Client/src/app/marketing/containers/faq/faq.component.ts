@@ -8,7 +8,7 @@ import { DataService } from '../../../services/data.service';
 export class FaqComponent implements OnInit {
 
     constructor(private _dataService: DataService) { }
-    private faqPage:any = {};
+    faqPage:any = {};
 
     ngOnInit(): void {
         this._dataService.getFaqPage().subscribe(

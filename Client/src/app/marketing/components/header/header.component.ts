@@ -1,9 +1,11 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { AboutDialogComponent } from '../aboutDialog/aboutDialog.component';
 import { DataService } from '../../../services/data.service';
 import { ContactDialogComponent } from '../contactDialog/contactDialog.component';
 import { DOCUMENT } from '@angular/platform-browser';
+import { isPlatformServer } from '@angular/common';
+
 
 @Component({
   selector: 'app-header',
@@ -20,13 +22,22 @@ export class HeaderComponent implements OnInit {
   private dataContactPage = {};
 
 
-  constructor(public dialog: MatDialog, private _dataService: DataService, @Inject(DOCUMENT) private document: Document) { }
+  constructor(public dialog: MatDialog,
+    private _dataService: DataService,
+    @Inject(DOCUMENT) private document: Document,
+    @Inject(PLATFORM_ID) private platformId) { }
 
   ngOnInit(): void {
+    if (isPlatformServer(this.platformId)) {
+      return;
+    }
     this.accessibilityControl();
   }
 
   toggleFocus() {
+    if (isPlatformServer(this.platformId)) {
+      return;
+    }
     this.document.body.classList.toggle('keyboardFocus');
     if (this.document.body.classList.contains(this.focusClass)) {
       localStorage.setItem(this.focusClass, this.focusClass)

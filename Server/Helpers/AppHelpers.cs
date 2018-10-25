@@ -5,6 +5,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Umbraco.Core.Models;
+using Umbraco.ModelsBuilder;
+using Umbraco.Web.PublishedContentModels;
+using Umbraco.Core.Models.PublishedContent;
+using Umbraco.Web.Models;
 
 namespace Server.Helpers
 {
@@ -40,21 +44,51 @@ namespace Server.Helpers
 
         static bool FilterProps(IPublishedProperty prop)
         {
-            return prop.HasValue && !ignoreFields.Contains(prop.PropertyTypeAlias);
+            return !ignoreFields.Contains(prop.PropertyTypeAlias);
         }
 
 
         static object ParseValue(object value)
         {
+            if(value == null)
+            {
+                return string.Empty;
+            }
             if (value is string || value is JObject)
                 return value;
+            else if (value is HtmlString)
+            {
+                return value.ToString();
+            }
+            else if (value is RelatedLinks)
+            {
+                var dic = new Dictionary<string, object>();
+                var val = (RelatedLinks)value;
+                if(val.Count() == 1)
+                {
+                    return val.FirstOrDefault().Link;
+                }
+               
+            }
+            else if (value is Umbraco.Web.PublishedContentModels.File)
+            {
+                var dic = new Dictionary<string, object>();
+                var val = (Umbraco.Web.PublishedContentModels.File)value;
+                return val.Url;
+            }
+            else if (value is Image)
+            {
+                var dic = new Dictionary<string, object>();
+                var val = (Image)value;
+                return val.Url;
+            }
             else if (value is IPublishedContent)
             {
                 var dic = new Dictionary<string, object>();
                 Parse((IPublishedContent)value, dic, false);
                 return dic;
             }
-
+           
             else if (value is IEnumerable)
             {
                 var list = value as IEnumerable;

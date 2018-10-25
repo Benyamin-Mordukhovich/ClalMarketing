@@ -1,7 +1,8 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Inject, PLATFORM_ID } from '@angular/core';
 import { Subscription, fromEvent, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { DataService } from '../../../services/data.service';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-hp',
@@ -15,17 +16,18 @@ export class HpComponent implements OnInit {
   windowHeight: number = 0;
   hpHeight: any = 'auto';
   //@ViewChild('slideSection') slideSectionRef: ElementRef;
-  showFooter:boolean = false;
-  private sectionItems: any = [];
-  private footerItem = {};
+  showFooter: boolean = false;
+  sectionItems: any = [];
+  footerItem = {};
 
-  constructor(private _dataService: DataService) {
+  constructor(private _dataService: DataService, @Inject(PLATFORM_ID) private platformId) {
 
   }
 
   ngOnInit() {
-
-    this.windowHeight = (window.innerHeight);
+    if (isPlatformBrowser(this.platformId)) {
+      this.windowHeight = (window.innerHeight);
+    }
 
     this._dataService.getHomePage().subscribe(
       res => {
@@ -36,7 +38,7 @@ export class HpComponent implements OnInit {
           e.bgUrl = "url(" + e.bgImageMobile + ")";
         });
 
-        if (window.screen.width > 1200) {
+        if (isPlatformBrowser(this.platformId) && window.screen.width > 1200) {
 
           this.stripHeight = this.windowHeight * this.sectionItems.length;
           this.hpHeight = this.stripHeight + this.windowHeight;
@@ -50,21 +52,23 @@ export class HpComponent implements OnInit {
             distance += interval;
           });
         }
-      
-
-
       }
     )
 
-    //create observable that emits click events
-    const source = fromEvent(window, 'scroll').pipe(map(e => e));
-    source.subscribe(val => {
-      this.scrollTop = window.pageYOffset;
-    });
+    if (isPlatformBrowser(this.platformId)) {
+      //create observable that emits click events
+      const source = fromEvent(window, 'scroll').pipe(map(e => e));
+      source.subscribe(val => {
+        this.scrollTop = window.pageYOffset;
+      });
 
-    setTimeout(()=>{
+      setTimeout(() => {
+        this.showFooter = true;
+      }, 1000)
+
+    } else {
       this.showFooter = true;
-    },1000)
+    }
 
   }
 

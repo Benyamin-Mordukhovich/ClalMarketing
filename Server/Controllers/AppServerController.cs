@@ -1,5 +1,7 @@
 ﻿using System.Web.Mvc;
+using Umbraco.Core.Models;
 using Umbraco.Web;
+using Umbraco.Web.Models;
 using Umbraco.Web.Mvc;
 
 namespace Server.Controllers
@@ -7,11 +9,10 @@ namespace Server.Controllers
     public class AppServerController : Controller, IRenderController
     {
         // GET: MyCustomUmbraco
-        public ActionResult Index()
+        public ActionResult Index(RenderModel<IPublishedContent> model)
         {
-            var url = Request.Url.LocalPath;
-            var content = UmbracoContext.Current.ContentCache.GetByRoute(url);
-            return View("Dev", content);
+            
+            return View("Dev", model.Content);
         }
     }
 }

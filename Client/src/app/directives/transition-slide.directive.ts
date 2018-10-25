@@ -19,9 +19,9 @@ export class TransitionSlideDirective {
     this.el = el;
 
     setTimeout(() => {
-      this.el.nativeElement.style.zIndex = (this.itemsNumber - this.index) * 10;
+      //this.el.nativeElement.style.zIndex = (this.itemsNumber - this.index) * 10;
       //console.log(this.el.nativeElement.style);
-    }, 1000)
+    }, 0)
   }
 
   @Input()
@@ -42,7 +42,7 @@ export class TransitionSlideDirective {
 function getCssValue(st: number, lastScrollTop: number, cssValueDir: string, scrollBegin: number, scrollEnd: number): number {
   let percentage;
 
-  console.log(st,lastScrollTop,"scrollBegin: " + scrollBegin)
+  //console.log(st,lastScrollTop,"scrollBegin: " + scrollBegin)
   if (st > lastScrollTop) {
     if (st < scrollBegin + 200) return;
   } else {
