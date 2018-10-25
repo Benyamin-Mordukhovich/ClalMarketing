@@ -80,7 +80,7 @@ namespace Server.Helpers
             {
                 var dic = new Dictionary<string, object>();
                 var val = (Image)value;
-                return val.Url;
+                return HttpContext.Current.Request.Url.GetLeftPart(UriPartial.Authority) + val.Url;
             }
             else if (value is IPublishedContent)
             {

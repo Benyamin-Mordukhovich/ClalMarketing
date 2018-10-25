@@ -27,7 +27,7 @@ export class DataService {
 
 
     getHomePage(): Observable<Ihp> {
-        let data = this.state.get(homeStateKey, undefined)
+        let data = this.state.get(homeStateKey, undefined);
         if (!data) {
 
             if (this.cacheHpPage[this.urls.hp]) {
@@ -70,35 +70,44 @@ export class DataService {
     }
 
     getAboutData(): Observable<IaboutDialog[]> {
-        if (this.cacheAboutDialog[this.urls.about]) {
-            return of(this.cacheAboutDialog[this.urls.about]);
+        let data = this.state.get(aboutStateKey, undefined);
+        if (!data) {
+
+            if (this.cacheAboutDialog[this.urls.about]) {
+                return of(this.cacheAboutDialog[this.urls.about]);
+            }
+
+            return this.http.get<IaboutDialog[]>(this.urls.about).pipe(
+                catchError(err => {
+                    return of([])
+                }),
+                tap(res => {
+                    this.cacheAboutDialog[this.urls.about] = res;
+                }),
+
+            );
         }
-
-        return this.http.get<IaboutDialog[]>(this.urls.about).pipe(
-            catchError(err => {
-                return of([])
-            }),
-            tap(res => {
-                this.cacheAboutDialog[this.urls.about] = res;
-            }),
-
-        );
+        return of(data);
     }
 
     getContactData(): Observable<IcontactPage[]> {
+        let data = this.state.get(contactStateKey, undefined);
+        if (!data) {
 
-        if (this.cacheContactForm[this.urls.contact]) {
-            return of(this.cacheContactForm[this.urls.contact]);
+            if (this.cacheContactForm[this.urls.contact]) {
+                return of(this.cacheContactForm[this.urls.contact]);
+            }
+
+            return this.http.get<IcontactPage[]>(this.urls.contact).pipe(
+                catchError(err => {
+                    return of([])
+                }),
+                tap(res => {
+                    this.cacheContactForm[this.urls.contact] = res;
+                })
+            )
         }
-
-        return this.http.get<IcontactPage[]>(this.urls.contact).pipe(
-            catchError(err => {
-                return of([])
-            }),
-            tap(res => {
-                this.cacheContactForm[this.urls.contact] = res;
-            })
-        )
+        return of(data);
     }
 
     sendContactForm(formValue: IcontactForm): Observable<Result> {

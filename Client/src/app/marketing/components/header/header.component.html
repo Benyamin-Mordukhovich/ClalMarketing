@@ -8,17 +8,16 @@
     <div class="menuAccessibilityContainer">
         <ul class="accessibilityList">
             <li class="item">
-                <button type="button" class="btnAccessibility keyboard" id="btnKeyboard" data-body="keyboardFocus"
-                    (click)="toggleFocus()">
+                <button type="button" class="btnAccessibility keyboard" id="btnKeyboard" data-body="keyboardFocus" (click)="toggleFocus()">
                     <img src="assets/img/keyboard.svg" alt="שימוש במקלדת">
                 </button>
             </li>
         </ul>
         <ul class="mainMenu">
             <li class="item" role="presentation"><a class="link" routerLink="/faq" [routerLinkActive]="'active'">שאלות ותשובות</a></li>
-            <li class="item" role="presentation"><button type="button" class="link" (click)="openAboutDialog()">אודות
+            <li class="item" role="presentation"><button type="button" class="link" (click)="openAboutDialog()" routerLink="/about" [routerLinkActive]="'active'">אודות
                     כלל ביטוח אשראי</button></li>
-            <li class="item" role="presentation"><button type="button" class="link" (click)="openContactDialog()">צור
+            <li class="item" role="presentation"><button type="button" class="link" (click)="openContactDialog()" routerLink="/contact" [routerLinkActive]="'active'">צור
                     קשר</button></li>
             <li class="item" role="presentation"><a href="#" class="link btnBorder">לאתר ניהול הפוליסה</a></li>
         </ul>
