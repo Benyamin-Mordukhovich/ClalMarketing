@@ -15,11 +15,12 @@
         </ul>
         <ul class="mainMenu">
             <li class="item" role="presentation"><a class="link" routerLink="/faq" [routerLinkActive]="'active'">שאלות ותשובות</a></li>
-            <li class="item" role="presentation"><button type="button" class="link" (click)="openAboutDialog()" routerLink="/about" [routerLinkActive]="'active'">אודות
-                    כלל ביטוח אשראי</button></li>
-            <li class="item" role="presentation"><button type="button" class="link" (click)="openContactDialog()" routerLink="/contact" [routerLinkActive]="'active'">צור
-                    קשר</button></li>
-            <li class="item" role="presentation"><a href="#" class="link btnBorder">לאתר ניהול הפוליסה</a></li>
+            <li class="item" role="presentation"><a class="link" routerLink="/about" [routerLinkActive]="'active'" (click)="openAboutDialog($event)">אודות
+                    כלל ביטוח אשראי</a></li>
+            <li class="item" role="presentation">
+                <a class="link" routerLink="/contact" [routerLinkActive]="'active'" (click)="openContactDialog($event)">צור
+                    קשר</a></li>
+            <li class="item " role="presentation "><a href="# " class="link btnBorder ">לאתר ניהול הפוליסה</a></li>
         </ul>
     </div>
 

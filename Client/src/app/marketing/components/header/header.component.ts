@@ -1,10 +1,8 @@
 import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { MatDialog } from '@angular/material';
-import { AboutDialogComponent } from '../aboutDialog/aboutDialog.component';
-import { DataService } from '../../../services/data.service';
-import { ContactDialogComponent } from '../contactDialog/contactDialog.component';
 import { DOCUMENT } from '@angular/platform-browser';
 import { isPlatformServer } from '@angular/common';
+import { ModalService } from '../../../services/modal.service';
 
 
 @Component({
@@ -18,14 +16,12 @@ export class HeaderComponent implements OnInit {
   focusTheme: string = '';
   isHamburgerOpen: boolean = false;
 
-  private dataAbout = {};
-  private dataContactPage = {};
 
 
   constructor(public dialog: MatDialog,
-    private _dataService: DataService,
     @Inject(DOCUMENT) private document: Document,
-    @Inject(PLATFORM_ID) private platformId) { }
+    @Inject(PLATFORM_ID) private platformId,
+    private modalService: ModalService) { }
 
   ngOnInit(): void {
     if (isPlatformServer(this.platformId)) {
@@ -60,35 +56,15 @@ export class HeaderComponent implements OnInit {
     this.isHamburgerOpen = !this.isHamburgerOpen;
   }
 
-  openAboutDialog(): void {
-
-    this._dataService.getAboutData().subscribe(
-      res => {
-        this.dataAbout = res
-        this.dialog.open(AboutDialogComponent, {
-          data: {
-            dataAbout: this.dataAbout
-          }
-        });
-
-      }
-    );
-
+  openAboutDialog(e:Event): void {
+    e.preventDefault();
+    this.modalService.openAboutDialog();
   }
 
 
-  openContactDialog() {
-    this._dataService.getContactData().subscribe(
-      res => {
-        this.dataContactPage = res
-
-        this.dialog.open(ContactDialogComponent, {
-          data: {
-            dataContactPage: this.dataContactPage
-          }
-        });
-      }
-    )
+  openContactDialog(e:Event): void {
+    e.preventDefault();
+    this.modalService.openContactDialog();
   }
 
 

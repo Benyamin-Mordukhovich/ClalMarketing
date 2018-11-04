@@ -28,6 +28,9 @@ import { SlickModule } from 'ngx-slick';
 
 import { FaqModelComponent } from './marketing/components/faqModel/faqModel.component';
 import { TransitionSlideDirective } from './directives/transition-slide.directive';
+import { ModalService } from './services/modal.service';
+import { AboutComponent } from './marketing/components/about/about.component';
+import { ContactComponent } from './marketing/components/contact/contact.component';
 export const MATERIALCOMPONENTS = [
   MatExpansionModule,
   MatDialogModule,
@@ -53,7 +56,9 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     SectionInfoComponent,
     FooterComponent,
     TransitionSlideDirective,
-    SlickComponent
+    SlickComponent,
+    AboutComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'clalMarketing'}),
@@ -69,7 +74,9 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   entryComponents:[
     AboutDialogComponent,
     ContactDialogComponent,
-    OfferDialogComponent
+    OfferDialogComponent,
+    AboutComponent,
+    ContactComponent
   ],
   providers: [
     {
@@ -80,4 +87,13 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+
+  constructor(modalService:ModalService) {
+    const isServer = typeof(window) === "undefined";
+    if(!isServer) {
+      modalService.listen() 
+    }
+  }
+
+}

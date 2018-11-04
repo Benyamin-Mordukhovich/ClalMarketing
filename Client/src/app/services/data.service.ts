@@ -69,7 +69,7 @@ export class DataService {
         return of(data);
     }
 
-    getAboutData(): Observable<IaboutDialog[]> {
+    getAboutData(): Observable<IaboutDialog> {
         let data = this.state.get(aboutStateKey, undefined);
         if (!data) {
 
@@ -77,9 +77,9 @@ export class DataService {
                 return of(this.cacheAboutDialog[this.urls.about]);
             }
 
-            return this.http.get<IaboutDialog[]>(this.urls.about).pipe(
+            return this.http.get<IaboutDialog>(this.urls.about).pipe(
                 catchError(err => {
-                    return of([])
+                    return of(null)
                 }),
                 tap(res => {
                     this.cacheAboutDialog[this.urls.about] = res;
@@ -90,7 +90,7 @@ export class DataService {
         return of(data);
     }
 
-    getContactData(): Observable<IcontactPage[]> {
+    getContactData(): Observable<IcontactPage> {
         let data = this.state.get(contactStateKey, undefined);
         if (!data) {
 
@@ -98,9 +98,9 @@ export class DataService {
                 return of(this.cacheContactForm[this.urls.contact]);
             }
 
-            return this.http.get<IcontactPage[]>(this.urls.contact).pipe(
+            return this.http.get<IcontactPage>(this.urls.contact).pipe(
                 catchError(err => {
-                    return of([])
+                    return of(null)
                 }),
                 tap(res => {
                     this.cacheContactForm[this.urls.contact] = res;

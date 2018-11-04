@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 export class AppComponent  {
   title = 'marketing-site';
 
-
+  isBrowser = typeof(window) !== "undefined"
 
 
 
