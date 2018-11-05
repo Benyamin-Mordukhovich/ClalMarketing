@@ -31,7 +31,10 @@ interface IcontactPage{
     title?: string,
     fieldList:Ifield[],
     transactionsList?:IdropDownItem[],
-    imgUrl?:string
+    imgUrl?:string,
+    mainTitleSendSuccess: string,
+    titleSendSuccess: string,
+    mainTitleSendFailed: string
 }
 interface Ifield{
     name:string,

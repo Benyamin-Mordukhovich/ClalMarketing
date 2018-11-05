@@ -1,6 +1,5 @@
 {
-    "sectionsData":[   
-        {
+    "sectionsData": [{
             "mainTitle": "לעבוד בראש שקט<br>עם ביטוח אשראי מבית כלל",
             "text": "לראשונה בישראל, שירותי ביטוח אשראי של כלל ניתנים גם לעסקים בינוניים וקטנים,בעלי מחזור הכנסות שנתי שבין 10-50 מיליון שח ביטוח אשראי מאפשר לך לבצע יותר עסקאות בצורה בטוחה,ומקנה ייתרון במימון הבנקאי כל זאת עם גב של חברת כלל ביטוח",
             "linkReadMore": "",
@@ -8,9 +7,9 @@
             "link": "www",
             "note": "כלל ממשיכה לספק ביטוח מימון פרויקטלי, ביטוח הזמנות ומגוון ביטוחים נוספים המתאימים לעסקים המובילים בשוק",
             "bgImage": "",
-            "bgImageMobile":"",
+            "bgImageMobile": "",
             "videoUrl": "small.mp4",
-            "caruselData":[]
+            "caruselData": []
         },
         {
             "mainTitle": "לעבוד בראש שקט2<br>עם ביטוח אשראי מבית כלל",
@@ -19,10 +18,10 @@
             "linkText": "",
             "link": "www",
             "note": "",
-            "bgImage": "assets/img/pic1.png",
-            "bgImageMobile":"assets/img/pic1Mobile.png",
+            "bgImage": "assets/img/clal_03.gif",
+            "bgImageMobile": "assets/img/pic1Mobile.png",
             "videoUrl": "",
-            "caruselData":[]
+            "caruselData": []
         },
         {
             "mainTitle": "המבוטחים שלנו ישנים <br>טוב יותר בלילה",
@@ -31,10 +30,10 @@
             "linkText": "",
             "link": "",
             "note": "",
-            "bgImage": "assets/img/pic2.png",
-            "bgImageMobile":"assets/img/pic2Mobile.png",
+            "bgImage": "assets/img/clal_01.gif",
+            "bgImageMobile": "assets/img/pic2Mobile.png",
             "videoUrl": "",
-            "caruselData":[]
+            "caruselData": []
         },
         {
             "mainTitle": "מנהל הסניף יקבל אותך עכשיו",
@@ -44,22 +43,21 @@
             "link": "",
             "note": "",
             "bgImage": "assets/img/pic3.png",
-            "bgImageMobile":"assets/img/pic3Mobile.png",
+            "bgImageMobile": "assets/img/pic3Mobile.png",
             "videoUrl": "",
-            "caruselData":[]
+            "caruselData": []
         },
         {
             "mainTitle": "אנחנו שם כשאתה צריך",
-            "text":"הפעלת הביטוח מתבצעת בשלושה צעדים פשוטים כך שתוכל <br>לקבל את החזר הכספי כמה שיותר מהר",
+            "text": "הפעלת הביטוח מתבצעת בשלושה צעדים פשוטים כך שתוכל <br>לקבל את החזר הכספי כמה שיותר מהר",
             "linkReadMore": "https://www.youtube.com",
             "linkText": "",
             "link": "",
             "note": "",
-            "bgImage": "assets/img/pic4.png",
-            "bgImageMobile":"assets/img/pic4Mobile.png",
+            "bgImage": "assets/img/clal_02.gif",
+            "bgImageMobile": "assets/img/pic4Mobile.png",
             "videoUrl": "",
-            "caruselData":[
-                {
+            "caruselData": [{
                     "comment": "ביטוח אשראי מבית כלל מאפשר לנו להגדיל את <br/> כמות העסקאות השנתית ולעבוד בראש שקט",
                     "text": "שהם רותם, מנכל רהיטי הקריות, מבוטח כבר חצי שנה",
                     "imgUrl": "assets/img/imgCarusel1.png"
@@ -72,9 +70,8 @@
             ]
         }
     ],
-    "footer":{
-        "mainTitle":"תהליך הרשמה אינטרנטי ופשוט",
-        "text":"נשמע טוב? תהליך ההרשמה דיגטלי, אורך מספר דקות ובסופו תקבלו הצעת מחיר מותאמת לפוליסת ביטוח אשראי"
+    "footer": {
+        "mainTitle": "תהליך הרשמה אינטרנטי ופשוט",
+        "text": "נשמע טוב? תהליך ההרשמה דיגטלי, אורך מספר דקות ובסופו תקבלו הצעת מחיר מותאמת לפוליסת ביטוח אשראי"
     }
 }
-  
