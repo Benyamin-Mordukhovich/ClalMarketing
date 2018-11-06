@@ -19,7 +19,7 @@ export class HpComponent implements OnInit {
   showFooter: boolean = false;
   sectionItems: any = [];
   footerItem = {};
-
+  header = {};
   constructor(private _dataService: DataService, @Inject(PLATFORM_ID) private platformId) {
 
   }
@@ -33,11 +33,13 @@ export class HpComponent implements OnInit {
       res => {
         this.sectionItems = res.sectionsData;
         this.footerItem = res.footer;
+        this.header = res.header;
 
         this.sectionItems.forEach(e => {
           e.bgUrl = "url(" + e.bgImageMobile + ")";
         });
-
+        this._dataService.sendData(this.header); 
+        
         if (isPlatformBrowser(this.platformId) && window.screen.width > 1200) {
 
           this.stripHeight = this.windowHeight * this.sectionItems.length;
