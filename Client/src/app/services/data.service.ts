@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
+import { Observable, of, Subject } from 'rxjs';
 import { tap, catchError } from 'rxjs/operators';
 import { environment } from "../../environments/environment";
 import { ContentUrls } from '../../types';
@@ -20,12 +20,15 @@ export class DataService {
     private cacheFaqPage: any = {}
     private cacheAboutDialog: any = {}
     private cacheContactForm: any = {}
-
+    public dataSubject = new Subject<any>()
     constructor(private http: HttpClient, private state: TransferState) {
 
     }
 
-
+    sendData(value) { 
+        this.dataSubject.next(value)     
+    }  
+    
     getHomePage(): Observable<Ihp> {
         let data = this.state.get(homeStateKey, undefined);
         if (!data) {
