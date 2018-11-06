@@ -102,3 +102,28 @@ interface Iheader{
     contactName:string,
     polisaBtn:Ilink,
 }
+
+interface IofferPage{
+    mainTitle:string,
+    text?:string,
+    businessDetailsTitle:string,
+    businessDetailsList:IofferItem[],
+    offerPriceTitle:string,
+    offerList:IofferList[]
+}
+
+interface IofferItem{
+    title:string,
+    number:string,
+    currency:string
+}
+
+type IofferList = IofferTextItem & IgiftOffer
+
+interface IofferTextItem extends IofferItem{
+    text:string
+}
+
+interface IgiftOffer extends IofferTextItem{
+    imgUrl:string
+}

@@ -5,6 +5,7 @@ const urls: ContentUrls = {
   about: "http://clalsmbbackoffice.stanga.co.il/umbraco/api/app/Content?url=/about",
   contact: "http://clalsmbbackoffice.stanga.co.il/umbraco/api/app/Content?url=/contact",
   faq: "http://clalsmbbackoffice.stanga.co.il/umbraco/api/app/Content?url=/faq",
+  offer: "http://clalsmbbackoffice.stanga.co.il/umbraco/api/app/Content?url=/offer",
   contactSubmitUrl: "http://clalsmbbackoffice.stanga.co.il/umbraco/api/Contact/Submit/"
 }
 

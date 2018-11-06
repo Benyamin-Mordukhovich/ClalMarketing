@@ -5,7 +5,7 @@
         <a href="{{item.joinBtn.linkUrl}}" target="item.joinBtn.targetBlank ? '_blank' : '_self' " class="btn btnGlobal">{{item.joinBtn.text}}</a>
     </div>
     
-    <button type="button" class="btnLink" (click)="openOfferDialog()">
+    <button type="button" class="btnLink" (click)="openOfferDialog($event)">
         {{item.linkText}}
         <span class="arrowIcon">
             <img src="assets/img/arrowWhite.png" alt="">

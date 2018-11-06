@@ -31,6 +31,7 @@ import { TransitionSlideDirective } from './directives/transition-slide.directiv
 import { ModalService } from './services/modal.service';
 import { AboutComponent } from './marketing/components/about/about.component';
 import { ContactComponent } from './marketing/components/contact/contact.component';
+import { OfferComponent } from './marketing/components/offer/offer.component';
 export const MATERIALCOMPONENTS = [
   MatExpansionModule,
   MatDialogModule,
@@ -59,6 +60,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     SlickComponent,
     AboutComponent,
     ContactComponent,
+    OfferComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'clalMarketing'}),
@@ -76,7 +78,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     ContactDialogComponent,
     OfferDialogComponent,
     AboutComponent,
-    ContactComponent
+    ContactComponent,
+    OfferComponent
   ],
   providers: [
     {

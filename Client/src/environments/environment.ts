@@ -5,6 +5,7 @@ const urls: ContentUrls = {
   about: "assets/about-data.json",
   contact: "assets/contact-data.json",
   faq: "assets/faq-data.json",
+  offer: "assets/offer-data.json",
   contactSubmitUrl: "/umbraco/api/Contact/Submit/"
 }
 

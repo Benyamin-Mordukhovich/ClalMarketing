@@ -4,6 +4,7 @@ import { DataService } from "./data.service";
 import { MatDialog } from "@angular/material";
 import { AboutDialogComponent } from "../marketing/components/aboutDialog/aboutDialog.component";
 import { ContactDialogComponent } from "../marketing/components/contactDialog/contactDialog.component";
+import { OfferDialogComponent } from "../marketing/components/offerDialog/offerDialog.component";
 
 @Injectable({ providedIn: "root" })
 export class ModalService {
@@ -23,6 +24,9 @@ export class ModalService {
             if(qs.modal == "contact") {
                 this._openContact()
             }
+            if(qs.modal == "offer"){
+                this._openOffer()
+            }
         })
     }
 
@@ -31,6 +35,10 @@ export class ModalService {
     }
     openContactDialog():void{
         this.setModalParam("contact")
+    }
+
+    openOfferDialog():void{
+        this.setModalParam("offer")
     }
 
     private _openAbout() {
@@ -50,6 +58,16 @@ export class ModalService {
         })
     }
 
+    private _openOffer() {
+        this._dataService.getOfferData().toPromise().then(res => {
+            let data = {
+                dataOfferPage: res
+            };
+            this.dialog.open(OfferDialogComponent, {data}).beforeClose().subscribe(_ => {
+                this.setModalParam()
+            })
+        })
+    }
 
     setModalParam(value?) {
         this._router.navigate([], {

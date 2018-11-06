@@ -3,5 +3,6 @@ export interface ContentUrls {
   faq: string
   about: string
   contact: string
+  offer: string
   contactSubmitUrl: string
 }

@@ -11,6 +11,7 @@ const homeStateKey = makeStateKey("home");
 const faqStateKey = makeStateKey("faq");
 const contactStateKey = makeStateKey("contact");
 const aboutStateKey = makeStateKey("about");
+const offerStateKey = makeStateKey("offer");
 
 @Injectable()
 export class DataService {
@@ -20,6 +21,7 @@ export class DataService {
     private cacheFaqPage: any = {}
     private cacheAboutDialog: any = {}
     private cacheContactForm: any = {}
+    private cacheOfferDialog: any = {}
     public dataSubject = new Subject<any>()
     constructor(private http: HttpClient, private state: TransferState) {
 
@@ -107,6 +109,26 @@ export class DataService {
                 }),
                 tap(res => {
                     this.cacheContactForm[this.urls.contact] = res;
+                })
+            )
+        }
+        return of(data);
+    }
+
+    getOfferData(): Observable<IofferPage> {
+        let data = this.state.get(offerStateKey, undefined);
+        if (!data) {
+
+            if (this.cacheOfferDialog[this.urls.offer]) {
+                return of(this.cacheOfferDialog[this.urls.offer]);
+            }
+
+            return this.http.get<IofferPage>(this.urls.offer).pipe(
+                catchError(err => {
+                    return of(null)
+                }),
+                tap(res => {
+                    this.cacheOfferDialog[this.urls.offer] = res;
                 })
             )
         }
