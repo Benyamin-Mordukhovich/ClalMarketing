@@ -1,7 +1,7 @@
 interface IaboutDialog{
     mainTitle:string;
     rte:string;
-    link:string;
+    link:Ilink;
     imgUrl:string;
 }
 
@@ -31,10 +31,7 @@ interface IcontactPage{
     title?: string,
     fieldList:Ifield[],
     transactionsList?:IdropDownItem[],
-    imgUrl?:string,
-    mainTitleSendSuccess: string,
-    titleSendSuccess: string,
-    mainTitleSendFailed: string
+    imgUrl?:string
 }
 interface Ifield{
     name:string,
@@ -53,6 +50,7 @@ interface IcontactForm{
 }
 
 interface Ihp{
+    header:Iheader,
     sectionsData:IsectionModel[],
     footer:{
         mainTitle?:string,
@@ -82,4 +80,18 @@ interface IcaruselItem{
     comment:string
     text:string
     imgUrl:string
+}
+
+interface Ilink{
+    text:string,
+    linkUrl:string,
+    targetBlank:boolean
+}
+
+interface Iheader{
+    logoUrl:string,
+    faqName:string,
+    aboutName:string,
+    contactName:string,
+    polisaBtn:Ilink,
 }
