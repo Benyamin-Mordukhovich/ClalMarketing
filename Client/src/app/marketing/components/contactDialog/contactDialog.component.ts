@@ -23,7 +23,8 @@ export class ContactDialogComponent {
   imgUrl: string = "";
   btnText: string = "המשך";
   sendSuccess: boolean = false;
-
+  fieldList: Ifield[] = [];
+  
   constructor(public dialogRef: MatDialogRef<ContactDialogComponent>) {}
 
   closeDialog() {

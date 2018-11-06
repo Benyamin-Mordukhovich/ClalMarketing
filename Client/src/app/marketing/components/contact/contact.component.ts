@@ -27,6 +27,8 @@ export class ContactComponent implements OnInit {
   btnText: string = "המשך";
   @Input()
   sendSuccess: boolean = false;
+  @Input()
+  fieldList: Ifield[] = [];
 
   @Output()
   done = new EventEmitter();
@@ -48,6 +50,7 @@ export class ContactComponent implements OnInit {
         this.mainTitleSendSuccess = res.mainTitleSendSuccess;
         this.titleSendSuccess = res.titleSendSuccess;
         this.mainTitleSendFailed = res.mainTitleSendFailed;
+        this.fieldList = res.fieldList;
       });
     this.contactForm = this._formBuilder.group({
       companyName: ["", Validators.required],
