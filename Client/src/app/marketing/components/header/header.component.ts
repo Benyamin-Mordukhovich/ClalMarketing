@@ -34,6 +34,7 @@ export class HeaderComponent implements OnInit {
       data => {
         this.headerData = data;
         this.polisaBtn = data.polisaBtn
+
       }
     );
   }
