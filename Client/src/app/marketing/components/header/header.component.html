@@ -1,27 +1,25 @@
-<header class="header" [class.open]="isHamburgerOpen">
-    <a role="button" class="hamburger" (click)="clickHamburger()">
-        <div><span></span></div>
-    </a>
-    <a class="logo" routerLink="/">
-        <img src="assets/img/logo.png" alt="לוגו">
-    </a>
-    <div class="menuAccessibilityContainer">
-        <ul class="accessibilityList">
-            <li class="item">
-                <button type="button" class="btnAccessibility keyboard" id="btnKeyboard" data-body="keyboardFocus" (click)="toggleFocus()">
-                    <img src="assets/img/keyboard.svg" alt="שימוש במקלדת">
-                </button>
-            </li>
-        </ul>
-        <ul class="mainMenu">
-            <li class="item" role="presentation"><a class="link" routerLink="/faq" [routerLinkActive]="'active'">שאלות ותשובות</a></li>
-            <li class="item" role="presentation"><a class="link" routerLink="/about" [routerLinkActive]="'active'" (click)="openAboutDialog($event)">אודות
-                    כלל ביטוח אשראי</a></li>
-            <li class="item" role="presentation">
-                <a class="link" routerLink="/contact" [routerLinkActive]="'active'" (click)="openContactDialog($event)">צור
-                    קשר</a></li>
-            <li class="item " role="presentation "><a href="# " class="link btnBorder ">לאתר ניהול הפוליסה</a></li>
-        </ul>
-    </div>
-
-</header>
+<header class="header" [class.open]="isHamburgerOpen" *ngIf="headerData">
+        <a role="button" class="hamburger" (click)="clickHamburger()">
+            <div><span></span></div>
+        </a>
+        <a class="logo" routerLink="/">
+            <img [src]="headerData.logoUrl" alt="לוגו">
+        </a>
+        <div class="menuAccessibilityContainer">
+            <ul class="accessibilityList">
+                <li class="item">
+                    <button type="button" class="btnAccessibility keyboard" id="btnKeyboard" data-body="keyboardFocus"
+                        (click)="toggleFocus()">
+                        <img src="assets/img/keyboard.svg" alt="שימוש במקלדת">
+                    </button>
+                </li>
+            </ul>
+            <ul class="mainMenu">
+                <li class="item" role="presentation"><a class="link" routerLink="/faq" [routerLinkActive]="'active'">{{headerData.faqName}}</a></li>
+                <li class="item" role="presentation"><button type="button" class="link" (click)="openAboutDialog()">{{headerData.aboutName}}</button></li>
+                <li class="item" role="presentation"><button type="button" class="link" (click)="openContactDialog()">{{headerData.contactName}}</button></li>
+                <li class="item" role="presentation" *ngIf="polisaBtn.text"><a href="{{polisaBtn.linkUrl}}" class="link btnBorder" target="{{polisaBtn.targetBlank ? '_blank' : '_self'}}">{{polisaBtn.text}}</a></li>
+            </ul>
+        </div>
+    
+    </header>

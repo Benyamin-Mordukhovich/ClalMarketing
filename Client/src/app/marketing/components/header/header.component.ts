@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material';
 import { DOCUMENT } from '@angular/platform-browser';
 import { isPlatformServer } from '@angular/common';
 import { ModalService } from '../../../services/modal.service';
+import { DataService } from 'src/app/services/data.service';
 
 
 @Component({
@@ -16,18 +17,25 @@ export class HeaderComponent implements OnInit {
   focusTheme: string = '';
   isHamburgerOpen: boolean = false;
 
-
+  private headerData = {};
+  private polisaBtn = {};
 
   constructor(public dialog: MatDialog,
     @Inject(DOCUMENT) private document: Document,
     @Inject(PLATFORM_ID) private platformId,
-    private modalService: ModalService) { }
+    private modalService: ModalService,private _dataService:DataService) { }
 
   ngOnInit(): void {
     if (isPlatformServer(this.platformId)) {
       return;
     }
     this.accessibilityControl();
+    this._dataService.dataSubject.subscribe(
+      data => {
+        this.headerData = data;
+        this.polisaBtn = data.polisaBtn
+      }
+    );
   }
 
   toggleFocus() {
