@@ -7,12 +7,12 @@
     </perfect-scrollbar>
 
     <div class="linkLogoContainer">
-        <a class="btnLink" href="#">
-      {{ link }}
-      <span class="arrowIcon">
-        <img src="assets/img/arrowIcon.png" alt="">
-      </span>
-    </a>
+        <a class="btnLink" [routerLink]="link.linkUrl" target="{{link.targetBlank ? '_blank' : '_self'}}">
+            {{ link.text }}
+            <span class="arrowIcon">
+                <img src="assets/img/arrowIcon.png" alt="">
+            </span>
+        </a>
         <div class="pic">
             <img src="{{ imgUrl }}" alt="">
         </div>
