@@ -119,6 +119,7 @@
   .rowFields {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
   }
   .rowFields .formGroup {
     width: 45%;

@@ -123,8 +123,8 @@
         }
     }
     /*E:about*/
-    /*S:contact*/
-    .imgContact {
+     /*S:contact*/
+     .imgContact {
         top: 18px;
         left: 34px;
         img {
@@ -133,7 +133,9 @@
     }
     .rowFields {
         display: flex;
-        justify-content: space-between; // margin: 0 -30px;
+        justify-content: space-between; 
+        flex-wrap: wrap;
+       
         .formGroup {
             width: 45%;
             &.details {
