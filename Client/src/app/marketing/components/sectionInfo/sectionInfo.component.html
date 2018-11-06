@@ -2,21 +2,21 @@
     <div class="sectionInfoInner">
         <div class="mainTitle" [innerHTML]="infoObj.mainTitle"></div>
         <div class="text" [innerHTML]="infoObj.text"></div>
-        <a class="btnLink" href="{{infoObj.linkReadMore}}" *ngIf="infoObj.linkReadMore.length > 0">
-                קרא עוד
-                <span class="arrowIcon">
-                    <img src="assets/img/arrowIcon.png" alt="">
-                </span>
-            </a>
+        <a class="btnLink" [href]="infoObj.linkReadMore" *ngIf="infoObj.linkReadMore.length > 0">
+            {{infoObj.linkReadMoreText}}
+            <span class="arrowIcon">
+                <img src="assets/img/arrowIcon.png" alt="">
+            </span>
+        </a>
         <div>
-            <a href="#" class="btn btnGlobal">להצעת מחיר</a>
+            <a [href]="infoObj.offerBtn.linkUrl" target="{{infoObj.offerBtn.targetBlank ? '_blank' : '_self'}}" class="btn btnGlobal">{{infoObj.offerBtn.text}}</a>
         </div>
         <a class="btnLink" href="{{infoObj.link}}" *ngIf="infoObj.linkText.length > 0">
-                {{infoObj.linkText}}
-                <span class="arrowIcon">
-                    <img src="assets/img/arrowIcon.png" alt="">
-                </span>
-            </a>
+            {{infoObj.linkText}}
+            <span class="arrowIcon">
+                <img src="assets/img/arrowIcon.png" alt="">
+            </span>
+        </a>
         <div class="note">{{infoObj.note}}</div>
     </div>
 </div>

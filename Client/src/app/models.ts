@@ -66,6 +66,7 @@ interface Ihp{
 interface IsectionModel{
     mainTitle?:string,
     text?:string,
+    linkReadMoreText?:string,
     linkReadMore?:string,
     linkText?:string,
     link?:string,
@@ -73,7 +74,8 @@ interface IsectionModel{
     bgImage?:string,
     bgImageMobile?:string,
     videoUrl?:string,
-    caruselData?:IcaruselItem[]
+    caruselData?:IcaruselItem[],
+    offerBtn:Ilink,
 }
 
 interface Result {

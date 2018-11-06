@@ -13,6 +13,7 @@
     "sectionsData": [{
             "mainTitle": "לעבוד בראש שקט<br>עם ביטוח אשראי מבית כלל",
             "text": "לראשונה בישראל, שירותי ביטוח אשראי של כלל ניתנים גם לעסקים בינוניים וקטנים,בעלי מחזור הכנסות שנתי שבין 10-50 מיליון שח ביטוח אשראי מאפשר לך לבצע יותר עסקאות בצורה בטוחה,ומקנה ייתרון במימון הבנקאי כל זאת עם גב של חברת כלל ביטוח",
+            "linkReadMoreText":"",
             "linkReadMore": "",
             "linkText": "יצאונים? זקוקים לביטוח פרויקטלי?",
             "link": "www",
@@ -20,11 +21,17 @@
             "bgImage": "",
             "bgImageMobile": "",
             "videoUrl": "small.mp4",
-            "caruselData": []
+            "caruselData": [],
+            "offerBtn":{
+                "text":"להצעת מחיר",
+                "linkUrl":"https://www.clalbit.co.il/",
+                "targetBlank":true
+            }
         },
         {
             "mainTitle": "לעבוד בראש שקט2<br>עם ביטוח אשראי מבית כלל",
             "text": "לראשונה בישראל, שירותי ביטוח אשראי של כלל ניתנים גם לעסקים בינוניים וקטנים,בעלי מחזור הכנסות שנתי שבין 10-50 מיליון שח ביטוח אשראי מאפשר לך לבצע יותר עסקאות בצורה בטוחה,ומקנה ייתרון במימון הבנקאי כל זאת עם גב של חברת כלל ביטוח",
+            "linkReadMoreText":"",
             "linkReadMore": "",
             "linkText": "",
             "link": "www",
@@ -32,11 +39,17 @@
             "bgImage": "assets/img/clal_03.gif",
             "bgImageMobile": "assets/img/pic1Mobile.png",
             "videoUrl": "",
-            "caruselData": []
+            "caruselData": [],
+            "offerBtn":{
+                "text":"להצעת מחיר",
+                "linkUrl":"https://www.clalbit.co.il/",
+                "targetBlank":true
+            }
         },
         {
             "mainTitle": "המבוטחים שלנו ישנים <br>טוב יותר בלילה",
             "text": "ביטוח אשראי מאפשר לך לעבוד בראש שקט ובביטחון גם אם יש לך<br> כמה עסקאות שאתה לא לגמרי בטוח אם תראה את הכסף מהם",
+            "linkReadMoreText":"קרא עוד",
             "linkReadMore": "https://www.google.com/",
             "linkText": "",
             "link": "",
@@ -44,11 +57,17 @@
             "bgImage": "assets/img/clal_01.gif",
             "bgImageMobile": "assets/img/pic2Mobile.png",
             "videoUrl": "",
-            "caruselData": []
+            "caruselData": [],
+            "offerBtn":{
+                "text":"להצעת מחיר",
+                "linkUrl":"https://www.clalbit.co.il/",
+                "targetBlank":true
+            }
         },
         {
             "mainTitle": "מנהל הסניף יקבל אותך עכשיו",
             "text": "כשהכסף שלך בטוח, תוכל לעבוד עם אותם לקוחות שפעם היית מפחד לקחת לראשונה בישראל שירותי ביטוח אשראי של כלל ניתנים גם לעסקים בעלי מחזור הכנסות שנתי של בין 5 ל-10 מליון ש",
+            "linkReadMoreText":"קרא עוד",
             "linkReadMore": "https://www.youtube.com",
             "linkText": "",
             "link": "",
@@ -56,11 +75,17 @@
             "bgImage": "assets/img/pic3.png",
             "bgImageMobile": "assets/img/pic3Mobile.png",
             "videoUrl": "",
-            "caruselData": []
+            "caruselData": [],
+            "offerBtn":{
+                "text":"להצעת מחיר",
+                "linkUrl":"https://www.clalbit.co.il/",
+                "targetBlank":true
+            }
         },
         {
             "mainTitle": "אנחנו שם כשאתה צריך",
             "text": "הפעלת הביטוח מתבצעת בשלושה צעדים פשוטים כך שתוכל <br>לקבל את החזר הכספי כמה שיותר מהר",
+            "linkReadMoreText":"קרא עוד",
             "linkReadMore": "https://www.youtube.com",
             "linkText": "",
             "link": "",
@@ -78,7 +103,12 @@
                     "text": "גדנכלחגדנלגדהצגף  ךלג גדג",
                     "imgUrl": "assets/img/imgCarusel2.png"
                 }
-            ]
+            ],
+            "offerBtn":{
+                "text":"להצעת מחיר",
+                "linkUrl":"https://www.clalbit.co.il/",
+                "targetBlank":true
+            }
         }
     ],
     "footer": {
