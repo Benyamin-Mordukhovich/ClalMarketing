@@ -57,8 +57,10 @@ interface Ihp{
     sectionsData:IsectionModel[],
     footer:{
         mainTitle?:string,
-        text?:string
-    }
+        text?:string,
+        joinBtn:Ilink
+    },
+    linkText:string
 }
 
 interface IsectionModel{
