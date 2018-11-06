@@ -1,6 +1,56 @@
 {
     "mainTitle": "צור קשר",
     "title": "השיארו לנו פרטים ונחזור עליכם בהקדם על מנת לענות על כל שאלה או בעיה\n תוכלו גם לעניין בדף שאלות ותשבות למציאת מענה",
+    "fieldList": [
+        {
+            "name": "companyName",
+            "type": "text",
+            "placeholder": "שם עסק / חברה",
+            "errorMsg":"שדה חברה חובה"
+        },
+        {
+            "name": "privateCompany",
+            "type": "text",
+            "placeholder": "ח.פ",
+            "errorMsg":"שדה ח.פ חובה"
+        },
+        {
+            "name": "transactionsOption",
+            "type": "text",
+            "placeholder": "מחזור עסקאות שנתי",
+            "errorMsg":"שדה מחזור עסקאות שנתי חובה"
+        },
+        {
+            "name": "customerName",
+            "type": "text",
+            "placeholder": "שם הפונה",
+            "errorMsg":"שדה הפונה חובה"
+        },
+        {
+            "name": "role",
+            "type": "text",
+            "placeholder": "תפקיד",
+            "errorMsg":"שדה תפקיד חובה"
+        },
+        {
+            "name": "phone",
+            "type": "tel",
+            "placeholder": "טלפון",
+            "errorMsg":"שדה טלפון חובה"
+        },
+        {
+            "name": "email",
+            "type": "email",
+            "placeholder": "כתובת דואר אלקטרוני",
+            "errorMsg":"שדה דואר חובה"
+        },
+        {
+            "name": "details",
+            "type": "text",
+            "placeholder": "פירוט הפנייה",
+            "errorMsg":"שדה הפנייה חובה"
+        }
+    ],
     "transactionsList": [
         {
             "title": "1,000,000",
