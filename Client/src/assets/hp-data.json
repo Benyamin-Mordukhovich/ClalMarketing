@@ -20,7 +20,7 @@
             "note": "כלל ממשיכה לספק ביטוח מימון פרויקטלי, ביטוח הזמנות ומגוון ביטוחים נוספים המתאימים לעסקים המובילים בשוק",
             "bgImage": "",
             "bgImageMobile": "",
-            "videoUrl": "small.mp4",
+            "videoUrl": "assets/movie.mp4",
             "caruselData": [],
             "offerBtn":{
                 "text":"להצעת מחיר",
@@ -72,7 +72,7 @@
             "linkText": "",
             "link": "",
             "note": "",
-            "bgImage": "assets/img/pic3.png",
+            "bgImage": "assets/img/clal_04.gif",
             "bgImageMobile": "assets/img/pic3Mobile.png",
             "videoUrl": "",
             "caruselData": [],
