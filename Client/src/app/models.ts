@@ -66,8 +66,7 @@ interface Ihp{
 interface IsectionModel{
     mainTitle?:string,
     text?:string,
-    linkReadMoreText?:string,
-    linkReadMore?:string,
+    linkReadMore:Ilink
     linkText?:string,
     link?:string,
     note?:string,

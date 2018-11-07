@@ -66,7 +66,9 @@ namespace Server.Helpers
                 var val = (RelatedLinks)value;
                 if(val.Count() == 1)
                 {
-                    return val.FirstOrDefault().Link;
+                    var link = val.FirstOrDefault();
+                    var linkToReturn = new { text = link.Caption, linkUrl = link.Link, targetBlank = link.NewWindow };
+                    return linkToReturn;
                 }
                
             }

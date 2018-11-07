@@ -7,7 +7,7 @@
     </perfect-scrollbar>
 
     <div class="linkLogoContainer">
-        <a *ngIf="link" class="btnLink" [routerLink]="link.linkUrl" target="{{link.targetBlank ? '_blank' : '_self'}}">
+        <a *ngIf="link" class="btnLink" href="{{link.linkUrl}}" target="{{link.targetBlank ? '_blank' : '_self'}}">
             {{ link.text }}
             <span class="arrowIcon">
                 <img src="assets/img/arrowIcon.png" alt="">
