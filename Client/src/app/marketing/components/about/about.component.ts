@@ -11,7 +11,7 @@ export class AboutComponent implements OnInit {
   @Input()
   rteHtml: string;
   @Input()
-  link: {};
+  link: any;
   @Input()
   imgUrl: string;
 

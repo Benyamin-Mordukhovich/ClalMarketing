@@ -91,14 +91,17 @@ interface IcaruselItem{
 interface Ilink{
     text:string,
     linkUrl:string,
-    targetBlank:boolean
+    targetBlank:boolean,
+    isInternal: boolean
 }
 
 interface Iheader{
     logoUrl:string,
-    faqName:string,
-    aboutName:string,
-    contactName:string,
+    headerLinks:{
+        faqLinkText:string,
+        contactLinkText: string,
+        aboutLinkText: string
+    },
     polisaBtn:Ilink,
 }
 

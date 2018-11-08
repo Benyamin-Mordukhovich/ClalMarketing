@@ -22,8 +22,6 @@ namespace Server
             ContentService.Publishing += ContentServicePublishing;
         }
 
-       
-
         private void ContentServicePublishing(IPublishingStrategy sender, PublishEventArgs<IContent> args)
         {
             var umbracoHelper = new UmbracoHelper(UmbracoContext.Current);

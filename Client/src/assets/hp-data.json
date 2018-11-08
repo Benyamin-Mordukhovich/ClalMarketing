@@ -1,13 +1,16 @@
 {
     "header": {
         "logoUrl": "assets/img/logo.png",
-        "faqName": "שאלות ותשובות",
-        "aboutName": "אודות כלל ביטוח אשראי",
-        "contactName": "צור קשר",
+        "headerLinks": {
+            "faqLinkText": "שאלות ותשובות",
+            "contactLinkText": "צור קשר",
+            "aboutLinkText": "אודות כלל ביטוח אשראי"
+        },
         "polisaBtn": {
             "text": "לאתר ניהול הפוליסה",
             "linkUrl": "https://www.clalbit.co.il/",
-            "targetBlank": false
+            "targetBlank": false,
+            "isInternal": false
         }
     },
     "sectionsData": [{
@@ -16,7 +19,8 @@
             "linkReadMore": {
                 "text": "לאתר ניהול הפוליסה",
                 "linkUrl": "https://www.google.co.il/",
-                "targetBlank": false
+                "targetBlank": false,
+                "isInternal": false
             },
             "linkText": "יצאונים? זקוקים לביטוח פרויקטלי?",
             "link": "www",
@@ -28,7 +32,8 @@
             "offerBtn": {
                 "text": "להצעת מחיר",
                 "linkUrl": "https://www.clalbit.co.il/",
-                "targetBlank": true
+                "targetBlank": true,
+                "isInternal": false
             }
         },
         {
@@ -49,7 +54,8 @@
             "offerBtn": {
                 "text": "להצעת מחיר",
                 "linkUrl": "https://www.clalbit.co.il/",
-                "targetBlank": true
+                "targetBlank": true,
+                "isInternal": false
             }
         },
         {
@@ -58,7 +64,8 @@
             "linkReadMore": {
                 "text": "לאתר ניהול הפוליסה",
                 "linkUrl": "https://www.google.co.il/",
-                "targetBlank": false
+                "targetBlank": false,
+                "isInternal": false
             },
             "linkText": "",
             "link": "",
@@ -70,7 +77,8 @@
             "offerBtn": {
                 "text": "להצעת מחיר",
                 "linkUrl": "https://www.clalbit.co.il/",
-                "targetBlank": true
+                "targetBlank": true,
+                "isInternal": false
             }
         },
         {
@@ -79,7 +87,8 @@
             "linkReadMore": {
                 "text": "לאתר ניהול הפוליסה",
                 "linkUrl": "https://www.google.co.il/",
-                "targetBlank": true
+                "targetBlank": true,
+                "isInternal": false
             },
             "linkText": "",
             "link": "",
@@ -91,7 +100,8 @@
             "offerBtn": {
                 "text": "להצעת מחיר",
                 "linkUrl": "https://www.clalbit.co.il/",
-                "targetBlank": true
+                "targetBlank": true,
+                "isInternal": false
             }
         },
         {
@@ -100,7 +110,8 @@
             "linkReadMore": {
                 "text": "לאתר ניהול הפוליסה",
                 "linkUrl": "https://www.google.co.il/",
-                "targetBlank": false
+                "targetBlank": false,
+                "isInternal": false
             },
             "linkText": "",
             "link": "",
@@ -122,7 +133,8 @@
             "offerBtn": {
                 "text": "להצעת מחיר",
                 "linkUrl": "https://www.clalbit.co.il/",
-                "targetBlank": true
+                "targetBlank": true,
+                "isInternal": false
             }
         }
     ],
@@ -132,7 +144,8 @@
         "joinBtn": {
             "text": "להצטרפות",
             "linkUrl": "https://www.ynet.co.il/",
-            "targetBlank": true
+            "targetBlank": true,
+            "isInternal": false
         },
         "linkText": "להצעת מחיר לדוגמא"
     }
