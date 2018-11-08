@@ -58,7 +58,7 @@ interface Ihp{
     footer:{
         mainTitle?:string,
         text?:string,
-        joinBtn:Ilink
+        joinBtn:Ilink,
     },
     linkText:string
 }
@@ -66,7 +66,7 @@ interface Ihp{
 interface IsectionModel{
     mainTitle?:string,
     text?:string,
-    linkReadMore:Ilink
+    linkReadMore:Ilink,
     linkText?:string,
     link?:string,
     note?:string,
