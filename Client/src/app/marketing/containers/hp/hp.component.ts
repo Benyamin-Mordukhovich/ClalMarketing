@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef, Inject, PLATFORM_ID } from '@angular/core';
 import { Subscription, fromEvent, Observable } from 'rxjs';
-import { map, debounceTime } from 'rxjs/operators';
 import { DataService } from '../../../services/data.service';
 import { isPlatformBrowser } from '@angular/common';
 
@@ -65,10 +64,12 @@ export class HpComponent implements OnInit {
     )
 
     if (isPlatformBrowser(this.platformId)) {
-      const source = fromEvent(window, 'scroll')
-      .subscribe( () => {
-        console.log("scrolling...");
+      fromEvent(window, 'scroll').subscribe( () => {
         this.scrollTop = window.pageYOffset;
+        //var promise1 = document.querySelectorAll('video')[1].play();
+        // var promise2 = document.querySelectorAll('video')[2].play();
+        // var promise3 = document.querySelectorAll('video')[3].play();
+        // var promise4 = document.querySelectorAll('video')[4].play();
       });
 
       setTimeout(() => {
