@@ -17,11 +17,6 @@ export class TransitionSlideDirective {
 
   constructor(el: ElementRef) {
     this.el = el;
-
-    setTimeout(() => {
-      //this.el.nativeElement.style.zIndex = (this.itemsNumber - this.index) * 10;
-      //console.log(this.el.nativeElement.style);
-    }, 0)
   }
 
   @Input()
@@ -31,7 +26,6 @@ export class TransitionSlideDirective {
     this.el.nativeElement.style.opacity = getCssValue(this._scrollTop, this.lastScrollTop, 'decrease', this.infoObj.scrollBegin, this.infoObj.scrollEnd) / 100;
     this.el.nativeElement.style.transform = 'scale(' + (1 + getCssValue(this._scrollTop, this.lastScrollTop, 'increase', this.infoObj.scrollBegin, this.infoObj.scrollEnd) / 100) + ')';
     this.el.nativeElement.style.visibility = getVisibility(this._scrollTop, this.lastScrollTop, this.infoObj.scrollEnd);
-    //console.log(this.el.nativeElement.style);
     this.lastScrollTop = this._scrollTop <= 0 ? 0 : this._scrollTop;
   }
 
@@ -42,11 +36,10 @@ export class TransitionSlideDirective {
 function getCssValue(st: number, lastScrollTop: number, cssValueDir: string, scrollBegin: number, scrollEnd: number): number {
   let percentage;
 
-  //console.log(st,lastScrollTop,"scrollBegin: " + scrollBegin)
   if (st > lastScrollTop) {
-    if (st < scrollBegin + 200) return;
+    if (st < scrollBegin) return;
   } else {
-    if (st > scrollEnd - 200) return;
+    if (st > scrollEnd) return;
   }
 
   if (st < scrollBegin) return;
@@ -54,6 +47,7 @@ function getCssValue(st: number, lastScrollTop: number, cssValueDir: string, scr
   if (cssValueDir == "decrease") {
     percentage = 100 - ((st - scrollBegin) / ((scrollEnd - scrollBegin) / 100));
     if (percentage <= 0) return;
+    if (percentage >= 90) return 100;
   } else {
     percentage = ((st - scrollBegin) / ((scrollEnd - scrollBegin) / 100));
     if (percentage >= 100) return;

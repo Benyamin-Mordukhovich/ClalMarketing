@@ -42,14 +42,20 @@ export class HpComponent implements OnInit {
         
         if (isPlatformBrowser(this.platformId) && window.screen.width > 1200) {
 
-          this.stripHeight = this.windowHeight * this.sectionItems.length;
+          let animationDisableAreaHeight = 400;
+          let animationTransitionAdditionalArea = 5000;
+          
+          this.stripHeight = (this.windowHeight * this.sectionItems.length) + animationTransitionAdditionalArea;
           this.hpHeight = this.stripHeight + this.windowHeight;
-          let interval = this.stripHeight / this.sectionItems.length;
+
+          let interval = this.stripHeight / (this.sectionItems.length + 1);
           let distance = 0;
 
-          this.sectionItems.forEach(e => {
-            e.scrollBegin = distance;
-            e.scrollEnd = distance + interval;
+          this.sectionItems.forEach((e, index) => {
+            e.scrollBegin = distance + animationDisableAreaHeight;
+            
+            e.scrollEnd = distance + interval - animationDisableAreaHeight;
+            console.log(`begin: ${e.scrollBegin} | end: ${e.scrollEnd}`)
             e.bgUrl = "url(" + e.bgImage + ")";
             distance += interval;
           });
