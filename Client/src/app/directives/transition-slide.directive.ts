@@ -47,7 +47,7 @@ function getCssValue(st: number, lastScrollTop: number, cssValueDir: string, scr
   if (cssValueDir == "decrease") {
     percentage = 100 - ((st - scrollBegin) / ((scrollEnd - scrollBegin) / 100));
     if (percentage <= 0) return;
-    if (percentage >= 90) return 100;
+    if (percentage >= 80) return 100;
   } else {
     percentage = ((st - scrollBegin) / ((scrollEnd - scrollBegin) / 100));
     if (percentage >= 100) return;

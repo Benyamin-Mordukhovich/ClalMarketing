@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef, Inject, PLATFORM_ID } from '@angular/core';
 import { Subscription, fromEvent, Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, debounceTime } from 'rxjs/operators';
 import { DataService } from '../../../services/data.service';
 import { isPlatformBrowser } from '@angular/common';
 
@@ -55,18 +55,19 @@ export class HpComponent implements OnInit {
             e.scrollBegin = distance + animationDisableAreaHeight;
             
             e.scrollEnd = distance + interval - animationDisableAreaHeight;
-            console.log(`begin: ${e.scrollBegin} | end: ${e.scrollEnd}`)
             e.bgUrl = "url(" + e.bgImage + ")";
             distance += interval;
+
+            console.log(`begin: ${e.scrollBegin} | end: ${e.scrollEnd}`);
           });
         }
       }
     )
 
     if (isPlatformBrowser(this.platformId)) {
-      //create observable that emits click events
-      const source = fromEvent(window, 'scroll').pipe(map(e => e));
-      source.subscribe(val => {
+      const source = fromEvent(window, 'scroll')
+      .subscribe( () => {
+        console.log("scrolling...");
         this.scrollTop = window.pageYOffset;
       });
 
