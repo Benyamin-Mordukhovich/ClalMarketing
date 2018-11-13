@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, of, Subject } from 'rxjs';
+import { Observable, of, Subject, interval } from 'rxjs';
 import { tap, catchError } from 'rxjs/operators';
 import { environment } from "../../environments/environment";
 import { ContentUrls } from '../../types';
@@ -22,6 +22,7 @@ export class DataService {
     private cacheAboutDialog: any = {}
     private cacheContactForm: any = {}
     private cacheOfferDialog: any = {}
+    private _layoutData = new Subject<any>();
     public dataSubject = new Subject<any>()
     constructor(private http: HttpClient, private state: TransferState) {
 
@@ -30,6 +31,10 @@ export class DataService {
     sendData(value) { 
         this.dataSubject.next(value)     
     }  
+
+    get layoutData() {
+        return this._layoutData.asObservable();
+    }
     
     getHomePage(): Observable<Ihp> {
         let data = this.state.get(homeStateKey, undefined);
@@ -44,6 +49,7 @@ export class DataService {
                 }),
                 tap(res => {
                     this.cacheHpPage[this.urls.hp] = res;
+                    this._layoutData.next(res)
                     this.state.set(homeStateKey, res)
                 })
             )
@@ -67,6 +73,7 @@ export class DataService {
                 }),
                 tap(res => {
                     this.cacheFaqPage[this.urls.faq] = res;
+                    this._layoutData.next(res)
                 }),
 
             );
@@ -88,6 +95,7 @@ export class DataService {
                 }),
                 tap(res => {
                     this.cacheAboutDialog[this.urls.about] = res;
+                    this._layoutData.next(res)
                 }),
 
             );
@@ -109,6 +117,7 @@ export class DataService {
                 }),
                 tap(res => {
                     this.cacheContactForm[this.urls.contact] = res;
+                    this._layoutData.next(res)
                 })
             )
         }
@@ -129,6 +138,7 @@ export class DataService {
                 }),
                 tap(res => {
                     this.cacheOfferDialog[this.urls.offer] = res;
+                    this._layoutData.next(res)
                 })
             )
         }
@@ -143,4 +153,3 @@ export class DataService {
 
 
 }
-

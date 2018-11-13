@@ -2,7 +2,7 @@
     <a role="button" class="hamburger" (click)="clickHamburger()">
         <div><span></span></div>
     </a>
-    <a class="logo" routerLink="/">
+    <a class="logo" routerLink="/" *ngIf="headerData.logoUrl">
         <img [src]="headerData.logoUrl" alt="לוגו">
     </a>
 

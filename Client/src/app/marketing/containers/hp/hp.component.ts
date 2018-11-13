@@ -18,8 +18,6 @@ export class HpComponent implements OnInit {
   //@ViewChild('slideSection') slideSectionRef: ElementRef;
   showFooter: boolean = false;
   sectionItems: any = [];
-  footerItem = {};
-  header = {};
   constructor(private _dataService: DataService, @Inject(PLATFORM_ID) private platformId) {
 
   }
@@ -32,13 +30,10 @@ export class HpComponent implements OnInit {
     this._dataService.getHomePage().subscribe(
       res => {
         this.sectionItems = res.sectionsData;
-        this.footerItem = res.footer;
-        this.header = res.header;
 
         this.sectionItems.forEach(e => {
           e.bgUrl = "url(" + e.bgImageMobile + ")";
         });
-        this._dataService.sendData(this.header); 
         
         if (isPlatformBrowser(this.platformId) && window.screen.width > 1200) {
 
@@ -67,18 +62,9 @@ export class HpComponent implements OnInit {
     if (isPlatformBrowser(this.platformId)) {
       const source = fromEvent(window, 'scroll')
       .subscribe( () => {
-        console.log("scrolling...");
         this.scrollTop = window.pageYOffset;
       });
 
-      setTimeout(() => {
-        this.showFooter = true;
-      }, 1000)
-
-    } else {
-      this.showFooter = true;
-    }
-
+    } 
   }
-
 }

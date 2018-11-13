@@ -30,13 +30,11 @@ export class HeaderComponent implements OnInit {
       return;
     }
     this.accessibilityControl();
-    this._dataService.dataSubject.subscribe(
-      data => {
-        this.headerData = data;
-        this.polisaBtn = data.polisaBtn
 
-      }
-    );
+    this._dataService.layoutData.subscribe(data => {
+        this.headerData = data.header;
+        this.polisaBtn = data.header.polisaBtn
+    })
   }
 
   toggleFocus() {

@@ -2,5 +2,5 @@
     <app-sectionInfo class="sectionInfoWrapper" appTransitionSlide [infoObj]="item" [scrollTop]="scrollTop" [index]="i" [class.caruselSection]="item.caruselData.length > 0" [itemsNumber]="sectionItems.length" [style.backgroundImage]="item.bgUrl" [style.zIndex]="sectionItems.length - i"
         *ngFor="let item of sectionItems; let i=index">
     </app-sectionInfo>
-    <app-footer [item]="footerItem" *ngIf="showFooter"></app-footer>
+    <app-footer></app-footer>
 </div>

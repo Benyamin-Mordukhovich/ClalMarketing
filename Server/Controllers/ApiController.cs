@@ -25,7 +25,24 @@ namespace Server.Controllers
                 return NotFound();
 
             var res = content.ToDicionary();
+
+            if (content.DocumentTypeAlias != "home")
+            {
+                AddHeaderFooter(res);
+            }
+
             return Ok(res);
+        }
+
+
+        private void AddHeaderFooter(Dictionary<string, object> res)
+        {
+            var homeContent = Umbraco.TypedContentAtRoot().FirstOrDefault();
+            if (homeContent == null) return;
+
+            var homeRes = homeContent.ToDicionary();
+            res.Add("header", homeRes["header"]);
+            res.Add("footer", homeRes["footer"]);
         }
     }
 }
