@@ -215,4 +215,7 @@
     font-size: 2.2em;
   }
   /*E:slick*/
+  .playBtn {
+    top: 43%;
+  }
 }
