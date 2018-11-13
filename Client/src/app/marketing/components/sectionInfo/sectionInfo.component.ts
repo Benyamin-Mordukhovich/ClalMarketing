@@ -16,7 +16,7 @@ export class SectionInfoComponent implements OnInit {
   @ViewChild("videoRef") videoElementRef: ElementRef;
 
   isVideoPlaying: boolean = false;
-  constructor() {}
+  constructor() { }
 
   playVideo() {
     if (this.infoObj.videoUrl.length) {
@@ -36,19 +36,24 @@ export class SectionInfoComponent implements OnInit {
 
   ngOnInit() {
     if (!this.isMobile) {
-      setTimeout(() => {
-        let videoBgs = [
-          document.querySelectorAll("video")[1],
-          document.querySelectorAll("video")[2],
-          document.querySelectorAll("video")[3],
-          document.querySelectorAll("video")[4]
-        ];
+      if (typeof document !== "undefined") {
+        setTimeout(() => {
+          let videoBgs = [
+            document.querySelectorAll("video")[1],
+            document.querySelectorAll("video")[2],
+            document.querySelectorAll("video")[3],
+            document.querySelectorAll("video")[4]
+          ];
 
-        videoBgs.forEach(video => {
-          video.muted = true;
-          video.play();
-        });
-      }, 0);
+
+          videoBgs.forEach(video => {
+            if(video) {
+              video.muted = true;
+              video.play();
+            }
+          });
+        }, 0);
+      }
     }
   }
 }

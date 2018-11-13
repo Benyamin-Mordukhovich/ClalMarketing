@@ -78,5 +78,30 @@
     "imgUrl": "assets/img/contactImg.png",
     "mainTitleSendSuccess": "הפניה נשלחה בהצלחה",
     "titleSendSuccess": "נציג יחזור אליכם בהקדם, <br> תודה!",
-    "mainTitleSendFailed": "השליחה נכשלה"
+    "mainTitleSendFailed": "השליחה נכשלה",
+    "header": {
+        "logoUrl": "assets/img/logo.png",
+        "headerLinks": {
+            "faqLinkText": "שאלות ותשובות",
+            "contactLinkText": "צור קשר",
+            "aboutLinkText": "אודות כלל ביטוח אשראי"
+        },
+        "polisaBtn": {
+            "text": "לאתר ניהול הפוליסה",
+            "linkUrl": "https://www.clalbit.co.il/",
+            "targetBlank": false,
+            "isInternal": false
+        }
+    },
+    "footer": {
+        "mainTitle": "תהליך הרשמה אינטרנטי ופשוט",
+        "text": "נשמע טוב? תהליך ההרשמה דיגטלי, אורך מספר דקות ובסופו תקבלו הצעת מחיר מותאמת לפוליסת ביטוח אשראי",
+        "joinBtn": {
+            "text": "להצטרפות",
+            "linkUrl": "https://www.ynet.co.il/",
+            "targetBlank": true,
+            "isInternal": false
+        },
+        "linkText": "להצעת מחיר לדוגמא"
+    }
 }

@@ -76,7 +76,7 @@ namespace Server.Helpers
             {
                 var dic = new Dictionary<string, object>();
                 var val = (Umbraco.Web.PublishedContentModels.File)value;
-                return val.Url;
+                return HttpContext.Current.Request.Url.GetLeftPart(UriPartial.Authority) + val.Url;
             }
             else if (value is Image)
             {

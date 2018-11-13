@@ -52,5 +52,19 @@
             "currency": "&#8362;",
             "text":"100 ש”ח עבור כל לקוח החל מהלקוח ה- 10"
         }
-    ]
+    ],
+    "header": {
+        "logoUrl": "assets/img/logo.png",
+        "headerLinks": {
+            "faqLinkText": "שאלות ותשובות",
+            "contactLinkText": "צור קשר",
+            "aboutLinkText": "אודות כלל ביטוח אשראי"
+        },
+        "polisaBtn": {
+            "text": "לאתר ניהול הפוליסה",
+            "linkUrl": "https://www.clalbit.co.il/",
+            "targetBlank": false,
+            "isInternal": false
+        }
+    }
 }

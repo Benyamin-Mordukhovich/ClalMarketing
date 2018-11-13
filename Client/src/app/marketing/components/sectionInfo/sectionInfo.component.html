@@ -26,7 +26,6 @@
         <div class="note">{{infoObj.note}}</div>
     </div>
 </div>
-
 <div *ngIf="infoObj.videoUrl.length > 0 && infoObj.videoType == 'player' " class="videoWrapper">
     <video width="100%" #videoRef (click)="stopVideo()">
         <source src="{{infoObj.videoUrl}}" type="video/mp4">
