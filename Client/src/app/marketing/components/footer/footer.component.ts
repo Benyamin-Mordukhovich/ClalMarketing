@@ -1,7 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { MatDialog } from '@angular/material';
-import { OfferDialogComponent } from '../offerDialog/offerDialog.component';
-import { ModalService } from 'src/app/services/modal.service';
+import { ModalService } from '../../../services/modal.service';
 @Component({
     selector: 'app-footer',
     templateUrl: './footer.component.html'

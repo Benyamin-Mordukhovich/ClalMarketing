@@ -3,7 +3,8 @@ import { MatDialog } from '@angular/material';
 import { DOCUMENT } from '@angular/platform-browser';
 import { isPlatformServer } from '@angular/common';
 import { ModalService } from '../../../services/modal.service';
-import { DataService } from 'src/app/services/data.service';
+import { DataService } from '../../../services/data.service';
+
 
 
 @Component({
@@ -17,8 +18,8 @@ export class HeaderComponent implements OnInit {
   focusTheme: string = '';
   isHamburgerOpen: boolean = false;
 
-  private headerData = {};
-  private polisaBtn = {};
+  headerData = {};
+  polisaBtn = {};
 
   constructor(public dialog: MatDialog,
     @Inject(DOCUMENT) private document: Document,
