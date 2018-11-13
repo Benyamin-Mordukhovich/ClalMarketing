@@ -14,7 +14,7 @@
                 <img src="assets/img/arrowIcon.png" alt="">
             </span>
         </a>
-        <div>
+        <div *ngIf="infoObj.offerBtn">
             <a [href]="infoObj.offerBtn.linkUrl" target="{{infoObj.offerBtn.targetBlank ? '_blank' : '_self'}}" class="btn btnGlobal">{{infoObj.offerBtn.text}}</a>
         </div>
         <a class="btnLink" href="{{infoObj.link}}" *ngIf="infoObj.linkText.length > 0">

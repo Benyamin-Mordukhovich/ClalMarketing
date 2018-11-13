@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { ModalService } from '../../../services/modal.service';
-import { DataService } from 'src/app/services/data.service';
+import { DataService } from '../../../services/data.service';
 
 const isServer = typeof window === "undefined";
 @Component({

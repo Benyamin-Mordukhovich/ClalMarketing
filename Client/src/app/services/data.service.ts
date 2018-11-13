@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, of, Subject, interval } from 'rxjs';
+import { Observable, of, Subject, ReplaySubject } from 'rxjs';
 import { tap, catchError } from 'rxjs/operators';
 import { environment } from "../../environments/environment";
 import { ContentUrls } from '../../types';
@@ -12,6 +12,7 @@ const faqStateKey = makeStateKey("faq");
 const contactStateKey = makeStateKey("contact");
 const aboutStateKey = makeStateKey("about");
 const offerStateKey = makeStateKey("offer");
+const layoutData = makeStateKey("layoutData");
 
 @Injectable()
 export class DataService {
@@ -22,10 +23,13 @@ export class DataService {
     private cacheAboutDialog: any = {}
     private cacheContactForm: any = {}
     private cacheOfferDialog: any = {}
-    private _layoutData = new Subject<any>();
+    private _layoutData = new ReplaySubject<any>();
     public dataSubject = new Subject<any>()
     constructor(private http: HttpClient, private state: TransferState) {
-
+        let data = state.get(layoutData,undefined);
+        if(data) {
+            this._layoutData.next(data)
+        }
     }
 
     sendData(value) { 
@@ -49,8 +53,8 @@ export class DataService {
                 }),
                 tap(res => {
                     this.cacheHpPage[this.urls.hp] = res;
-                    this._layoutData.next(res)
-                    this.state.set(homeStateKey, res)
+                    this.state.set(homeStateKey, res);
+                    this.setLayoutData(res)
                 })
             )
         }
@@ -73,7 +77,7 @@ export class DataService {
                 }),
                 tap(res => {
                     this.cacheFaqPage[this.urls.faq] = res;
-                    this._layoutData.next(res)
+                    this.setLayoutData(res)
                 }),
 
             );
@@ -95,7 +99,7 @@ export class DataService {
                 }),
                 tap(res => {
                     this.cacheAboutDialog[this.urls.about] = res;
-                    this._layoutData.next(res)
+                    this.setLayoutData(res)
                 }),
 
             );
@@ -117,7 +121,7 @@ export class DataService {
                 }),
                 tap(res => {
                     this.cacheContactForm[this.urls.contact] = res;
-                    this._layoutData.next(res)
+                    this.setLayoutData(res)
                 })
             )
         }
@@ -138,7 +142,7 @@ export class DataService {
                 }),
                 tap(res => {
                     this.cacheOfferDialog[this.urls.offer] = res;
-                    this._layoutData.next(res)
+                    this.setLayoutData(res)
                 })
             )
         }
@@ -149,6 +153,11 @@ export class DataService {
         // console.log("sendContactForm",formValue);
         const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) }
         return this.http.post<Result>(this.urls.contactSubmitUrl, formValue, httpOptions)
+    }
+
+    setLayoutData({header, footer}) {
+        this.state.set(layoutData,{header, footer})
+        this._layoutData.next({header, footer})
     }
 
 

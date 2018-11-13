@@ -1,11 +1,11 @@
-interface IaboutDialog{
+interface IaboutDialog extends Ipage{
     mainTitle:string;
     rte:string;
     link:Ilink;
     imgUrl:string;
 }
 
-interface IfaqPage {
+interface IfaqPage extends Ipage{
     mainTitle?: string;
     items?: IfaqModel[];
     imgUrl?:string;
@@ -26,7 +26,7 @@ interface IdropDownItem{
     value?: string | number | boolean
 }
 
-interface IcontactPage{
+interface IcontactPage extends Ipage {
     mainTitle?: string;
     title?: string,
     fieldList:Ifield[],
@@ -52,14 +52,18 @@ interface IcontactForm{
     details: string,
 }
 
-interface Ihp{
-    header:Iheader,
-    sectionsData:IsectionModel[],
+interface Ipage  {
     footer:{
         mainTitle?:string,
         text?:string,
         joinBtn:Ilink,
     },
+    header:Iheader
+}
+
+interface Ihp extends Ipage{
+
+    sectionsData:IsectionModel[],
     linkText:string
 }
 
@@ -105,7 +109,7 @@ interface Iheader{
     polisaBtn:Ilink,
 }
 
-interface IofferPage{
+interface IofferPage extends Ipage{
     mainTitle:string,
     text?:string,
     businessDetailsTitle:string,
