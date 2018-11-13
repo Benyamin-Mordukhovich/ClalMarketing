@@ -27,6 +27,21 @@ export class SectionInfoComponent {
         }
     }
 
+    ngOnInit() {
+        setTimeout(()=> {
+            let videoBgs = [
+                document.querySelectorAll('video')[1],
+                document.querySelectorAll('video')[2],
+                document.querySelectorAll('video')[3],
+                document.querySelectorAll('video')[4]
+            ]
+
+            videoBgs.forEach( video => {
+                video.muted = true;
+                video.play();
+            })
+        }, 0)
+    }
 
 
 }
