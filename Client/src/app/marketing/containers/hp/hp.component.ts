@@ -8,6 +8,7 @@ import { isPlatformBrowser } from '@angular/common';
   templateUrl: './hp.component.html'
 })
 export class HpComponent implements OnInit {
+  isMobile: boolean;
   scrollTop: number;
   stripHeight: number = 0;
   opacityValue: number = 1;
@@ -26,6 +27,7 @@ export class HpComponent implements OnInit {
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
       this.windowHeight = (window.innerHeight);
+      this.isMobile = (window.screen.width > 1200) ? false : true;
     }
 
     this._dataService.getHomePage().subscribe(
@@ -39,7 +41,7 @@ export class HpComponent implements OnInit {
         });
         this._dataService.sendData(this.header); 
         
-        if (isPlatformBrowser(this.platformId) && window.screen.width > 1200) {
+        if (!this.isMobile) {
 
           let animationDisableAreaHeight = 400;
           let animationTransitionAdditionalArea = 5000;
@@ -52,9 +54,7 @@ export class HpComponent implements OnInit {
 
           this.sectionItems.forEach((e, index) => {
             e.scrollBegin = distance + animationDisableAreaHeight;
-            
             e.scrollEnd = distance + interval - animationDisableAreaHeight;
-            e.bgUrl = "url(" + e.bgImage + ")";
             distance += interval;
 
             console.log(`begin: ${e.scrollBegin} | end: ${e.scrollEnd}`);
