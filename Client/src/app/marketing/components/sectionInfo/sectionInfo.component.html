@@ -28,7 +28,7 @@
     <button type="button" class="playBtn" (click)="playVideo()" [class.active]="isVideoPlaying"></button>
 </div>
 
-<div *ngIf="infoObj.videoUrl.length > 0 && infoObj.videoType == 'background' " class="videoBgWrapper">
+<div *ngIf="infoObj.videoUrl.length > 0 && infoObj.videoType == 'background' " class="videoWrapper">
     <video width="100%" autoplay loop muted playsinline>
         <source [src]="infoObj.videoUrl" type="video/mp4">
     </video>
