@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef, Inject, PLATFORM_ID } from '@angular/core';
 import { Subscription, fromEvent, Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, debounceTime } from 'rxjs/operators';
 import { DataService } from '../../../services/data.service';
 import { isPlatformBrowser } from '@angular/common';
 
@@ -42,25 +42,32 @@ export class HpComponent implements OnInit {
         
         if (isPlatformBrowser(this.platformId) && window.screen.width > 1200) {
 
-          this.stripHeight = this.windowHeight * this.sectionItems.length;
+          let animationDisableAreaHeight = 400;
+          let animationTransitionAdditionalArea = 5000;
+          
+          this.stripHeight = (this.windowHeight * this.sectionItems.length) + animationTransitionAdditionalArea;
           this.hpHeight = this.stripHeight + this.windowHeight;
-          let interval = this.stripHeight / this.sectionItems.length;
+
+          let interval = this.stripHeight / (this.sectionItems.length + 1);
           let distance = 0;
 
-          this.sectionItems.forEach(e => {
-            e.scrollBegin = distance;
-            e.scrollEnd = distance + interval;
+          this.sectionItems.forEach((e, index) => {
+            e.scrollBegin = distance + animationDisableAreaHeight;
+            
+            e.scrollEnd = distance + interval - animationDisableAreaHeight;
             e.bgUrl = "url(" + e.bgImage + ")";
             distance += interval;
+
+            console.log(`begin: ${e.scrollBegin} | end: ${e.scrollEnd}`);
           });
         }
       }
     )
 
     if (isPlatformBrowser(this.platformId)) {
-      //create observable that emits click events
-      const source = fromEvent(window, 'scroll').pipe(map(e => e));
-      source.subscribe(val => {
+      const source = fromEvent(window, 'scroll')
+      .subscribe( () => {
+        console.log("scrolling...");
         this.scrollTop = window.pageYOffset;
       });
 

@@ -17,8 +17,8 @@ export class HeaderComponent implements OnInit {
   focusTheme: string = '';
   isHamburgerOpen: boolean = false;
 
-   headerData = {};
-   polisaBtn = {};
+  headerData = {};
+  polisaBtn = {};
 
   constructor(public dialog: MatDialog,
     @Inject(DOCUMENT) private document: Document,
