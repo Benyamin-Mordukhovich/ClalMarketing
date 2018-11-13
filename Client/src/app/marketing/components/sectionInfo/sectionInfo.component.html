@@ -21,11 +21,17 @@
     </div>
 </div>
 
-<div *ngIf="infoObj.videoUrl.length > 0" class="videoWrapper">
+<div *ngIf="infoObj.videoUrl.length > 0 && infoObj.videoType == 'player' " class="videoWrapper">
     <video width="100%" #videoRef (click)="stopVideo()">
         <source src="{{infoObj.videoUrl}}" type="video/mp4">
     </video>
     <button type="button" class="playBtn" (click)="playVideo()" [class.active]="isVideoPlaying"></button>
+</div>
+
+<div *ngIf="infoObj.videoUrl.length > 0 && infoObj.videoType == 'background' && !isMobile" class="videoWrapper">
+    <video width="100%" autoplay loop muted playsinline>
+        <source [src]="infoObj.videoUrl" type="video/mp4">
+    </video>
 </div>
 
 <div *ngIf="infoObj.caruselData.length > 0">
