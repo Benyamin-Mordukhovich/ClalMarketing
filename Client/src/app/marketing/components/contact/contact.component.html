@@ -1,0 +1,43 @@
+<div class="container-fluid">
+    <h1 class="mainTitle">{{ mainTitle }}</h1>
+    <h2 class="titleContact" [innerHTML]="title"></h2>
+    <div class="imgContact">
+        <img src="{{ imgUrl }}" alt="">
+    </div>
+    <perfect-scrollbar class="perfectScrollbar aboutDialogScroll" [class.sendSuccess]="sendSuccess">
+        <form [formGroup]="contactForm">
+            <div class="rowFields">
+                <div class="formGroup" *ngFor="let field of fieldList;let i = index" [class.details]="fieldList[i].fieldName == 'details'">
+                    <mat-form-field class="formField" *ngIf="(fieldList[i].fieldName != 'transactionsOption') && (fieldList[i].fieldName != 'details')">
+                        <input matInput [type]="fieldList[i].type" [placeholder]="fieldList[i].placeholder" formControlName="{{fieldList[i].fieldName}}" autocomplete="off">
+                        <span class="errorMsg" *ngIf="fieldList[i].fieldName != 'email' && !contactForm.controls[fieldList[i].fieldName].valid && contactForm.controls[fieldList[i].fieldName].touched">
+                                    {{ fieldList[i].errorMsg }}</span>
+                        <span class="errorMsg" *ngIf="fieldList[i].fieldName == 'email' && contactForm.controls['email'].touched">
+                                    <span *ngIf="contactForm.controls['email'].value === ''">{{ fieldList[i].errorMsg }}</span>
+                        <span *ngIf="!contactForm.controls['email'].valid && contactForm.controls['email'].value != ''">נא להזין אימייל חוקי</span>
+                        </span>
+                    </mat-form-field>
+                    <mat-form-field class="formField" *ngIf="fieldList[i].fieldName == 'transactionsOption'">
+                        <mat-select [placeholder]="fieldList[i].placeholder" formControlName="{{ fieldList[i].fieldName }}">
+                            <mat-option *ngFor="let option of transactionsOptionsList" [value]="option.value">
+                                {{ option.title }}
+                            </mat-option>
+                        </mat-select>
+                        <span class="errorMsg" *ngIf="!contactForm.controls[fieldList[i].fieldName].valid && contactForm.controls[fieldList[i].fieldName].touched">
+                                    {{ fieldList[i].errorMsg }}
+                                </span>
+                    </mat-form-field>
+                    <mat-form-field class="formField" *ngIf="fieldList[i].fieldName == 'details'">
+                        <input matInput type="text" [placeholder]="fieldList[i].placeholder" formControlName="{{fieldList[i].fieldName}}" autocomplete="off">
+                        <span class="errorMsg" *ngIf="!contactForm.controls['details'].valid && contactForm.controls['details'].touched">
+                                    {{ fieldList[i].errorMsg }}
+                                </span>
+                    </mat-form-field>
+                </div>
+            </div>
+        </form>
+    </perfect-scrollbar>
+    <div class="btnSend">
+        <button type="button" class="btn btnGlobal" [disabled]="!contactForm.valid" (click)="submit()">{{ btnText }}</button>
+    </div>
+</div>

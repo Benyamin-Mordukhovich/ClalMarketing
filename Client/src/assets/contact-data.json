@@ -1,0 +1,82 @@
+{
+    "mainTitle": "צור קשר",
+    "title": "השיארו לנו פרטים ונחזור עליכם בהקדם על מנת לענות על כל שאלה או בעיה\n תוכלו גם לעניין בדף שאלות ותשבות למציאת מענה",
+    "fieldList": [{
+            "fieldName": "companyName",
+            "type": "text",
+            "placeholder": "שם עסק / חברה",
+            "errorMsg": "שדה חברה חובה"
+        },
+        {
+            "fieldName": "privateCompany",
+            "type": "text",
+            "placeholder": "ח.פ",
+            "errorMsg": "שדה ח.פ חובה"
+        },
+        {
+            "fieldName": "transactionsOption",
+            "type": "text",
+            "placeholder": "מחזור עסקאות שנתי",
+            "errorMsg": "שדה מחזור עסקאות שנתי חובה"
+        },
+        {
+            "fieldName": "customerName",
+            "type": "text",
+            "placeholder": "שם הפונה",
+            "errorMsg": "שדה הפונה חובה"
+        },
+        {
+            "fieldName": "role",
+            "type": "text",
+            "placeholder": "תפקיד",
+            "errorMsg": "שדה תפקיד חובה"
+        },
+        {
+            "fieldName": "phone",
+            "type": "tel",
+            "placeholder": "טלפון",
+            "errorMsg": "שדה טלפון חובה"
+        },
+        {
+            "fieldName": "email",
+            "type": "email",
+            "placeholder": "כתובת דואר אלקטרוני",
+            "errorMsg": "שדה דואר חובה"
+        },
+        {
+            "fieldName": "details",
+            "type": "text",
+            "placeholder": "פירוט הפנייה",
+            "errorMsg": "שדה הפנייה חובה"
+        }
+    ],
+    "transactionsList": [{
+            "title": "1,000,000",
+            "value": "1,000,000"
+        },
+        {
+            "title": "2,000,000",
+            "value": "2,000,000"
+        },
+        {
+            "title": "3,000,000",
+            "value": "3,000,000"
+        },
+        {
+            "title": "1,000,000",
+            "value": "1,000,000"
+        },
+        {
+            "title": "2,000,000",
+            "value": "2,000,000"
+        },
+        {
+            "title": "3,000,000",
+            "value": "3,000,000"
+        }
+    ],
+    "imgUrl": "assets/img/contactImg.png",
+    "mainTitleSendSuccess": "הפניה נשלחה בהצלחה",
+    "titleSendSuccess": "נציג יחזור אליכם בהקדם, <br> תודה!",
+    "mainTitleSendFailed": "השליחה נכשלה"
+}

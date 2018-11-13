@@ -1,0 +1,25 @@
+{
+  "propertyEditors": [
+    {
+
+      "alias": "My.NestedContentSingle",
+      "name": "Single Nested Content",
+      "editor": {
+        "view": "~/App_Plugins/NestedContentSingle/editor.html",
+        "valueType": "JSON",
+        "hideLabel": true
+      },
+      "prevalues": {
+        "fields": [
+          {
+            "label": "Document Type",
+            "description": "Document Type",
+            "key": "contentType",
+            "view": "~/App_Plugins/NestedContentSingle/prevalues.html"
+          }
+        ]
+      }
+    }
+  ],
+  "javascript": ["~/App_Plugins/NestedContentSingle/controller.js"]
+}

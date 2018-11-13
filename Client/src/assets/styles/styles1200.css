@@ -1,0 +1,221 @@
+@media (min-width: 1200px) {
+  /*S:perfect-scrollbar*/
+  perfect-scrollbar.perfectScrollbar > .ps.ps--active-y > .ps__rail-y,
+  perfect-scrollbar.perfectScrollbar > .ps.ps--scrolling-y > .ps__rail-y {
+    right: 0 !important;
+  }
+  .mainTitle {
+    font-size: 4.6em;
+  }
+  /*E:perfect-scrollbar*/
+  /*S:header*/
+  .header {
+    padding: 0 50px;
+  }
+  .header .logo img {
+    width: auto;
+  }
+  .mainMenu .item {
+    margin: 0 24px;
+  }
+  .mainMenu .link {
+    font-size: 1.8em;
+  }
+  .accessibilityList .btnAccessibility {
+    margin: 0 24px;
+  }
+  .btnAccessibility.keyboard {
+    display: block;
+    width: 40px;
+    margin-top: 5px;
+  }
+  .btnAccessibility.keyboard img {
+    width: 40px;
+  }
+  /*E:header*/
+  .picFaq img {
+    width: auto;
+  }
+  /*S:dialog*/
+  .dialogContainer.about {
+    width: 1030px;
+    padding: 60px 140px;
+  }
+  .dialogContainer.contact {
+    width: 1000px;
+    padding: 10vh 16vh;
+  }
+  .dialogContainer.offer {
+    max-width: 1500px;
+    padding: 6.8vh 6.8vw 5vh 5.2vw;
+  }
+  /*E:dialog*/
+  /*S:contact*/
+  .imgContact {
+    top: 56px;
+    left: 74px;
+  }
+  .imgContact img {
+    width: auto;
+  }
+  .titleContact {
+    max-width: 450px;
+    margin: 10px 0 40px;
+  }
+  .rowFields {
+    margin-bottom: 2.8vh;
+  }
+  .btnSend {
+    margin-top: 40px;
+    margin-top: 4vh;
+  }
+  /*E:contact*/
+  /*S:offerDialog*/
+  .offerContainer {
+    padding-bottom: 34px;
+    padding-left: 16px;
+    display: flex;
+  }
+  .offerContainer .title {
+    padding-bottom: 9px;
+    font-size: 3.2vh;
+  }
+  .businessDetailsBox {
+    min-width: 280px;
+    padding-top: 30px;
+    margin-left: 70px;
+  }
+  .offerBox {
+    max-width: 920px;
+    padding: 30px 60px;
+  }
+  .offerBox .offerList {
+    margin-top: 0;
+  }
+  .offerBox .offerList .item {
+    margin: 6.4vh 0 2.1vh;
+  }
+  .offerList {
+    margin-top: 6.4vh;
+  }
+  .offerList .item {
+    margin-bottom: 30px;
+  }
+  .offerList .item .pic {
+    width: auto;
+    top: -6px;
+  }
+  .offerList .numberContainer .number {
+    font-size: 5.8vh;
+  }
+  .offerList .numberContainer .currency {
+    font-size: 2.6em;
+  }
+  /*E:offerDialog*/
+  /*S:home*/
+  .sectionInfoWrapper {
+    height: auto;
+    top: 112px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    background-size: 85%;
+  }
+  .sectionInfoWrapper.caruselSection .sectionInfo {
+    height: auto;
+  }
+  .sectionInfo {
+    position: absolute;
+    right: 15px;
+    left: 15px;
+    top: 10vh;
+    padding: 0;
+    transition: all 0.2s linear;
+  }
+  .sectionInfo .btnGlobal {
+    margin: 20px 0 33px;
+  }
+  .sectionInfo.playing {
+    opacity: 0;
+    visibility: hidden;
+  }
+  .videoWrapper {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+  }
+  /*E:home*/
+  /*S:footer*/
+  .footer {
+    height: auto;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    padding: 20vh 15px 0;
+    background-image: url(./../img/footer.png);
+  }
+  .footer .title {
+    font-size: 4.2em;
+  }
+  .footer .btnLinkContainer {
+    margin: 10px 0 40px;
+  }
+  /*S:footer*/
+  /*S:slick*/
+  .commentsCarusel {
+    height: auto;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  .commentsCarusel .slick-arrow {
+    top: 50%;
+    bottom: auto;
+    transform: translateY(-50%);
+  }
+  .commentsCarusel .slick-arrow.slick-prev {
+    right: 45px;
+  }
+  .commentsCarusel .slick-arrow.slick-next {
+    left: 45px;
+  }
+  .commentsCarusel .slick-dots {
+    bottom: 70px;
+  }
+  .itemCarusel {
+    min-height: 380px;
+    display: flex;
+    justify-content: center;
+    padding: 80px 15px 80px;
+  }
+  .itemCarusel .pic {
+    margin: 0 0 0 96px;
+  }
+  .itemCarusel .comment {
+    margin-bottom: 10px;
+    text-align: right;
+    font-size: 3.4em;
+  }
+  .itemCarusel .comment img {
+    width: auto;
+  }
+  .itemCarusel .startPic {
+    position: absolute;
+    top: 0;
+    right: -44px;
+  }
+  .itemCarusel .text {
+    text-align: right;
+    font-size: 2.2em;
+  }
+  /*E:slick*/
+  .playBtn {
+    top: 43%;
+  }
+}

@@ -1,0 +1,152 @@
+{
+    "header": {
+        "logoUrl": "assets/img/logo.png",
+        "headerLinks": {
+            "faqLinkText": "שאלות ותשובות",
+            "contactLinkText": "צור קשר",
+            "aboutLinkText": "אודות כלל ביטוח אשראי"
+        },
+        "polisaBtn": {
+            "text": "לאתר ניהול הפוליסה",
+            "linkUrl": "https://www.clalbit.co.il/",
+            "targetBlank": false,
+            "isInternal": false
+        }
+    },
+    "sectionsData": [{
+            "mainTitle": "לעבוד בראש שקט<br>עם ביטוח אשראי מבית כלל",
+            "text": "לראשונה בישראל, שירותי ביטוח אשראי של כלל ניתנים גם לעסקים בינוניים וקטנים,בעלי מחזור הכנסות שנתי שבין 10-50 מיליון שח ביטוח אשראי מאפשר לך לבצע יותר עסקאות בצורה בטוחה,ומקנה ייתרון במימון הבנקאי כל זאת עם גב של חברת כלל ביטוח",
+            "linkReadMore": {
+                "text": "לאתר ניהול הפוליסה",
+                "linkUrl": "https://www.google.co.il/",
+                "targetBlank": false,
+                "isInternal": false
+            },
+            "linkText": "יצאונים? זקוקים לביטוח פרויקטלי?",
+            "link": "www",
+            "note": "כלל ממשיכה לספק ביטוח מימון פרויקטלי, ביטוח הזמנות ומגוון ביטוחים נוספים המתאימים לעסקים המובילים בשוק",
+            "bgImage": "",
+            "bgImageMobile": "",
+            "videoUrl": "assets/movie.mp4",
+            "caruselData": [],
+            "offerBtn": {
+                "text": "להצעת מחיר",
+                "linkUrl": "https://www.clalbit.co.il/",
+                "targetBlank": true,
+                "isInternal": false
+            }
+        },
+        {
+            "mainTitle": "לעבוד בראש שקט2<br>עם ביטוח אשראי מבית כלל",
+            "text": "לראשונה בישראל, שירותי ביטוח אשראי של כלל ניתנים גם לעסקים בינוניים וקטנים,בעלי מחזור הכנסות שנתי שבין 10-50 מיליון שח ביטוח אשראי מאפשר לך לבצע יותר עסקאות בצורה בטוחה,ומקנה ייתרון במימון הבנקאי כל זאת עם גב של חברת כלל ביטוח",
+            "linkReadMore": {
+                "text": "לאתר ניהול הפוליסה",
+                "linkUrl": "https://www.google.co.il/",
+                "targetBlank": true
+            },
+            "linkText": "",
+            "link": "www",
+            "note": "",
+            "bgImage": "assets/img/clal_03.gif",
+            "bgImageMobile": "assets/img/pic1Mobile.png",
+            "videoUrl": "",
+            "caruselData": [],
+            "offerBtn": {
+                "text": "להצעת מחיר",
+                "linkUrl": "https://www.clalbit.co.il/",
+                "targetBlank": true,
+                "isInternal": false
+            }
+        },
+        {
+            "mainTitle": "המבוטחים שלנו ישנים <br>טוב יותר בלילה",
+            "text": "ביטוח אשראי מאפשר לך לעבוד בראש שקט ובביטחון גם אם יש לך<br> כמה עסקאות שאתה לא לגמרי בטוח אם תראה את הכסף מהם",
+            "linkReadMore": {
+                "text": "לאתר ניהול הפוליסה",
+                "linkUrl": "https://www.google.co.il/",
+                "targetBlank": false,
+                "isInternal": false
+            },
+            "linkText": "",
+            "link": "",
+            "note": "",
+            "bgImage": "assets/img/clal_01.gif",
+            "bgImageMobile": "assets/img/pic2Mobile.png",
+            "videoUrl": "",
+            "caruselData": [],
+            "offerBtn": {
+                "text": "להצעת מחיר",
+                "linkUrl": "https://www.clalbit.co.il/",
+                "targetBlank": true,
+                "isInternal": false
+            }
+        },
+        {
+            "mainTitle": "מנהל הסניף יקבל אותך עכשיו",
+            "text": "כשהכסף שלך בטוח, תוכל לעבוד עם אותם לקוחות שפעם היית מפחד לקחת לראשונה בישראל שירותי ביטוח אשראי של כלל ניתנים גם לעסקים בעלי מחזור הכנסות שנתי של בין 5 ל-10 מליון ש",
+            "linkReadMore": {
+                "text": "לאתר ניהול הפוליסה",
+                "linkUrl": "https://www.google.co.il/",
+                "targetBlank": true,
+                "isInternal": false
+            },
+            "linkText": "",
+            "link": "",
+            "note": "",
+            "bgImage": "assets/img/clal_04.gif",
+            "bgImageMobile": "assets/img/pic3Mobile.png",
+            "videoUrl": "",
+            "caruselData": [],
+            "offerBtn": {
+                "text": "להצעת מחיר",
+                "linkUrl": "https://www.clalbit.co.il/",
+                "targetBlank": true,
+                "isInternal": false
+            }
+        },
+        {
+            "mainTitle": "אנחנו שם כשאתה צריך",
+            "text": "הפעלת הביטוח מתבצעת בשלושה צעדים פשוטים כך שתוכל <br>לקבל את החזר הכספי כמה שיותר מהר",
+            "linkReadMore": {
+                "text": "לאתר ניהול הפוליסה",
+                "linkUrl": "https://www.google.co.il/",
+                "targetBlank": false,
+                "isInternal": false
+            },
+            "linkText": "",
+            "link": "",
+            "note": "",
+            "bgImage": "assets/img/clal_02.gif",
+            "bgImageMobile": "assets/img/pic4Mobile.png",
+            "videoUrl": "",
+            "caruselData": [{
+                    "comment": "ביטוח אשראי מבית כלל מאפשר לנו להגדיל את <br/> כמות העסקאות השנתית ולעבוד בראש שקט",
+                    "text": "שהם רותם, מנכל רהיטי הקריות, מבוטח כבר חצי שנה",
+                    "imgUrl": "assets/img/imgCarusel1.png"
+                },
+                {
+                    "comment": "ביטווח  מהם",
+                    "text": "גדנכלחגדנלגדהצגף  ךלג גדג",
+                    "imgUrl": "assets/img/imgCarusel2.png"
+                }
+            ],
+            "offerBtn": {
+                "text": "להצעת מחיר",
+                "linkUrl": "https://www.clalbit.co.il/",
+                "targetBlank": true,
+                "isInternal": false
+            }
+        }
+    ],
+    "footer": {
+        "mainTitle": "תהליך הרשמה אינטרנטי ופשוט",
+        "text": "נשמע טוב? תהליך ההרשמה דיגטלי, אורך מספר דקות ובסופו תקבלו הצעת מחיר מותאמת לפוליסת ביטוח אשראי",
+        "joinBtn": {
+            "text": "להצטרפות",
+            "linkUrl": "https://www.ynet.co.il/",
+            "targetBlank": true,
+            "isInternal": false
+        },
+        "linkText": "להצעת מחיר לדוגמא"
+    }
+}

@@ -1,0 +1,28 @@
+<header class="header" [class.open]="isHamburgerOpen" *ngIf="headerData">
+    <a role="button" class="hamburger" (click)="clickHamburger()">
+        <div><span></span></div>
+    </a>
+    <a class="logo" routerLink="/" *ngIf="headerData.logoUrl">
+        <img [src]="headerData.logoUrl" alt="לוגו">
+    </a>
+
+
+    <div class="menuAccessibilityContainer">
+        <ul class="accessibilityList">
+            <li class="item">
+                <button type="button" class="btnAccessibility keyboard" id="btnKeyboard" data-body="keyboardFocus" (click)="toggleFocus()">
+                    <img src="assets/img/keyboard.svg" alt="שימוש במקלדת">
+                </button>
+            </li>
+        </ul>
+        <ul class="mainMenu" *ngIf="headerData.headerLinks">
+            <li class="item" role="presentation"><a class="link" routerLink="/faq" [routerLinkActive]="'active'">{{headerData.headerLinks.faqLinkText}}</a></li>
+            <li class="item" role="presentation"><a class="link" routerLink="/about" [routerLinkActive]="'active'" (click)="openAboutDialog($event)">{{headerData.headerLinks.aboutLinkText}}</a></li>
+            <li class="item" role="presentation"><a class="link" routerLink="/contact" [routerLinkActive]="'active'" (click)="openContactDialog($event)">{{headerData.headerLinks.contactLinkText}}</a></li>
+            <li class="item" role="presentation" *ngIf="polisaBtn.text && !polisaBtn.inInternal"><a href="{{polisaBtn.linkUrl}}" class="link btnBorder" target="{{polisaBtn.targetBlank ? '_blank' : '_self'}}">{{polisaBtn.text}}</a></li>
+            <li class="item" role="presentation" *ngIf="polisaBtn.text && polisaBtn.inInternal"><a routerLink="{{polisaBtn.linkUrl}}" class="link btnBorder" target="{{polisaBtn.targetBlank ? '_blank' : '_self'}}">{{polisaBtn.text}}</a></li>
+            <!-- <li *ngFor="let item of "></li> -->
+        </ul>
+    </div>
+
+</header>

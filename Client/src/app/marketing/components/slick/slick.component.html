@@ -1,0 +1,36 @@
+<ngx-slick *ngIf="!isServer" class="commentsCarusel" #slickModal="slick-modal" [config]="slideConfig">
+    <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+        <div class="itemCarusel">
+            <div class="pic">
+                <img src="{{ slide.imgUrl }}" alt="">
+            </div>
+            <div>
+                <div class="comment">
+                    <img class="startPic" src="assets/img/commentStart.png" alt="">
+                    <span [innerHTML]="slide.comment"></span>
+                    <img class="endPic" src="assets/img/commentEnd.png" alt="">
+                </div>
+                <div class="text" [innerHTML]="slide.text"></div>
+            </div>
+
+        </div>
+    </div>
+</ngx-slick>
+
+<div *ngIf="isServer">
+    <div *ngFor="let slide of slides" class="slide">
+        <div class="itemCarusel">
+            <div class="pic">
+                <img src="{{ slide.imgUrl }}" alt="">
+            </div>
+            <div>
+                <div class="comment">
+                    <img class="startPic" src="assets/img/commentStart.png" alt="">
+                    <span [innerHTML]="slide.comment"></span>
+                    <img class="endPic" src="assets/img/commentEnd.png" alt="">
+                </div>
+                <div class="text" [innerHTML]="slide.text"></div>
+            </div>
+        </div>
+    </div>
+</div>

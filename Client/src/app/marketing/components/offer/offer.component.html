@@ -1,0 +1,42 @@
+<h1 class="mainTitle">{{offerData.mainTitle}}</h1>
+<h2 class="titleOffer">{{offerData.text}}</h2>
+
+<perfect-scrollbar class="perfectScrollbar offerDialogScroll">
+    <div class="offerContainer">
+        <div class="businessDetailsBox">
+            <div class="title">{{offerData.businessDetailsTitle}}</div>
+            <ul class="offerList">
+                <li class="item" *ngFor="let businessDetails of offerData.businessDetailsList">
+                    <div class="titleItem">{{businessDetails.title}} </div>
+                    <div class="numberContainer">
+                        <span class="number">{{businessDetails.number}} </span><span class="currency" [innerHTML]="businessDetails.currency"></span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="offerBox">
+            <div class="title">{{offerData.offerPriceTitle}}</div>
+            <ul class="offerList">
+                <li class="item" *ngFor="let offer of offerData.offerList">
+                    <div class="titleItem">{{offer.title}} </div>
+                    <div class="numberContainer" [class.present]="offer.imgUrl">
+                        <span class="number">{{offer.number}} </span> <span class="currency" [innerHTML]="offer.currency"></span>
+                        <img *ngIf="offer.imgUrl" class="pic" [src]="offer.imgUrl" alt="">
+
+                    </div>
+                    <div class="text">{{offer.text}}</div>
+                </li>
+                
+                <!-- <li class="item">
+                    <div class="titleItem">{{offer.title}}</div>
+                    <div class="numberContainer present">
+                        <span class="number">5 </span> <span class="currency">%</span>
+                        <img class="pic" src="assets/img/present.png" alt="">
+
+                    </div>
+                    <div class="text">שהם 0.34% מסך החובות הפתוחים לאותו החודש</div>
+                </li> -->
+            </ul>
+        </div>
+    </div>
+</perfect-scrollbar>

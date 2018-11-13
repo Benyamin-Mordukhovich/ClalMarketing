@@ -60,4 +60,8 @@
 #*.pdf   diff=astextplain
 #*.PDF   diff=astextplain
 #*.rtf   diff=astextplain
+<<<<<<< HEAD
 #*.RTF   diff=astextplain
+=======
+#*.RTF   diff=astextplain
+>>>>>>> server-setup
