@@ -27,7 +27,8 @@
             "note": "כלל ממשיכה לספק ביטוח מימון פרויקטלי, ביטוח הזמנות ומגוון ביטוחים נוספים המתאימים לעסקים המובילים בשוק",
             "bgImage": "",
             "bgImageMobile": "",
-            "videoUrl": "assets/movie.mp4",
+            "videoUrl": "assets/clal_open_test_4.mp4",
+            "videoType": "player",
             "caruselData": [],
             "offerBtn": {
                 "text": "להצעת מחיר",
@@ -49,7 +50,8 @@
             "note": "",
             "bgImage": "assets/img/clal_03.gif",
             "bgImageMobile": "assets/img/pic1Mobile.png",
-            "videoUrl": "",
+            "videoUrl": "assets/clal_03.mp4",
+            "videoType": "background",
             "caruselData": [],
             "offerBtn": {
                 "text": "להצעת מחיר",
@@ -72,7 +74,8 @@
             "note": "",
             "bgImage": "assets/img/clal_01.gif",
             "bgImageMobile": "assets/img/pic2Mobile.png",
-            "videoUrl": "",
+            "videoUrl": "assets/clal_01.mp4",
+            "videoType": "background",
             "caruselData": [],
             "offerBtn": {
                 "text": "להצעת מחיר",
@@ -95,7 +98,8 @@
             "note": "",
             "bgImage": "assets/img/clal_04.gif",
             "bgImageMobile": "assets/img/pic3Mobile.png",
-            "videoUrl": "",
+            "videoUrl": "assets/clal_04.mp4",
+            "videoType": "background",
             "caruselData": [],
             "offerBtn": {
                 "text": "להצעת מחיר",
@@ -118,7 +122,8 @@
             "note": "",
             "bgImage": "assets/img/clal_02.gif",
             "bgImageMobile": "assets/img/pic4Mobile.png",
-            "videoUrl": "",
+            "videoUrl": "assets/clal_02.mp4",
+            "videoType": "background",
             "caruselData": [{
                     "comment": "ביטוח אשראי מבית כלל מאפשר לנו להגדיל את <br/> כמות העסקאות השנתית ולעבוד בראש שקט",
                     "text": "שהם רותם, מנכל רהיטי הקריות, מבוטח כבר חצי שנה",

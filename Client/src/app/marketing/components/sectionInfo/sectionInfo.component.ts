@@ -1,4 +1,4 @@
-import { Component, Input, ViewChild, ElementRef, OnInit } from "@angular/core";
+import { Component, Input, ViewChild, ElementRef, OnInit } from '@angular/core';
 @Component({
   selector: "app-sectionInfo",
   templateUrl: "./sectionInfo.component.html"

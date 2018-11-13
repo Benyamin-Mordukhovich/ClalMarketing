@@ -1212,3 +1212,29 @@ perfect-scrollbar.perfectScrollbar {
         left: -3px;
     }
 }
+
+
+.videoDummy {
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    border-radius: 100%;
+    background-color: crimson;
+    //transform: translate(-50%, -50%);
+
+    &.animate {
+        animation: scaleAnimation 1s ease forwards;
+    }
+}
+
+@keyframes scaleAnimation {
+    99% {
+        transform: scale(2);
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}

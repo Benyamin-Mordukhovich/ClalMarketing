@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef, Inject, PLATFORM_ID } from '@angular/core';
 import { Subscription, fromEvent, Observable } from 'rxjs';
-import { map, debounceTime } from 'rxjs/operators';
 import { DataService } from '../../../services/data.service';
 import { isPlatformBrowser } from '@angular/common';
 
@@ -9,6 +8,7 @@ import { isPlatformBrowser } from '@angular/common';
   templateUrl: './hp.component.html'
 })
 export class HpComponent implements OnInit {
+  isMobile: boolean;
   scrollTop: number;
   stripHeight: number = 0;
   opacityValue: number = 1;
@@ -25,6 +25,7 @@ export class HpComponent implements OnInit {
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
       this.windowHeight = (window.innerHeight);
+      this.isMobile = (window.screen.width > 1200) ? false : true;
     }
 
     this._dataService.getHomePage().subscribe(
@@ -35,7 +36,7 @@ export class HpComponent implements OnInit {
           e.bgUrl = "url(" + e.bgImageMobile + ")";
         });
         
-        if (isPlatformBrowser(this.platformId) && window.screen.width > 1200) {
+        if (!this.isMobile) {
 
           let animationDisableAreaHeight = 400;
           let animationTransitionAdditionalArea = 5000;
@@ -48,9 +49,7 @@ export class HpComponent implements OnInit {
 
           this.sectionItems.forEach((e, index) => {
             e.scrollBegin = distance + animationDisableAreaHeight;
-            
             e.scrollEnd = distance + interval - animationDisableAreaHeight;
-            e.bgUrl = "url(" + e.bgImage + ")";
             distance += interval;
 
             console.log(`begin: ${e.scrollBegin} | end: ${e.scrollEnd}`);
@@ -60,8 +59,7 @@ export class HpComponent implements OnInit {
     )
 
     if (isPlatformBrowser(this.platformId)) {
-      const source = fromEvent(window, 'scroll')
-      .subscribe( () => {
+      fromEvent(window, 'scroll').subscribe( () => {
         this.scrollTop = window.pageYOffset;
       });
 
