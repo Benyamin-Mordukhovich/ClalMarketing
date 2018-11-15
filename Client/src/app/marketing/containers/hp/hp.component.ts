@@ -1,8 +1,8 @@
 import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
 import { DataService } from '../../../services/data.service';
 import { isPlatformBrowser } from '@angular/common';
-import { fromEvent } from 'rxjs';
-import { auditTime, debounceTime } from 'rxjs/operators';
+import { fromEvent, interval } from 'rxjs';
+import { throttle } from 'rxjs/operators';
 
 @Component({
   selector: 'app-hp',
@@ -10,7 +10,7 @@ import { auditTime, debounceTime } from 'rxjs/operators';
 })
 export class HpComponent implements OnInit {
   layerIndex: number = 0;
-  scrollDelay: number = 500;
+  scrollDelay: number = 1000;
   isScrollEnabled: boolean = true;
 
   isMobile: boolean;
@@ -35,7 +35,7 @@ export class HpComponent implements OnInit {
     
     if(!this.isMobile) {
       const wheel = fromEvent(window, 'wheel')
-      .pipe(debounceTime(this.scrollDelay))
+      .pipe(throttle(val => interval(this.scrollDelay)))
       .subscribe( (e: WheelEvent) => {
         if (e.deltaY > 0) {
           this.incrementLayerIndex();
@@ -45,7 +45,7 @@ export class HpComponent implements OnInit {
       });
   
       const keyup = fromEvent(window, 'keyup')
-      .pipe(debounceTime(this.scrollDelay))
+      .pipe(throttle(val => interval(this.scrollDelay)))
       .subscribe( (e: KeyboardEvent) => {
         if (e.keyCode === 40) {
           this.incrementLayerIndex();
