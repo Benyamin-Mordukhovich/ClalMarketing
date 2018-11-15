@@ -3,7 +3,8 @@ import { MatDialog } from "@angular/material";
 import { DOCUMENT } from "@angular/platform-browser";
 import { isPlatformServer } from "@angular/common";
 import { ModalService } from "../../../services/modal.service";
-import { DataService } from "../../../services/data.service";
+import { DataService } from "../../../services/data.service";\
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: "app-header",
@@ -19,12 +20,15 @@ export class HeaderComponent implements OnInit {
   headerData = {};
   polisaBtn = {};
 
+  activeLink: string = 'faq';
+
   constructor(
     public dialog: MatDialog,
     @Inject(DOCUMENT) private document: Document,
     @Inject(PLATFORM_ID) private platformId,
     private modalService: ModalService,
-    private _dataService: DataService
+    private _dataService: DataService,
+    private activatedRoute: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
@@ -36,6 +40,21 @@ export class HeaderComponent implements OnInit {
       return;
     }
     this.accessibilityControl();
+
+    console.log(this.activatedRoute)
+    this.activatedRoute.queryParams.subscribe(qs => {
+      console.log(qs)
+      switch(qs.modal) {
+        case "about":
+          this.activeLink = 'about';
+          break;
+        case "contact":
+          this.activeLink = 'contact';
+          break;
+        default:
+          this.activeLink = 'faq';
+      }
+  })
   }
 
   toggleFocus() {
