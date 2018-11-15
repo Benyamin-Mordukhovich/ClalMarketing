@@ -256,4 +256,39 @@
     .playBtn{
         top: 43%;
     }
+
+    .scrollIndicator {
+        left: 50%;
+        bottom: 40px;
+        width: 40px;
+        height: 40px;
+        position: fixed;
+        display: block;
+        z-index: 1000;
+        cursor: pointer;
+        border-radius: 100%;
+        opacity: 1;
+        visibility: visible;
+        transition: all .25s ease;
+        animation: jump 2s infinite 2s;
+        background: rgba(255,255,255,.35);
+        
+        &:after {
+            content: "";
+            left: 50%;
+            top: 50%;
+            width: 14px;
+            height: 14px;
+            display: block;
+            position: absolute;
+            border-left: 2px solid #666;
+            border-bottom: 2px solid #666;
+            transform: translate(-50%, -70%) rotate(-45deg);
+        }
+
+        &--hide {
+            opacity: 0;
+            visibility: hidden; 
+        }
+    }
 }
