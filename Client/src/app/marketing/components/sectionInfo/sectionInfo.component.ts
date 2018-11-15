@@ -6,18 +6,19 @@ import { Component, Input, ViewChild, ElementRef, OnInit } from '@angular/core';
 export class SectionInfoComponent implements OnInit {
   @Input() infoObj;
   @Input() isMobile;
+
   @Input()
-  set scrollTop(scrollTop: number) {
-    if (scrollTop >= 500) {
-      this.stopVideo();
+  set layerIndex(layerIndex: number) {
+    if(layerIndex > 0) {
+      this.resetVideo();
     }
   }
-
+  
   @ViewChild("videoRef") videoElementRef: ElementRef;
-
+  
   isVideoPlaying: boolean = false;
   constructor() { }
-
+  
   playVideo() {
     if (this.infoObj.videoUrl.length) {
       if (this.isVideoPlaying == false) {
@@ -26,11 +27,21 @@ export class SectionInfoComponent implements OnInit {
       }
     }
   }
-
+  
   stopVideo() {
     if (this.isVideoPlaying == true) {
       this.videoElementRef.nativeElement.pause();
       this.isVideoPlaying = false;
+    }
+  }
+  
+  resetVideo() {
+    if(this.videoElementRef) {
+      console.log("reset video")
+      setTimeout(() => {
+        this.stopVideo();
+        this.videoElementRef.nativeElement.load();
+      }, 2000)
     }
   }
 

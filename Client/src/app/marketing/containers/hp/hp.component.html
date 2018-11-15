@@ -1,20 +1,12 @@
-<div [style.height.px]="hpHeight">
-    <app-sectionInfo class="sectionInfoWrapper" 
-    appTransitionSlide 
-    [infoObj]="item" 
-    [scrollTop]="scrollTop" 
-    [index]="i"
+<app-sectionInfo 
+    class="sectionInfoWrapper" 
+    [infoObj]="item"
+    [layerIndex]="layerIndex"
     [class.caruselSection]="item.caruselData.length > 0"
-    [itemsNumber]="sectionItems.length" 
     [style.zIndex]="sectionItems.length - i" 
-    [style.backgroundImage]="item.bgUrl"
     [isMobile]="isMobile"
+    [ngClass]="{'outOfView': layerIndex > i }"
     *ngFor="let item of sectionItems; let i=index">
 </app-sectionInfo>
-<app-footer></app-footer> 
-</div>
-<!-- [style.backgroundImage]="item.bgUrl"  -->
 
-
-
-
+<app-footer></app-footer>

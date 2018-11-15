@@ -148,11 +148,19 @@
         right: 0;
         bottom: 0;
         position: fixed;
-        background-size: 85%;
+        transform: scale(1);
+        transition: all .6s ease-in-out;
+
         &.caruselSection {
             .sectionInfo {
                 height: auto;
             }
+        }
+
+        &.outOfView {
+            opacity: 0;
+            visibility: hidden;
+            transform: scale(2);
         }
     }
     .sectionInfo {

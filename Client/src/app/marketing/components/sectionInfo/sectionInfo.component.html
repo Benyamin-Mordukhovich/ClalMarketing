@@ -1,4 +1,7 @@
+<img *ngIf="isMobile" class="sectionInfoMobileImg" src="{{infoObj.bgImageMobile}}" alt="">
+
 <div class="sectionInfo" [class.playing]="isVideoPlaying">
+
     <div class="sectionInfoInner">
         <div class="mainTitle" [innerHTML]="infoObj.mainTitle"></div>
         <div class="text" [innerHTML]="infoObj.text"></div>
@@ -26,6 +29,7 @@
         <div class="note">{{infoObj.note}}</div>
     </div>
 </div>
+
 <div *ngIf="infoObj.videoUrl.length > 0 && infoObj.videoType == 'player' " class="videoWrapper">
     <video width="100%" #videoRef (click)="stopVideo()">
         <source src="{{infoObj.videoUrl}}" type="video/mp4">

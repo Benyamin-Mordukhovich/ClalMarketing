@@ -944,12 +944,10 @@ perfect-scrollbar.perfectScrollbar {
 
 .sectionInfoWrapper {
     display: block;
-    height: calc(100vh - #{$headerHight});
     background-color: #fff;
-    background-repeat: no-repeat;
-    background-size: 100%;
     transform-origin: center center;
     transition: visibility .25s ease;
+
     &:nth-of-type(even) {
         background-position: bottom right;
         .sectionInfo {
@@ -966,11 +964,8 @@ perfect-scrollbar.perfectScrollbar {
     }
     &.caruselSection {
         height: auto;
+        padding: 50px 0;
         background-position: top left;
-        background-color: $colorYellow;
-        .sectionInfo {
-            height: calc(100vh - #{$headerHight});
-        }
     }
 }
 
@@ -1003,6 +998,10 @@ perfect-scrollbar.perfectScrollbar {
     }
 }
 
+.sectionInfoMobileImg {
+    width: 100%;
+}
+
 .note {
     margin-top: 6px;
     font-size: 1.4em;
@@ -1014,11 +1013,10 @@ perfect-scrollbar.perfectScrollbar {
 /*S:footer*/
 
 .footer {
-    height: calc(100vh - 60px);
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding: 85px $gutter 80px;
+    padding: 50px $gutter 200px;
     background-color: #1d3a74;
     background-image: url(./../img/footerMobile.png);
     background-repeat: no-repeat;
@@ -1060,7 +1058,7 @@ perfect-scrollbar.perfectScrollbar {
 /*S:slick*/
 
 .commentsCarusel {
-    height: calc(100vh - #{$headerHight});
+    //height: calc(100vh - #{$headerHight});
     z-index: 99;
     background: white;
     .slick-list {
@@ -1105,7 +1103,7 @@ perfect-scrollbar.perfectScrollbar {
     }
     .slick-dots {
         position: absolute;
-        bottom: 36px;
+        bottom: -30px;
         left: 0;
         right: 0;
         display: flex;
@@ -1129,7 +1127,7 @@ perfect-scrollbar.perfectScrollbar {
 }
 
 .itemCarusel {
-    padding: 80px 15px 0;
+    padding: 0 15px;
     .pic {
         text-align: center;
         margin: 0 0 40px 0;
