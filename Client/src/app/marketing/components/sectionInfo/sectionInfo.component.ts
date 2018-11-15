@@ -9,7 +9,7 @@ export class SectionInfoComponent implements OnInit {
 
   @Input()
   set layerIndex(layerIndex: number) {
-    if(layerIndex > 0) {
+    if(layerIndex == 1) {
       this.resetVideo();
     }
   }
@@ -41,7 +41,7 @@ export class SectionInfoComponent implements OnInit {
       setTimeout(() => {
         this.stopVideo();
         this.videoElementRef.nativeElement.load();
-      }, 2000)
+      }, 500)
     }
   }
 

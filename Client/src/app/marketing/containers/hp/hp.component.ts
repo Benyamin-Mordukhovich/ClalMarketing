@@ -33,7 +33,7 @@ export class HpComponent implements OnInit {
       }
     )
     
-    if(!this.isMobile) {
+    if(!this.isMobile && isPlatformBrowser(this.platformId)) {
       const wheel = fromEvent(window, 'wheel')
       .pipe(throttle(val => interval(this.scrollDelay)))
       .subscribe( (e: WheelEvent) => {
