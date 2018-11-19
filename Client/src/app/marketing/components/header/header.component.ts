@@ -3,7 +3,7 @@ import { MatDialog } from "@angular/material";
 import { DOCUMENT } from "@angular/platform-browser";
 import { isPlatformServer } from "@angular/common";
 import { ModalService } from "../../../services/modal.service";
-import { DataService } from "../../../services/data.service";\
+import { DataService } from "../../../services/data.service";
 import { ActivatedRoute } from "@angular/router";
 
 @Component({
