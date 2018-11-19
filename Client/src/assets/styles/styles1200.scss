@@ -231,8 +231,17 @@
         display: flex;
         justify-content: center;
         padding: 80px 15px 80px;
+
         .pic {
+            width: 118px;
+            height: 118px;
+            overflow: hidden;
             margin: 0 0 0 96px;
+            border-radius: 100%;
+            
+            img {
+                width: 100%;
+            }
         }
         .comment {
             margin-bottom: 10px;
