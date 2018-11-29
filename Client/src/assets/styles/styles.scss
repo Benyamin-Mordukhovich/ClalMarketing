@@ -987,9 +987,7 @@ perfect-scrollbar.perfectScrollbar {
 .sectionInfo {
     padding: 30px 35px;
     z-index: 1;
-    .sectionInfoInner {
-        max-width: 540px;
-    }
+    
     .text {
         margin-top: 10px;
         font-size: 1.5em;
@@ -1204,6 +1202,10 @@ perfect-scrollbar.perfectScrollbar {
 
 .scrollIndicator {
     display: none;
+}
+
+.mainVideo {
+    width: 100%;
 }
 
 @include keyframes(bounce) {

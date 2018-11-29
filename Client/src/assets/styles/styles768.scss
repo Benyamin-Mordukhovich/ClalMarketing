@@ -1,8 +1,7 @@
 @import 'elements';
 @media (min-width: $screen-sm) {
-    $headerHight: 112px;
     .wrapper {
-        padding-top: $headerHight;
+        padding-top: $headerHightLaptop;
     }
     .mainTitle {
         font-size: 3.6em;
@@ -14,7 +13,7 @@
     }
     /*S:header*/
     .header {
-        height: $headerHight;
+        height: $headerHightLaptop;
         justify-content: space-between;
         padding: 0 10px;
         &.open {
@@ -192,7 +191,7 @@
         right: 5vw;
         left: auto;
         .text {
-            font-size: 2.2em;
+            font-size: 1.8em;
         }
         .btnGlobal {
             margin: 15px 0;

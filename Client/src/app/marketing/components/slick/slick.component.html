@@ -1,8 +1,8 @@
-<ngx-slick *ngIf="!isServer" class="commentsCarusel" #slickModal="slick-modal" [config]="slideConfig">
-    <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+<section *ngIf="!isServer" class="commentsCarusel">
+    <div *ngFor="let slide of slides" class="slide">
         <div class="itemCarusel">
             <div class="pic">
-                <img src="{{ slide.imgUrl }}" alt="">
+                <img [src]="slide.imgUrl" alt="">
             </div>
             <div>
                 <div class="comment">
@@ -12,10 +12,9 @@
                 </div>
                 <div class="text" [innerHTML]="slide.text"></div>
             </div>
-
         </div>
     </div>
-</ngx-slick>
+</section>
 
 <div *ngIf="isServer">
     <div *ngFor="let slide of slides" class="slide">

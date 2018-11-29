@@ -1,0 +1,38 @@
+@import 'elements';
+
+@media (min-width: $screen-xl) {
+    // .mainVideo {
+    //     top: 0;
+    //     left: 0;
+    //     right: 0;
+    //     bottom: 0;
+    //     position: absolute;
+    // }
+    .wrapper {
+        padding-top: $headerHightDesktop;
+    }
+
+    .mainTitle {
+        font-size: 4.6em;
+    }
+
+    .header {
+        height: $headerHightDesktop;
+    }
+
+    .itemCarusel {
+        min-height: 380px;
+    }
+
+    .sectionInfo {
+        top: 10vh;
+
+        .sectionInfoInner {
+            max-width: 540px;
+        }
+
+        .text {
+            font-size: 2.2em;
+        }
+    }
+}
