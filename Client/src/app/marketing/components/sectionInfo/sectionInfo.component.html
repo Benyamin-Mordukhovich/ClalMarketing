@@ -31,7 +31,7 @@
 </div>
 
 <div *ngIf="infoObj.videoUrl.length > 0 && infoObj.videoType == 'player' " class="videoWrapper">
-    <video class="mainVideo" #videoRef (click)="stopVideo()" poster="{{infoObj.videoPoster}}" preload="none">
+    <video class="mainVideo" #videoRef (click)="stopVideo()" poster="../../../../assets/img/mainVideoPreview.png" preload="none">
         <source src="{{infoObj.videoUrl}}" type="video/mp4">
     </video>
     <button type="button" class="playBtn" (click)="playVideo()" [class.active]="isVideoPlaying"></button>
