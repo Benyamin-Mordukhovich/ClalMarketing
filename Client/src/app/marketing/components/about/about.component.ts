@@ -6,13 +6,9 @@ import { DataService } from "../../../services/data.service";
   templateUrl: "./about.component.html"
 })
 export class AboutComponent implements OnInit {
-  @Input()
   title: string;
-  @Input()
   rteHtml: string;
-  @Input()
   link: any;
-  @Input()
   imgUrl: string;
 
   constructor(private _dataService: DataService) {}
