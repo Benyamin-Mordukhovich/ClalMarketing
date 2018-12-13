@@ -14,7 +14,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
-import { AboutDialogComponent } from './marketing/components/aboutDialog/aboutDialog.component';
+// import { AboutDialogComponent } from './marketing/components/aboutDialog/aboutDialog.component';
 import { ContactDialogComponent } from './marketing/components/contactDialog/contactDialog.component';
 import { OfferDialogComponent } from './marketing/components/offerDialog/offerDialog.component';
 import { SectionInfoComponent } from './marketing/components/sectionInfo/sectionInfo.component';
@@ -50,7 +50,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     FaqComponent,
     ErrorPageComponent,
     HeaderComponent,
-    AboutDialogComponent,
+    // AboutDialogComponent,
     ContactDialogComponent,
     OfferDialogComponent,
     FaqModelComponent,
@@ -74,7 +74,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     SlickModule.forRoot()
   ],
   entryComponents:[
-    AboutDialogComponent,
+    // AboutDialogComponent,
     ContactDialogComponent,
     OfferDialogComponent,
     AboutComponent,

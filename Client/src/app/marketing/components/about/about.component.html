@@ -1,26 +1,28 @@
-<div class="container-fluid">
-    <h1 class="mainTitle">{{ title }}</h1>
-    <perfect-scrollbar class="perfectScrollbar aboutDialogScroll">
-        <div class="aboutDialog">
-            <div class="text" [innerHTML]="rteHtml"></div>
-        </div>
-    </perfect-scrollbar>
-
-    <div class="linkLogoContainer">
-        <a *ngIf="link && link.isInternal" class="btnLink" routerLink="{{link.linkUrl}}" target="{{link.targetBlank ? '_blank' : '_self'}}">
-            {{ link.text }}
-            <span class="arrowIcon">
-                <img src="assets/img/arrowIcon.png" alt="">
-            </span>
-        </a>
-        <a *ngIf="link && !link.isInternal" class="btnLink" href="{{link.linkUrl}}" target="{{link.targetBlank ? '_blank' : '_self'}}">
-            {{ link.text }}
-            <span class="arrowIcon">
-                <img src="assets/img/arrowIcon.png" alt="">
-            </span>
-        </a>
-        <div class="pic">
-            <img src="{{ imgUrl }}" alt="">
+<section class="generalSection">
+    <div class="container-fluid">
+        <h1 class="mainTitle">{{ title }}</h1>
+        <perfect-scrollbar class="perfectScrollbar aboutDialogScroll">
+            <div class="aboutDialog">
+                <div class="text" [innerHTML]="rteHtml"></div>
+            </div>
+        </perfect-scrollbar>
+    
+        <div class="linkLogoContainer">
+            <a *ngIf="link && link.isInternal" class="btnLink" routerLink="{{link.linkUrl}}" target="{{link.targetBlank ? '_blank' : '_self'}}">
+                {{ link.text }}
+                <span class="arrowIcon">
+                    <img src="assets/img/arrowIcon.png" alt="">
+                </span>
+            </a>
+            <a *ngIf="link && !link.isInternal" class="btnLink" href="{{link.linkUrl}}" target="{{link.targetBlank ? '_blank' : '_self'}}">
+                {{ link.text }}
+                <span class="arrowIcon">
+                    <img src="assets/img/arrowIcon.png" alt="">
+                </span>
+            </a>
+            <div class="pic">
+                <img src="{{ imgUrl }}" alt="">
+            </div>
         </div>
     </div>
-</div>
+</section>

@@ -41,9 +41,7 @@ export class HeaderComponent implements OnInit {
     }
     this.accessibilityControl();
 
-    console.log(this.activatedRoute)
     this.activatedRoute.queryParams.subscribe(qs => {
-      console.log(qs)
       switch(qs.modal) {
         case "about":
           this.activeLink = 'about';
@@ -81,10 +79,10 @@ export class HeaderComponent implements OnInit {
     this.isHamburgerOpen = !this.isHamburgerOpen;
   }
 
-  openAboutDialog(e: Event): void {
-    e.preventDefault();
-    this.modalService.openAboutDialog();
-  }
+  // openAboutDialog(e: Event): void {
+  //   e.preventDefault();
+  //   this.modalService.openAboutDialog();
+  // }
 
   openContactDialog(e: Event): void {
     e.preventDefault();

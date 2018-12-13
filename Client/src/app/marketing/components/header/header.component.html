@@ -16,8 +16,9 @@
             </li>
         </ul>
         <ul class="mainMenu" *ngIf="headerData.headerLinks">
-            <li class="item" role="presentation"><a class="link" routerLink="/faq" [routerLinkActive]="'active'" [ngClass]="{ 'inActive': (activeLink == 'about') || (activeLink == 'contact') }">{{headerData.headerLinks.faqLinkText}}</a></li>
-            <li class="item" role="presentation"><a class="link" routerLink="/about" [ngClass]="{'active': activeLink == 'about'}" (click)="openAboutDialog($event)">{{headerData.headerLinks.aboutLinkText}}</a></li>
+            <li class="item" role="presentation"><a class="link" routerLink="/faq" [routerLinkActive]="'active'" [ngClass]="{ 'inActive': (activeLink == 'contact') }">{{headerData.headerLinks.faqLinkText}}</a></li>
+            <!-- <li class="item" role="presentation"><a class="link" routerLink="/about" [ngClass]="{'active': activeLink == 'about'}" (click)="openAboutDialog($event)">{{headerData.headerLinks.aboutLinkText}}</a></li> -->
+            <li class="item" role="presentation"><a class="link" routerLink="/about" [routerLinkActive]="'active'" [ngClass]="{ 'inActive': (activeLink == 'contact') }">{{headerData.headerLinks.aboutLinkText}}</a></li>
             <li class="item" role="presentation"><a class="link" routerLink="/contact" [ngClass]="{'active': activeLink == 'contact'}" (click)="openContactDialog($event)">{{headerData.headerLinks.contactLinkText}}</a></li>
             <li class="item" role="presentation" *ngIf="polisaBtn.text && !polisaBtn.inInternal"><a href="{{polisaBtn.linkUrl}}" class="link btnBorder" target="{{polisaBtn.targetBlank ? '_blank' : '_self'}}">{{polisaBtn.text}}</a></li>
             <li class="item" role="presentation" *ngIf="polisaBtn.text && polisaBtn.inInternal"><a routerLink="{{polisaBtn.linkUrl}}" class="link btnBorder" target="{{polisaBtn.targetBlank ? '_blank' : '_self'}}">{{polisaBtn.text}}</a></li>
