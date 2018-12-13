@@ -144,13 +144,11 @@
         position: fixed;
         transform: scale(1);
         transition: all .6s ease-in-out;
-
         &.caruselSection {
             .sectionInfo {
                 height: auto;
             }
         }
-
         &.outOfView {
             opacity: 0;
             visibility: hidden;
@@ -167,11 +165,10 @@
         .btnGlobal {
             margin: 20px 0 33px;
         }
-        &.playing{
+        &.playing {
             opacity: 0;
             visibility: hidden;
         }
-
         .sectionInfoInner {
             max-width: 440px;
         }
@@ -229,14 +226,12 @@
         display: flex;
         justify-content: center;
         padding: 80px 15px 80px;
-
         .pic {
             width: 118px;
             height: 118px;
             overflow: hidden;
             margin: 0 0 0 96px;
             border-radius: 100%;
-            
             img {
                 width: 100%;
             }
@@ -260,7 +255,7 @@
         }
     }
     /*E:slick*/
-    .playBtn{
+    .playBtn {
         top: 50%;
     }
     .scrollIndicator {
@@ -277,8 +272,7 @@
         visibility: visible;
         transition: all .25s ease;
         animation: jump 2s infinite 2s;
-        background: rgba(255,255,255,.35);
-        
+        background: rgba(255, 255, 255, .35);
         &:after {
             content: "";
             left: 50%;
@@ -291,28 +285,24 @@
             border-bottom: 2px solid #666;
             transform: translate(-50%, -70%) rotate(-45deg);
         }
-
         &--hide {
             opacity: 0;
-            visibility: hidden; 
+            visibility: hidden;
         }
     }
-    
     // .mainVideo {
     //     left: 0;
     //     bottom: 0;
     //     width: 80%;
     //     position: absolute;
     // }
-
     .mainVideo {
-        top: 0;
+        top: -60px;
         left: 0;
         right: 0;
         bottom: 0;
         position: absolute;
     }
-
     .note {
         max-width: 90%;
     }
