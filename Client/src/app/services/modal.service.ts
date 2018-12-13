@@ -27,6 +27,18 @@ export class ModalService {
             if(qs.modal == "offer"){
                 this._openOffer()
             }
+            // if(qs.modal == "meet"){
+            //     this._openMeet()
+            // }
+            // if(qs.modal == "join"){
+            //     this._openJoin()
+            // }
+            // if(qs.modal == "sleep"){
+            //     this._openSleep()
+            // }
+            // if(qs.modal == "newTransaction"){
+            //     this._openNewTransaction()
+            // }
         })
     }
 

@@ -5,18 +5,21 @@
     <div class="sectionInfoInner">
         <div class="mainTitle" [innerHTML]="infoObj.mainTitle"></div>
         <div class="text" [innerHTML]="infoObj.text"></div>
-        <a class="btnLink" [href]="infoObj.linkReadMore.linkUrl" *ngIf="infoObj.linkReadMore && !infoObj.linkReadMore.isInternal &&infoObj.linkReadMore.length > 0">
+        <a class="btnLink" [href]="infoObj.linkReadMore.linkUrl" *ngIf="infoObj.linkReadMore && !infoObj.linkReadMore.isInternal && !infoObj.linkReadMoreIsPopup">
             {{infoObj.linkReadMore.text}}
             <span class="arrowIcon">
                 <img src="assets/img/arrowIcon.png" alt="">
             </span>
         </a>
-        <a class="btnLink" routerLink="{{infoObj.linkReadMore.linkUrl}}" *ngIf="infoObj.linkReadMore && infoObj.linkReadMore.isInternal && infoObj.linkReadMore.length > 0">
+        <a class="btnLink" routerLink="{{infoObj.linkReadMore.linkUrl}}" *ngIf="infoObj.linkReadMore && infoObj.linkReadMore.isInternal && !infoObj.linkReadMoreIsPopup">
             {{infoObj.linkReadMore.text}}
             <span class="arrowIcon">
                 <img src="assets/img/arrowIcon.png" alt="">
             </span>
         </a>
+
+       
+
         <div *ngIf="infoObj.offerBtn">
             <a [href]="infoObj.offerBtn.linkUrl" target="{{infoObj.offerBtn.targetBlank ? '_blank' : '_self'}}" class="btn btnGlobal">{{infoObj.offerBtn.text}}</a>
         </div>
