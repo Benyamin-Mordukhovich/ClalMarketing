@@ -46,14 +46,6 @@ export class SectionInfoComponent implements OnInit {
     }
   }
 
-  openDialog(linkPath){
-    let path = linkPath.split('/').filter(Boolean);
-    let param = path[path.length - 1];
-    console.log('param',param)
-
-    this.modalService.openSectionInfoDialog(param);
-  }
-
   ngOnInit() {
     if (!this.isMobile) {
       if (typeof document !== "undefined") {

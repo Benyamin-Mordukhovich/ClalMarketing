@@ -5,7 +5,7 @@ import { tap, catchError } from 'rxjs/operators';
 import { environment } from "../../environments/environment";
 import { ContentUrls } from '../../types';
 import { TransferState, makeStateKey } from '@angular/platform-browser';
-import { IcontactPage,Ihp,IfaqPage,IaboutDialog ,IcontactForm,IofferPage,Result,Ipopup} from '../models';
+import { IcontactPage,Ihp,IfaqPage,IaboutDialog ,IcontactForm,IofferPage,Result,IpopupPage} from '../models';
 
 
 const homeStateKey = makeStateKey("home");
@@ -158,7 +158,7 @@ export class DataService {
         return of(data);
     }
 
-    getPopupSection(id): Observable<any> {
+    getPopupSection(id): Observable<IpopupPage> {
   
         let data = this.state.get(popupSection, undefined);
         if (!data || data['section_' + id]) {
@@ -167,7 +167,7 @@ export class DataService {
             if (this.popupSections[url]) {
                 return of(this.popupSections[url]);
             }
-            return this.http.get<Ipopup>(url).pipe(
+            return this.http.get<IpopupPage>(url).pipe(
                 catchError(err => {
                     return of(null)
                 }),

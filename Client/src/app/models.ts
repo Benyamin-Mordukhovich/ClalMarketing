@@ -137,7 +137,7 @@ interface IgiftOffer extends IofferTextItem{
     imgUrl:string
 }
 
-export interface Ipopup{
+export interface IpopupPage extends Ipage{
     title:string,
     text:string,
     joinBtn:Ilink

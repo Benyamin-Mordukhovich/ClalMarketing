@@ -35,8 +35,8 @@
                 "linkUrl": "https://www.clalbit.co.il/",
                 "targetBlank": true,
                 "isInternal": false
-            }
-      
+            },
+            "linkReadMoreIsPopup":false
         },
         {
             "mainTitle": "לעבוד בראש שקט<br>עם ביטוח אשראי מבית כלל",

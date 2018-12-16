@@ -18,7 +18,7 @@
             </span>
         </a>
 
-        <a class="btnLink" (click)="openPopup.emit()">
+        <a class="btnLink" (click)="openPopup.emit()" *ngIf="infoObj.linkReadMore && infoObj.linkReadMoreIsPopup">
             {{infoObj.linkReadMore.text}}
             <span class="arrowIcon">
                 <img src="assets/img/arrowIcon.png" alt="">
