@@ -36,7 +36,7 @@
                 "targetBlank": true,
                 "isInternal": false
             },
-            "linkReadMoreIsPopup":false
+            "isReadMorePopup":false
         },
         {
             "mainTitle": "לעבוד בראש שקט<br>עם ביטוח אשראי מבית כלל",
@@ -61,7 +61,7 @@
                 "targetBlank": true,
                 "isInternal": false
             },
-            "linkReadMoreIsPopup":true
+            "isReadMorePopup":true
            
         },
         {
@@ -87,7 +87,7 @@
                 "targetBlank": true,
                 "isInternal": false
             },
-            "linkReadMoreIsPopup":true
+            "isReadMorePopup":true
         },
         {
             "mainTitle": "מנהל הסניף יקבל אותך עכשיו",
@@ -112,7 +112,7 @@
                 "targetBlank": true,
                 "isInternal": false
             },
-            "linkReadMoreIsPopup":true
+            "isReadMorePopup":true
         },
         {
             "mainTitle": "אנחנו שם כשאתה צריך",
@@ -147,7 +147,7 @@
                 "targetBlank": true,
                 "isInternal": false
             },
-            "linkReadMoreIsPopup":true
+            "isReadMorePopup":true
         }
     ],
     "footer": {
