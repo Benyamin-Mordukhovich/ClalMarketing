@@ -6,6 +6,7 @@ import { ErrorPageComponent } from "./marketing/containers/errorPage/errorPage.c
 import { AboutComponent } from "./marketing/components/about/about.component";
 import { ContactComponent } from "./marketing/components/contact/contact.component";
 import { OfferComponent } from "./marketing/components/offer/offer.component";
+import { DialogHpComponent } from "./marketing/components/dialogHp/dialogHp.component";
 
 const routes: Routes = [
   { path: "", component: HpComponent },
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: "about", component: AboutComponent },
   { path: "contact",component: ContactComponent },
   { path: "offer" , component: OfferComponent},
+  { path: "popupSection2" , component: DialogHpComponent},
   { path: "**", component: ErrorPageComponent }
 ];
 

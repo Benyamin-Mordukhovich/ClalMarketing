@@ -5,6 +5,7 @@ import { MatDialog } from "@angular/material";
 // import { AboutDialogComponent } from "../marketing/components/aboutDialog/aboutDialog.component";
 import { ContactDialogComponent } from "../marketing/components/contactDialog/contactDialog.component";
 import { OfferDialogComponent } from "../marketing/components/offerDialog/offerDialog.component";
+import { SectionInfoDialogComponent } from "../marketing/components/sectionInfoDialog/sectionInfoDialog.component";
 
 @Injectable({ providedIn: "root" })
 export class ModalService {
@@ -15,42 +16,35 @@ export class ModalService {
         public dialog: MatDialog) {
 
     }
-
     listen() {
         this.activatedRoute.queryParams.subscribe(qs => {
             // if(qs.modal == "about") {
             //     this._openAbout()
             // }
-            if(qs.modal == "contact") {
+            if (qs.modal == "contact") {
                 this._openContact()
             }
-            if(qs.modal == "offer"){
+            if (qs.modal == "offer") {
                 this._openOffer()
             }
-            // if(qs.modal == "meet"){
-            //     this._openMeet()
-            // }
-            // if(qs.modal == "join"){
-            //     this._openJoin()
-            // }
-            // if(qs.modal == "sleep"){
-            //     this._openSleep()
-            // }
-            // if(qs.modal == "newTransaction"){
-            //     this._openNewTransaction()
-            // }
+            if (qs.modal == "popupSection2" || qs.modal == "popupSection3" || qs.modal == "popupSection4" || qs.modal == "popupSection5") {
+                this._openDialogSectionInfo();
+            }
         })
     }
 
     // openAboutDialog(): void {
     //     this.setModalParam("about")
     // }
-    openContactDialog():void{
+    openContactDialog(): void {
         this.setModalParam("contact")
     }
 
-    openOfferDialog():void{
+    openOfferDialog(): void {
         this.setModalParam("offer")
+    }
+    openSectionInfoDialog(param?): void {
+        this.setModalParam(param)
     }
 
     // private _openAbout() {
@@ -64,7 +58,7 @@ export class ModalService {
             let data = {
                 dataContactPage: res
             };
-            this.dialog.open(ContactDialogComponent, {data}).beforeClose().subscribe(_ => {
+            this.dialog.open(ContactDialogComponent, { data }).beforeClose().subscribe(_ => {
                 this.setModalParam()
             })
         })
@@ -75,10 +69,22 @@ export class ModalService {
             let data = {
                 dataOfferPage: res
             };
-            this.dialog.open(OfferDialogComponent, {data}).beforeClose().subscribe(_ => {
+            this.dialog.open(OfferDialogComponent, { data }).beforeClose().subscribe(_ => {
                 this.setModalParam()
             })
         })
+    }
+
+    private _openDialogSectionInfo() {
+        this._dataService.getPopupSection2().toPromise().then(res => {
+            let data = {
+                dataDialogSection: res
+            };
+            this.dialog.open(SectionInfoDialogComponent, { data }).beforeClose().subscribe(_ => {
+                this.setModalParam()
+            })
+        })
+
     }
 
     setModalParam(value?) {

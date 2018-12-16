@@ -18,7 +18,12 @@
             </span>
         </a>
 
-       
+        <a class="btnLink" (click)="openDialog(infoObj.linkReadMore.linkUrl)">
+            {{infoObj.linkReadMore.text}}
+            <span class="arrowIcon">
+                <img src="assets/img/arrowIcon.png" alt="">
+            </span>
+        </a>
 
         <div *ngIf="infoObj.offerBtn">
             <a [href]="infoObj.offerBtn.linkUrl" target="{{infoObj.offerBtn.targetBlank ? '_blank' : '_self'}}" class="btn btnGlobal">{{infoObj.offerBtn.text}}</a>

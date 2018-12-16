@@ -1207,6 +1207,29 @@ perfect-scrollbar.perfectScrollbar {
 .mainVideo {
     width: 100%;
 }
+.sectionInfoDialog{
+    padding: 10px 0;
+}
+.dialogTop{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 15px;
+    border-bottom: solid 1px #bcc3d6;
+}
+
+.dialogContent{
+    padding: 10px 15px;
+    .title{
+        font-size: 2.6em;
+        margin-bottom: 10px;
+        color:$colorBlue;
+    }
+    .text{
+        font-size: 1.6em;
+        color:$colorBlueDark;
+    }
+}
 
 @include keyframes(bounce) {
     0%,

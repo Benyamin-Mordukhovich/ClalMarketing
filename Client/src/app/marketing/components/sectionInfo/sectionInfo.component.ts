@@ -1,4 +1,5 @@
 import { Component, Input, ViewChild, ElementRef, OnInit } from '@angular/core';
+import { ModalService } from 'src/app/services/modal.service';
 @Component({
   selector: "app-sectionInfo",
   templateUrl: "./sectionInfo.component.html"
@@ -17,7 +18,7 @@ export class SectionInfoComponent implements OnInit {
   @ViewChild("videoRef") videoElementRef: ElementRef;
   
   isVideoPlaying: boolean = false;
-  constructor() { }
+  constructor(private modalService:ModalService) { }
   
   playVideo() {
     if (this.infoObj.videoUrl.length) {
@@ -37,12 +38,19 @@ export class SectionInfoComponent implements OnInit {
   
   resetVideo() {
     if(this.videoElementRef) {
-      console.log("reset video")
       setTimeout(() => {
         this.stopVideo();
         this.videoElementRef.nativeElement.load();
       }, 500)
     }
+  }
+
+  openDialog(linkPath){
+    let path = linkPath.split('/').filter(Boolean);
+    let param = path[path.length - 1];
+    console.log('param',param)
+
+    this.modalService.openSectionInfoDialog(param);
   }
 
   ngOnInit() {

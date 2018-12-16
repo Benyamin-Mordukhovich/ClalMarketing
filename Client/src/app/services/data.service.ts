@@ -5,6 +5,7 @@ import { tap, catchError } from 'rxjs/operators';
 import { environment } from "../../environments/environment";
 import { ContentUrls } from '../../types';
 import { TransferState, makeStateKey } from '@angular/platform-browser';
+import { IcontactPage,Ihp,IfaqPage,IaboutDialog ,IcontactForm,IofferPage,Result,Ipopup} from '../models';
 
 
 const homeStateKey = makeStateKey("home");
@@ -13,6 +14,10 @@ const contactStateKey = makeStateKey("contact");
 const aboutStateKey = makeStateKey("about");
 const offerStateKey = makeStateKey("offer");
 const layoutData = makeStateKey("layoutData");
+const popupSection2 = makeStateKey("popupSection2");
+const popupSection3 = makeStateKey("popupSection3");
+const popupSection4 = makeStateKey("popupSection4");
+const popupSection5 = makeStateKey("popupSection5");
 
 @Injectable()
 export class DataService {
@@ -23,8 +28,10 @@ export class DataService {
     private cacheAboutDialog: any = {}
     private cacheContactForm: any = {}
     private cacheOfferDialog: any = {}
+    private popupSection2: any = {}
     private _layoutData = new ReplaySubject<any>();
     public dataSubject = new Subject<any>()
+    
     constructor(private http: HttpClient, private state: TransferState) {
         let data = state.get(layoutData,undefined);
         if(data) {
@@ -142,6 +149,28 @@ export class DataService {
                 }),
                 tap(res => {
                     this.cacheOfferDialog[this.urls.offer] = res;
+                    this.setLayoutData(res)
+                })
+            )
+        }
+        return of(data);
+    }
+
+    getPopupSection2(): Observable<any> {
+  
+        let data = this.state.get(popupSection2, undefined);
+        if (!data) {
+
+            if (this.popupSection2[this.urls.popupSection2]) {
+                return of(this.popupSection2[this.urls.popupSection2]);
+            }
+
+            return this.http.get<Ipopup>(this.urls.popupSection2).pipe(
+                catchError(err => {
+                    return of(null)
+                }),
+                tap(res => {
+                    this.popupSection2[this.urls.popupSection2] = res;
                     this.setLayoutData(res)
                 })
             )

@@ -16,6 +16,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 // import { AboutDialogComponent } from './marketing/components/aboutDialog/aboutDialog.component';
 import { ContactDialogComponent } from './marketing/components/contactDialog/contactDialog.component';
+import { SectionInfoDialogComponent } from './marketing/components/sectionInfoDialog/sectionInfoDialog.component';
 import { OfferDialogComponent } from './marketing/components/offerDialog/offerDialog.component';
 import { SectionInfoComponent } from './marketing/components/sectionInfo/sectionInfo.component';
 import { FooterComponent } from './marketing/components/footer/footer.component';
@@ -30,6 +31,7 @@ import { FaqModelComponent } from './marketing/components/faqModel/faqModel.comp
 import { TransitionSlideDirective } from './directives/transition-slide.directive';
 import { ModalService } from './services/modal.service';
 import { AboutComponent } from './marketing/components/about/about.component';
+import { dialogHpComponent } from './marketing/components/dialogHp/dialogHp.component';
 import { ContactComponent } from './marketing/components/contact/contact.component';
 import { OfferComponent } from './marketing/components/offer/offer.component';
 export const MATERIALCOMPONENTS = [
@@ -61,6 +63,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     AboutComponent,
     ContactComponent,
     OfferComponent,
+    SectionInfoDialogComponent,
+    dialogHpComponent
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'clalMarketing'}),
@@ -79,7 +83,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     OfferDialogComponent,
     AboutComponent,
     ContactComponent,
-    OfferComponent
+    OfferComponent,
+    SectionInfoDialogComponent
   ],
   providers: [
     {

@@ -1,17 +1,19 @@
-interface IaboutDialog extends Ipage{
+// import { join } from "path";
+
+export interface IaboutDialog extends Ipage{
     mainTitle:string;
     rte:string;
     link:Ilink;
     imgUrl:string;
 }
 
-interface IfaqPage extends Ipage{
+export interface IfaqPage extends Ipage{
     mainTitle?: string;
     items?: IfaqModel[];
     imgUrl?:string;
 }
 
-interface IfaqModel {
+export interface IfaqModel {
     title: string;
     items: Ifaq[];
 }
@@ -26,7 +28,7 @@ interface IdropDownItem{
     value?: string | number | boolean
 }
 
-interface IcontactPage extends Ipage {
+export interface IcontactPage extends Ipage {
     mainTitle?: string;
     title?: string,
     fieldList:Ifield[],
@@ -36,12 +38,12 @@ interface IcontactPage extends Ipage {
     titleSendSuccess:string,
     mainTitleSendFailed:string
 }
-interface Ifield{
+export interface Ifield{
     name:string,
     placeholder:string,
     errorMsg:string
 }
-interface IcontactForm{
+export interface IcontactForm{
     companyName: string,
     privateCompany: string,
     transactionsOption:string,
@@ -61,7 +63,7 @@ interface Ipage  {
     header:Iheader
 }
 
-interface Ihp extends Ipage{
+export interface Ihp extends Ipage{
 
     sectionsData:IsectionModel[],
     linkText:string
@@ -79,9 +81,10 @@ interface IsectionModel{
     videoUrl?:string,
     caruselData?:IcaruselItem[],
     offerBtn:Ilink,
+    linkReadMoreIsPopup:boolean,
 }
 
-interface Result {
+export interface Result {
     success: boolean
     error?:string
 }
@@ -109,7 +112,7 @@ interface Iheader{
     polisaBtn:Ilink,
 }
 
-interface IofferPage extends Ipage{
+export interface IofferPage extends Ipage{
     mainTitle:string,
     text?:string,
     businessDetailsTitle:string,
@@ -132,4 +135,10 @@ interface IofferTextItem extends IofferItem{
 
 interface IgiftOffer extends IofferTextItem{
     imgUrl:string
+}
+
+export interface Ipopup{
+    title:string,
+    text:string,
+    joinBtn:Ilink
 }
