@@ -17,9 +17,9 @@
             "mainTitle": "לעבוד בראש שקט<br>עם ביטוח אשראי מבית כלל",
             "text": "לראשונה בישראל, שירותי ביטוח אשראי של כלל ניתנים גם לעסקים בינוניים וקטנים,בעלי מחזור הכנסות שנתי שבין 10-50 מיליון שח ביטוח אשראי מאפשר לך לבצע יותר עסקאות בצורה בטוחה,ומקנה ייתרון במימון הבנקאי כל זאת עם גב של חברת כלל ביטוח",
             "linkReadMore": {
-                "text": "לאתר ניהול הפוליסה",
+                "text": "קרא עוד",
                 "linkUrl": "https://www.google.co.il/",
-                "targetBlank": false,
+                "targetBlank": true,
                 "isInternal": false
             },
             "linkText": "יצאונים? זקוקים לביטוח פרויקטלי?",
@@ -27,7 +27,7 @@
             "note": "כלל ממשיכה לספק ביטוח מימון פרויקטלי, ביטוח הזמנות ומגוון ביטוחים נוספים המתאימים לעסקים המובילים בשוק",
             "videoPoster": "assets/img/Clal_06_0001.png",
             "bgImageMobile": "",
-            "videoUrl": "assets/Clal_16.mp4",
+            "videoUrl": "assets/Clal_17.mp4",
             "videoType": "player",
             "caruselData": [],
             "offerBtn": {
@@ -35,15 +35,17 @@
                 "linkUrl": "https://www.clalbit.co.il/",
                 "targetBlank": true,
                 "isInternal": false
-            }
+            },
+            "isReadMorePopup":false
         },
         {
             "mainTitle": "לעבוד בראש שקט<br>עם ביטוח אשראי מבית כלל",
             "text": "לראשונה בישראל, שירותי ביטוח אשראי של כלל ניתנים גם לעסקים בינוניים וקטנים,בעלי מחזור הכנסות שנתי שבין 10-50 מיליון שח ביטוח אשראי מאפשר לך לבצע יותר עסקאות בצורה בטוחה,ומקנה ייתרון במימון הבנקאי כל זאת עם גב של חברת כלל ביטוח",
             "linkReadMore": {
-                "text": "לאתר ניהול הפוליסה",
-                "linkUrl": "https://www.google.co.il/",
-                "targetBlank": true
+                "text": "קרא עוד",
+                "linkUrl": "http://localhost:4200/popupSection2/",
+                "targetBlank": true,
+                "isInternal": false
             },
             "linkText": "",
             "link": "www",
@@ -58,14 +60,16 @@
                 "linkUrl": "https://www.clalbit.co.il/",
                 "targetBlank": true,
                 "isInternal": false
-            }
+            },
+            "isReadMorePopup":true
+           
         },
         {
             "mainTitle": "המבוטחים שלנו ישנים <br>טוב יותר בלילה",
             "text": "ביטוח אשראי מאפשר לך לעבוד בראש שקט ובביטחון גם אם יש לך<br> כמה עסקאות שאתה לא לגמרי בטוח אם תראה את הכסף מהם",
             "linkReadMore": {
-                "text": "לאתר ניהול הפוליסה",
-                "linkUrl": "https://www.google.co.il/",
+                "text": "קרא עוד",
+                "linkUrl": "http://localhost:4200/popupSection3/",
                 "targetBlank": false,
                 "isInternal": false
             },
@@ -82,14 +86,15 @@
                 "linkUrl": "https://www.clalbit.co.il/",
                 "targetBlank": true,
                 "isInternal": false
-            }
+            },
+            "isReadMorePopup":true
         },
         {
             "mainTitle": "מנהל הסניף יקבל אותך עכשיו",
             "text": "כשהכסף שלך בטוח, תוכל לעבוד עם אותם לקוחות שפעם היית מפחד לקחת לראשונה בישראל שירותי ביטוח אשראי של כלל ניתנים גם לעסקים בעלי מחזור הכנסות שנתי של בין 5 ל-10 מליון ש",
             "linkReadMore": {
-                "text": "לאתר ניהול הפוליסה",
-                "linkUrl": "https://www.google.co.il/",
+                "text": "קרא עוד",
+                "linkUrl": "http://localhost:4200/popupSection4/",
                 "targetBlank": true,
                 "isInternal": false
             },
@@ -106,14 +111,15 @@
                 "linkUrl": "https://www.clalbit.co.il/",
                 "targetBlank": true,
                 "isInternal": false
-            }
+            },
+            "isReadMorePopup":true
         },
         {
             "mainTitle": "אנחנו שם כשאתה צריך",
             "text": "הפעלת הביטוח מתבצעת בשלושה צעדים פשוטים כך שתוכל <br>לקבל את החזר הכספי כמה שיותר מהר",
             "linkReadMore": {
-                "text": "לאתר ניהול הפוליסה",
-                "linkUrl": "https://www.google.co.il/",
+                "text": "קרא עוד",
+                "linkUrl": "http://localhost:4200/popupSection5/",
                 "targetBlank": false,
                 "isInternal": false
             },
@@ -140,7 +146,8 @@
                 "linkUrl": "https://www.clalbit.co.il/",
                 "targetBlank": true,
                 "isInternal": false
-            }
+            },
+            "isReadMorePopup":true
         }
     ],
     "footer": {

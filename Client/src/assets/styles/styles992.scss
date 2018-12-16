@@ -1,3 +1,17 @@
 @import 'elements';
-
-@media (min-width: $screen-md) {}
+@media (min-width: $screen-md) {
+    .sectionInfoDialog {
+        width: 860px;
+    }
+    .dialogTop {
+        height: 90px;
+        padding-left: 50px;
+    }
+    .dialogContent {
+        padding: 30px 37px;
+        .title {
+            font-size: 3.6em;
+            margin-bottom: 25px;
+        }
+    }
+}

@@ -549,7 +549,6 @@ perfect-scrollbar.perfectScrollbar {
 
 .generalSection {
     padding: 40px $gutter 15px;
-    
 }
 
 .faqContainer {
@@ -866,14 +865,14 @@ perfect-scrollbar.perfectScrollbar {
     box-shadow: 0px 15px 25px 0px rgba(5, 36, 99, 0.2);
 }
 
-.businessDetailsBox{
-    .offerList{
+.businessDetailsBox {
+    .offerList {
         display: flex;
         flex-wrap: wrap;
-        .item{
+        .item {
             margin-left: 15px;
         }
-    }   
+    }
 }
 
 .offerList {
@@ -954,7 +953,6 @@ perfect-scrollbar.perfectScrollbar {
     background-color: #fff;
     transform-origin: center center;
     transition: visibility .25s ease;
-
     &:nth-of-type(even) {
         background-position: bottom right;
         .sectionInfo {
@@ -987,7 +985,6 @@ perfect-scrollbar.perfectScrollbar {
 .sectionInfo {
     padding: 30px 35px;
     z-index: 1;
-    
     .text {
         margin-top: 10px;
         font-size: 1.5em;
@@ -1040,11 +1037,9 @@ perfect-scrollbar.perfectScrollbar {
         font-size: 1.6em;
         color: $colorWhite;
     }
-      
     .btnLinkContainer {
         margin: 40px 0 50px;
         box-shadow: 0px 0px 18px 0px rgba(1, 192, 240, 0.5);
-
     }
     .btnGlobal {
         border-radius: 5px;
@@ -1165,23 +1160,24 @@ perfect-scrollbar.perfectScrollbar {
 }
 
 /*E:slick*/
-.videoWrapper{
+
+.videoWrapper {
     position: relative;
 }
-.playBtn{
+
+.playBtn {
     width: 60px;
     height: 60px;
     position: absolute;
-    top:50%;
+    top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     border-radius: 50%;
     background: $colorWhite;
     cursor: pointer;
     box-shadow: 0px 12px 16px 0px rgba(47, 103, 117, 0.56);
     @include transitionMove();
-
-    &:after{
+    &:after {
         content: '';
         position: absolute;
         width: 0;
@@ -1189,12 +1185,11 @@ perfect-scrollbar.perfectScrollbar {
         border-top: 12px solid transparent;
         border-left: 20px solid $colorBlueDark;
         border-bottom: 12px solid transparent;
-        top:50%;
+        top: 50%;
         left: 55%;
-        transform: translate(-50%,-50%);
+        transform: translate(-50%, -50%);
     }
-
-    &.active{
+    &.active {
         opacity: 0;
         visibility: hidden;
     }
@@ -1206,6 +1201,34 @@ perfect-scrollbar.perfectScrollbar {
 
 .mainVideo {
     width: 100%;
+}
+
+.sectionInfoDialog {
+    padding: 10px 0;
+}
+
+.dialogTop {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 15px;
+    border-bottom: solid 1px #bcc3d6;
+    .btnGlobal {
+        box-shadow: 0px 0px 18px 0px rgba(1, 192, 240, 0.5);
+    }
+}
+
+.dialogContent {
+    padding: 10px 15px;
+    .title {
+        font-size: 2.6em;
+        margin-bottom: 10px;
+        color: $colorBlue;
+    }
+    .text {
+        font-size: 1.6em;
+        color: $colorBlueDark;
+    }
 }
 
 @include keyframes(bounce) {
@@ -1240,12 +1263,12 @@ perfect-scrollbar.perfectScrollbar {
     20%,
     50%,
     80% {
-      transform: translateY(0);
+        transform: translateY(0);
     }
     40% {
-      transform: translateY(-10px);
+        transform: translateY(-10px);
     }
     60% {
-      transform: translateY(-5px);
+        transform: translateY(-5px);
     }
-  }
+}

@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { DataService } from "../../../services/data.service";
+import { Ifield } from "../../../models";
 
 @Component({
   selector: "app-contact",

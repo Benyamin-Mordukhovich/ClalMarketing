@@ -5,6 +5,7 @@ import { MatDialog } from "@angular/material";
 // import { AboutDialogComponent } from "../marketing/components/aboutDialog/aboutDialog.component";
 import { ContactDialogComponent } from "../marketing/components/contactDialog/contactDialog.component";
 import { OfferDialogComponent } from "../marketing/components/offerDialog/offerDialog.component";
+import { SectionInfoDialogComponent } from "../marketing/components/sectionInfoDialog/sectionInfoDialog.component";
 
 @Injectable({ providedIn: "root" })
 export class ModalService {
@@ -15,58 +16,52 @@ export class ModalService {
         public dialog: MatDialog) {
 
     }
-
     listen() {
         this.activatedRoute.queryParams.subscribe(qs => {
-            // if(qs.modal == "about") {
-            //     this._openAbout()
-            // }
-            if(qs.modal == "contact") {
+            if(!qs.modal) return;
+            if (qs.modal == "contact") {
                 this._openContact()
             }
-            if(qs.modal == "offer"){
+            if (qs.modal == "offer") {
                 this._openOffer()
+            }
+
+            if (qs.modal.startsWith('popupSection')) {
+                let id = qs.modal.split('_')[1]; 
+                if(id)
+                    this._openDialogSectionInfo(id);
             }
         })
     }
 
-    // openAboutDialog(): void {
-    //     this.setModalParam("about")
-    // }
-    openContactDialog():void{
+    openContactDialog(): void {
         this.setModalParam("contact")
     }
 
-    openOfferDialog():void{
+    openOfferDialog(): void {
         this.setModalParam("offer")
     }
-
-    // private _openAbout() {
-    //     this.dialog.open(AboutDialogComponent).beforeClose().subscribe(_ => {
-    //         this.setModalParam()
-    //     })
-    // }
+    openSectionInfoDialog(id): void {
+        this.setModalParam("popupSection_" + id)
+    }
 
     private _openContact() {
-        this._dataService.getContactData().toPromise().then(res => {
-            let data = {
-                dataContactPage: res
-            };
-            this.dialog.open(ContactDialogComponent, {data}).beforeClose().subscribe(_ => {
-                this.setModalParam()
-            })
-        })
+        this.dialog.open(ContactDialogComponent, {  }).beforeClose().subscribe(_ => {
+            this.setModalParam()
+        });
     }
 
     private _openOffer() {
-        this._dataService.getOfferData().toPromise().then(res => {
-            let data = {
-                dataOfferPage: res
-            };
-            this.dialog.open(OfferDialogComponent, {data}).beforeClose().subscribe(_ => {
-                this.setModalParam()
-            })
+        this.dialog.open(OfferDialogComponent).beforeClose().subscribe(_ => {
+            this.setModalParam()
         })
+    }
+
+    private _openDialogSectionInfo(id) {
+        this.dialog.open(SectionInfoDialogComponent,{data: {id}}).beforeClose().subscribe(_ => {
+            this.setModalParam()
+        })
+
     }
 
     setModalParam(value?) {
@@ -77,6 +72,7 @@ export class ModalService {
             },
             queryParamsHandling: 'merge',
         })
+
 
     }
 }

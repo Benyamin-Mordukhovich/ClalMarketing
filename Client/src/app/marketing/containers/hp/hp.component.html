@@ -8,6 +8,7 @@
     [style.zIndex]="sectionItems.length - i" 
     [isMobile]="isMobile"
     [ngClass]="{'outOfView': layerIndex > i }"
+    (openPopup)="openPopup(i + 1)"
     *ngFor="let item of sectionItems; let i=index">
 </app-sectionInfo>
 

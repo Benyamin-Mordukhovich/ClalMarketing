@@ -5,6 +5,7 @@ import { tap, catchError } from 'rxjs/operators';
 import { environment } from "../../environments/environment";
 import { ContentUrls } from '../../types';
 import { TransferState, makeStateKey } from '@angular/platform-browser';
+import { IcontactPage,Ihp,IfaqPage,IaboutDialog ,IcontactForm,IofferPage,Result,Ipopup} from '../models';
 
 
 const homeStateKey = makeStateKey("home");
@@ -13,6 +14,11 @@ const contactStateKey = makeStateKey("contact");
 const aboutStateKey = makeStateKey("about");
 const offerStateKey = makeStateKey("offer");
 const layoutData = makeStateKey("layoutData");
+const popupSection = makeStateKey("popupSection2");
+const popupSection2 = makeStateKey("popupSection2");
+const popupSection3 = makeStateKey("popupSection3");
+const popupSection4 = makeStateKey("popupSection4");
+const popupSection5 = makeStateKey("popupSection5");
 
 @Injectable()
 export class DataService {
@@ -23,8 +29,11 @@ export class DataService {
     private cacheAboutDialog: any = {}
     private cacheContactForm: any = {}
     private cacheOfferDialog: any = {}
+    private popupSections: any = {}
+    private popupSection2: any = {}
     private _layoutData = new ReplaySubject<any>();
     public dataSubject = new Subject<any>()
+    
     constructor(private http: HttpClient, private state: TransferState) {
         let data = state.get(layoutData,undefined);
         if(data) {
@@ -147,6 +156,28 @@ export class DataService {
             )
         }
         return of(data);
+    }
+
+    getPopupSection(id): Observable<any> {
+  
+        let data = this.state.get(popupSection, undefined);
+        if (!data || data['section_' + id]) {
+            let url = this.urls.popupSectionsUrl(id)
+
+            if (this.popupSections[url]) {
+                return of(this.popupSections[url]);
+            }
+            return this.http.get<Ipopup>(url).pipe(
+                catchError(err => {
+                    return of(null)
+                }),
+                tap(res => {
+                    this.popupSections[url] = res;
+                    this.setLayoutData(res)
+                })
+            )
+        }
+        return of(data['section_' + id]);
     }
 
     sendContactForm(formValue: IcontactForm): Observable<Result> {

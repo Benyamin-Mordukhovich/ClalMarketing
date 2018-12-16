@@ -13,17 +13,17 @@ import { DataService } from "../../../services/data.service";
   templateUrl: "./contactDialog.component.html"
 })
 export class ContactDialogComponent {
-  contactForm: FormGroup;
-  mainTitle: string = "";
-  title: string = "";
-  transactionsOptionsList: any[] = [];
-  mainTitleSendSuccess: string = "";
-  titleSendSuccess: string = "";
-  mainTitleSendFailed: string = "";
-  imgUrl: string = "";
-  btnText: string = "המשך";
-  sendSuccess: boolean = false;
-  fieldList: Ifield[] = [];
+  // contactForm: FormGroup;
+  // mainTitle: string = "";
+  // title: string = "";
+  // transactionsOptionsList: any[] = [];
+  // mainTitleSendSuccess: string = "";
+  // titleSendSuccess: string = "";
+  // mainTitleSendFailed: string = "";
+  // imgUrl: string = "";
+  // btnText: string = "המשך";
+  // sendSuccess: boolean = false;
+  // fieldList: Ifield[] = [];
   
   constructor(public dialogRef: MatDialogRef<ContactDialogComponent>) {}
 
