@@ -1,5 +1,6 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
 import { DataService } from "../../../services/data.service";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: "app-dialogHp",
@@ -11,22 +12,39 @@ export class DialogHpComponent implements OnInit {
   btnText: string;
   btnLink: any;
 
-  data:any = {}
+  data: any = {};
 
+  @Input() id;
 
-  constructor(private _dataService: DataService) {}
+  constructor(
+    private _dataService: DataService,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit() {
-    this._dataService
-      .getPopupSection2()
-      .toPromise()
-      .then(res => {
-        let data = res;
-        console.log('res',res)
-        this.title = data.title;
-        this.text = data.text;
-        this.btnText = data.joinBtn.text;
-        this.btnLink = data.joinBtn.linkUrl;
+
+    if(this.id) {
+      this.load();
+    } else{
+      this.route.paramMap.subscribe(params => {
+        this.id = params.get("id");
+        this.load();
       });
+    }
+
+    
+  }
+
+  load() {
+    this._dataService
+        .getPopupSection(this.id)
+        .toPromise()
+        .then(res => {
+          let data = res;
+          this.title = data.title;
+          this.text = data.text;
+          this.btnText = data.btnText;
+          this.btnLink = data.btnLink;
+        });
   }
 }

@@ -3,6 +3,7 @@ import { DataService } from '../../../services/data.service';
 import { isPlatformBrowser } from '@angular/common';
 import { fromEvent, interval } from 'rxjs';
 import { throttle } from 'rxjs/operators';
+import { ModalService } from 'src/app/services/modal.service';
 
 @Component({
   selector: 'app-hp',
@@ -16,7 +17,7 @@ export class HpComponent implements OnInit {
   isMobile: boolean;
   showFooter: boolean = false;
   sectionItems: any = [];
-  constructor(private _dataService: DataService, @Inject(PLATFORM_ID) private platformId) { }
+  constructor(private _dataService: DataService, @Inject(PLATFORM_ID) private platformId, private modalService:ModalService) { }
 
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
@@ -56,6 +57,10 @@ export class HpComponent implements OnInit {
         }
       });
     }
+  }
+
+  openPopup(id) {
+    this.modalService.openSectionInfoDialog(id)
   }
 
   incrementLayerIndex() {

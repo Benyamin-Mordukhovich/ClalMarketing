@@ -4,9 +4,9 @@
     "urlName": "popupsection2",
     "docType": "hpSectionPopup",
     "btnLink": "",
-    "text": "<p>Description 1</p>",
-    "btnText": "Button 1",
-    "title": "Title 1",
+    "text": "<p>Description 2</p>",
+    "btnText": "Button 2",
+    "title": "Title 2",
     "header": {
         "logoUrl": "http://dev.clalmarketing.com/media/1031/logo.png",
         "polisaBtn": {

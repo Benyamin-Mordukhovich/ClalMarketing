@@ -18,10 +18,6 @@ export class OfferComponent implements OnInit {
       .toPromise()
       .then(res => {
           this.offerData = res
-        // this.title = res.mainTitle;
-        // this.rteHtml = res.rte;
-        // this.link = res.link;
-        // this.imgUrl = res.imgUrl;
       });
   }
 }

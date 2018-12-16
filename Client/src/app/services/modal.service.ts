@@ -18,24 +18,22 @@ export class ModalService {
     }
     listen() {
         this.activatedRoute.queryParams.subscribe(qs => {
-            // if(qs.modal == "about") {
-            //     this._openAbout()
-            // }
+            if(!qs.modal) return;
             if (qs.modal == "contact") {
                 this._openContact()
             }
             if (qs.modal == "offer") {
                 this._openOffer()
             }
-            if (qs.modal == "popupSection2" || qs.modal == "popupSection3" || qs.modal == "popupSection4" || qs.modal == "popupSection5") {
-                this._openDialogSectionInfo();
+
+            if (qs.modal.startsWith('popupSection')) {
+                let id = qs.modal.split('_')[1]; 
+                if(id)
+                    this._openDialogSectionInfo(id);
             }
         })
     }
 
-    // openAboutDialog(): void {
-    //     this.setModalParam("about")
-    // }
     openContactDialog(): void {
         this.setModalParam("contact")
     }
@@ -43,46 +41,25 @@ export class ModalService {
     openOfferDialog(): void {
         this.setModalParam("offer")
     }
-    openSectionInfoDialog(param?): void {
-        this.setModalParam(param)
+    openSectionInfoDialog(id): void {
+        this.setModalParam("popupSection_" + id)
     }
 
-    // private _openAbout() {
-    //     this.dialog.open(AboutDialogComponent).beforeClose().subscribe(_ => {
-    //         this.setModalParam()
-    //     })
-    // }
-
     private _openContact() {
-        this._dataService.getContactData().toPromise().then(res => {
-            let data = {
-                dataContactPage: res
-            };
-            this.dialog.open(ContactDialogComponent, { data }).beforeClose().subscribe(_ => {
-                this.setModalParam()
-            })
-        })
+        this.dialog.open(ContactDialogComponent, {  }).beforeClose().subscribe(_ => {
+            this.setModalParam()
+        });
     }
 
     private _openOffer() {
-        this._dataService.getOfferData().toPromise().then(res => {
-            let data = {
-                dataOfferPage: res
-            };
-            this.dialog.open(OfferDialogComponent, { data }).beforeClose().subscribe(_ => {
-                this.setModalParam()
-            })
+        this.dialog.open(OfferDialogComponent).beforeClose().subscribe(_ => {
+            this.setModalParam()
         })
     }
 
-    private _openDialogSectionInfo() {
-        this._dataService.getPopupSection2().toPromise().then(res => {
-            let data = {
-                dataDialogSection: res
-            };
-            this.dialog.open(SectionInfoDialogComponent, { data }).beforeClose().subscribe(_ => {
-                this.setModalParam()
-            })
+    private _openDialogSectionInfo(id) {
+        this.dialog.open(SectionInfoDialogComponent,{data: {id}}).beforeClose().subscribe(_ => {
+            this.setModalParam()
         })
 
     }
@@ -95,6 +72,7 @@ export class ModalService {
             },
             queryParamsHandling: 'merge',
         })
+
 
     }
 }

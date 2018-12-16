@@ -1,4 +1,4 @@
-import { Component, Inject } from "@angular/core";
+import { Component, Inject, Input } from "@angular/core";
 import { MatDialogRef,MAT_DIALOG_DATA  } from "@angular/material";
 
 
@@ -8,10 +8,9 @@ import { MatDialogRef,MAT_DIALOG_DATA  } from "@angular/material";
 })
 export class SectionInfoDialogComponent {
 
-  dataModal;
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any,public dialogRef: MatDialogRef<SectionInfoDialogComponent>) {
-    this.dataModal = data;
-    console.log('this.dataModal',this.dataModal)
+  constructor(public dialogRef: MatDialogRef<SectionInfoDialogComponent>, 
+    @Inject(MAT_DIALOG_DATA) public data: any) {
+      
   }
 
   closeDialog() {

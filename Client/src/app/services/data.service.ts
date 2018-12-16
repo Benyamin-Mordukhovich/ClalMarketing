@@ -14,6 +14,7 @@ const contactStateKey = makeStateKey("contact");
 const aboutStateKey = makeStateKey("about");
 const offerStateKey = makeStateKey("offer");
 const layoutData = makeStateKey("layoutData");
+const popupSection = makeStateKey("popupSection2");
 const popupSection2 = makeStateKey("popupSection2");
 const popupSection3 = makeStateKey("popupSection3");
 const popupSection4 = makeStateKey("popupSection4");
@@ -28,6 +29,7 @@ export class DataService {
     private cacheAboutDialog: any = {}
     private cacheContactForm: any = {}
     private cacheOfferDialog: any = {}
+    private popupSections: any = {}
     private popupSection2: any = {}
     private _layoutData = new ReplaySubject<any>();
     public dataSubject = new Subject<any>()
@@ -156,26 +158,26 @@ export class DataService {
         return of(data);
     }
 
-    getPopupSection2(): Observable<any> {
+    getPopupSection(id): Observable<any> {
   
-        let data = this.state.get(popupSection2, undefined);
-        if (!data) {
+        let data = this.state.get(popupSection, undefined);
+        if (!data || data['section_' + id]) {
+            let url = this.urls.popupSectionsUrl(id)
 
-            if (this.popupSection2[this.urls.popupSection2]) {
-                return of(this.popupSection2[this.urls.popupSection2]);
+            if (this.popupSections[url]) {
+                return of(this.popupSections[url]);
             }
-
-            return this.http.get<Ipopup>(this.urls.popupSection2).pipe(
+            return this.http.get<Ipopup>(url).pipe(
                 catchError(err => {
                     return of(null)
                 }),
                 tap(res => {
-                    this.popupSection2[this.urls.popupSection2] = res;
+                    this.popupSections[url] = res;
                     this.setLayoutData(res)
                 })
             )
         }
-        return of(data);
+        return of(data['section_' + id]);
     }
 
     sendContactForm(formValue: IcontactForm): Observable<Result> {

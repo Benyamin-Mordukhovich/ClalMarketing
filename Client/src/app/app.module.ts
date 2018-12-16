@@ -31,7 +31,7 @@ import { FaqModelComponent } from './marketing/components/faqModel/faqModel.comp
 import { TransitionSlideDirective } from './directives/transition-slide.directive';
 import { ModalService } from './services/modal.service';
 import { AboutComponent } from './marketing/components/about/about.component';
-import { dialogHpComponent } from './marketing/components/dialogHp/dialogHp.component';
+import { DialogHpComponent } from './marketing/components/dialogHp/dialogHp.component';
 import { ContactComponent } from './marketing/components/contact/contact.component';
 import { OfferComponent } from './marketing/components/offer/offer.component';
 export const MATERIALCOMPONENTS = [
@@ -64,7 +64,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     ContactComponent,
     OfferComponent,
     SectionInfoDialogComponent,
-    dialogHpComponent
+    DialogHpComponent
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'clalMarketing'}),
@@ -84,7 +84,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     AboutComponent,
     ContactComponent,
     OfferComponent,
-    SectionInfoDialogComponent
+    SectionInfoDialogComponent,
+    DialogHpComponent
   ],
   providers: [
     {

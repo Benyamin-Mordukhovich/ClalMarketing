@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: "about", component: AboutComponent },
   { path: "contact",component: ContactComponent },
   { path: "offer" , component: OfferComponent},
-  { path: "popupSection2" , component: DialogHpComponent},
+  { path: "popupSection/:id" , component: DialogHpComponent},
   { path: "**", component: ErrorPageComponent }
 ];
 
