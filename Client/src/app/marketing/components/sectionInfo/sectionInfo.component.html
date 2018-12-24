@@ -1,10 +1,9 @@
-<img *ngIf="isMobile" class="sectionInfoMobileImg" src="{{infoObj.bgImageMobile}}" alt="">
-<img *ngIf="!isMobile" class="sectionInfoMobileImg" src="{{infoObj.bgImage}}" alt="">
 
 <div class="sectionInfo" [class.playing]="isVideoPlaying">
 
     <div class="sectionInfoInner">
         <div class="mainTitle" [innerHTML]="infoObj.mainTitle"></div>
+        
         <div class="text" [innerHTML]="infoObj.text"></div>
         <a class="btnLink" [href]="infoObj.linkReadMore.linkUrl" *ngIf="infoObj.linkReadMore && !infoObj.linkReadMore.isInternal && !infoObj.isReadMorePopup">
             {{infoObj.linkReadMore.text}}
@@ -40,7 +39,7 @@
 </div>
 
 <div *ngIf="infoObj.videoUrl.length > 0 && infoObj.videoType == 'player' " class="videoWrapper">
-    <video class="mainVideo" #videoRef (click)="stopVideo()" poster="../../../../assets/img/Clal_06_0001.png" preload="none">
+    <video class="mainVideo" #videoRef (click)="stopVideo()" poster="{{infoObj.videoBgImage}}" preload="none">
         <source src="{{infoObj.videoUrl}}" type="video/mp4">
     </video>
     <button type="button" class="playBtn" (click)="playVideo()" [class.active]="isVideoPlaying"></button>
@@ -51,6 +50,8 @@
         <source [src]="infoObj.videoUrl" type="video/mp4">
     </video>
 </div>
+
+<img *ngIf="isMobile && infoObj.videoType != 'player'" class="sectionInfoMobileImg" src="{{infoObj.bgImageMobile}}" alt="">
 
 <div *ngIf="infoObj.caruselData.length > 0">
     <app-slick [slides]="infoObj.caruselData"></app-slick>

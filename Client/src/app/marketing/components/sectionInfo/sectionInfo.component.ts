@@ -47,6 +47,9 @@ export class SectionInfoComponent implements OnInit {
   }
 
   ngOnInit() {
+    if(this.infoObj.videoType == ''){
+      this.infoObj.videoType = 'background'; 
+    }
     if (!this.isMobile) {
       if (typeof document !== "undefined") {
         setTimeout(() => {
