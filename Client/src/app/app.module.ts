@@ -84,8 +84,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     AboutComponent,
     ContactComponent,
     OfferComponent,
-    SectionInfoDialogComponent,
-    DialogHpComponent
+    SectionInfoDialogComponent
   ],
   providers: [
     {
