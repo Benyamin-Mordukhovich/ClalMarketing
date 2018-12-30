@@ -3,7 +3,7 @@ import { DataService } from '../../../services/data.service';
 import { isPlatformBrowser } from '@angular/common';
 import { fromEvent, interval } from 'rxjs';
 import { throttle } from 'rxjs/operators';
-import { ModalService } from 'src/app/services/modal.service';
+import { ModalService } from '../../../services/modal.service';
 
 @Component({
   selector: 'app-hp',

@@ -1,5 +1,5 @@
 import { Component, Input, ViewChild, ElementRef, OnInit, Output, EventEmitter } from '@angular/core';
-import { ModalService } from 'src/app/services/modal.service';
+import { ModalService } from '../../../../app/services/modal.service';
 @Component({
   selector: "app-sectionInfo",
   templateUrl: "./sectionInfo.component.html"

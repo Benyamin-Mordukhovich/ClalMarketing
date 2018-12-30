@@ -24,10 +24,12 @@ export class SlickComponent implements OnInit {
     };
 
     ngOnInit() {
-        setTimeout(() => {
-            this.slider = $('.commentsCarusel');
-            this.slider.slick(this.slideConfig)
-        }, 0)
+        if(!this.isServer) {
+            setTimeout(() => {
+                this.slider = $('.commentsCarusel');
+                this.slider.slick(this.slideConfig)
+            }, 0)
+        }
     }
  
 }

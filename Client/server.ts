@@ -6,7 +6,7 @@ import { enableProdMode } from '@angular/core';
 
 import * as express from 'express';
 import { join } from 'path';
-
+process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
 // Faster server renders w/ Prod mode (dev mode never needed)
 enableProdMode();
 
